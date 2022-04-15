@@ -54,6 +54,11 @@ ExportedObj/
 # Unity3D generated file on crash reports
 sysinfo.txt
 
+# Backup art files
+*.png~
+*.kra~
+*.blend1
+
 # Builds
 *.apk
 *.unitypackage
