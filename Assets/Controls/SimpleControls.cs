@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class SimpleControls : MonoBehaviour
 {
     [SerializeField]
@@ -21,13 +22,29 @@ public class SimpleControls : MonoBehaviour
 
     private float timeSinceLastFire = float.MaxValue;
 
+    private Rigidbody rb;
+
+    private float horizontalInput;
+    private float verticalInput;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        rb.AddForce((new Vector3(horizontalInput, 0, verticalInput).normalized * moveSpeed) - rb.velocity, ForceMode.VelocityChange);
+        //rb.MovePosition(rb.position+ new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
+        // rb.AddForce(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed*10 * Time.deltaTime);
+    }
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
+        //
+        //transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
 
         if (Input.GetButton("Fire1") && timeSinceLastFire > (60f/(float)fireRate) && objectToFire != null)
         {
