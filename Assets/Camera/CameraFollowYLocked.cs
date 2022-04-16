@@ -23,15 +23,19 @@ public class CameraFollowYLocked : MonoBehaviour
     [SerializeField]
     private float lerpSpeed = 10f;
 
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             distance += -1 * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")) * distanceChangeAmount;
             distance = Mathf.Clamp(distance, minDistance, maxDistance);
         }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
 
         float x = target.transform.position.x;
         float y = target.transform.position.y + distance;
