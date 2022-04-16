@@ -6,16 +6,37 @@ public class CameraFollowYLocked : MonoBehaviour
 {
     [SerializeField]
     private GameObject target;
+    
+    [SerializeField]
+    private float distance = 25;
 
     [SerializeField]
-    private float y;
+    private float minDistance = 5;
+
+    [SerializeField]
+    private float maxDistance = 60;
+
+    // When the scrollwheel changes, how far will we zoome in our out?
+    [SerializeField]
+    private float distanceChangeAmount = 5;
+
+    [SerializeField]
+    private float lerpSpeed = 10f;
+
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            distance += -1 * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")) * distanceChangeAmount;
+            distance = Mathf.Clamp(distance, minDistance, maxDistance);
+        }
+
         float x = target.transform.position.x;
+        float y = target.transform.position.y + distance;
         float z = target.transform.position.z;
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(x, y, z), Time.deltaTime * 5);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(x, y, z), Time.deltaTime * lerpSpeed);
     }
 }
