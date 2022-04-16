@@ -278,7 +278,6 @@ GameObject:
   - component: {fileID: 1558578703}
   - component: {fileID: 1558578702}
   - component: {fileID: 1558578701}
-  - component: {fileID: 1558578705}
   - component: {fileID: 1558578707}
   - component: {fileID: 1558578700}
   - component: {fileID: 1558578706}
@@ -381,23 +380,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1558578705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558578699}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36357a7b45195b3489d14f3c1ac10988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 25
-  fireRate: 300
-  projectileFireDistance: 3
-  initialProjectileVelocity: 5
-  objectToFire: {fileID: 672534189483499478, guid: 594f31d1e518ec9409cd7560fd069a53, type: 3}
 --- !u!114 &1558578706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,9 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 25
   fireRate: 300
-  projectileFireDistance: 3
-  initialProjectileVelocity: 15
-  objectToFire: {fileID: 423118593022880732, guid: 8af295b43fbdf08458dc72fbac22e06a, type: 3}
+  bulletPattern: {fileID: 11400000, guid: f32ffcdb954dfea429235276aa1a861a, type: 2}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +426,6 @@ GameObject:
   - component: {fileID: 1687258583}
   - component: {fileID: 1687258586}
   - component: {fileID: 1687258587}
-  - component: {fileID: 1687258588}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -601,23 +580,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5e85e99f3f512469d1024728b7e18a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1558578699}
-  y: 50
---- !u!114 &1687258588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db05990365092d84289d2a246685c7e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ee5e85e99f3f512469d1024728b7e18a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1558578699}
@@ -625,8 +590,7 @@ MonoBehaviour:
   minDistance: 5
   maxDistance: 60
   distanceChangeAmount: 5
-  viewingPositionVector: {x: 0, y: 0.5, z: -0.5}
-  viewingAngleVector: {x: 45, y: 0, z: 0}
+  lerpSpeed: 10
 --- !u!1 &1956979663
 GameObject:
   m_ObjectHideFlags: 0
