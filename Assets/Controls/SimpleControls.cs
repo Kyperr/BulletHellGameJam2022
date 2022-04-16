@@ -12,13 +12,7 @@ public class SimpleControls : MonoBehaviour
     private int fireRate = 600;// rounds per minute
 
     [SerializeField]
-    private float projectileFireDistance = 1.5f;
-
-    [SerializeField]
-    private float initialProjectileVelocity = 10f;
-
-    [SerializeField]
-    private GameObject objectToFire;
+    private BulletPattern bulletPattern;
 
     private float timeSinceLastFire = float.MaxValue;
 
@@ -46,39 +40,14 @@ public class SimpleControls : MonoBehaviour
         //
         //transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
 
-        if (Input.GetButton("Fire1") && timeSinceLastFire > (60f/(float)fireRate) && objectToFire != null)
+        if (Input.GetButton("Fire1") && timeSinceLastFire > (60f / (float)fireRate) && bulletPattern != null)
         {
-            SpawnProjectile();
+            StartCoroutine(bulletPattern.TriggerBulletPattern(this.gameObject));
             timeSinceLastFire = 0;
         }
         else
         {
             timeSinceLastFire += Time.deltaTime;
         }
-    }
-
-    private void SpawnProjectile()
-    {
-        Vector3 mousePos = Input.mousePosition;
-
-        float directionX = mousePos.x - (Screen.width / 2);
-
-        // We are translating the y position of the mouse to the z position in the world.
-        float directionZ = mousePos.y - (Screen.height / 2);
-
-        // float directionZ = transform.position.y;
-
-
-        Vector3 spawnDirection = new Vector3(directionX, 0, directionZ).normalized;
-
-        Vector3 spawnPositon = this.transform.position + (spawnDirection * projectileFireDistance);
-
-        GameObject go = Instantiate(objectToFire, spawnPositon, this.transform.rotation);
-
-        if (go.GetComponent<Velocity>())
-        {
-            go.GetComponent<Velocity>().SetVelocity(spawnDirection * initialProjectileVelocity);
-        }
-
     }
 }

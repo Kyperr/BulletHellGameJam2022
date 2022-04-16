@@ -21,7 +21,13 @@ public class ForceDriver : MonoBehaviour
     }
 
     [SerializeField]
-    private int ForcesAffectorSamples = 10;
+    private int forcesAffectorSamples = 10;
+
+    [SerializeField]
+    private int numberOfAffected = 0;
+
+    [SerializeField]
+    private int numberOfAffecting = 0;
 
     private List<AffectedByForces> affectedByForcesList = new List<AffectedByForces>();
 
@@ -30,11 +36,13 @@ public class ForceDriver : MonoBehaviour
     // To start, this is going to simply approximate gravity.
     void Update()
     {
+        numberOfAffected = affectedByForcesList.Count;
+        numberOfAffecting = affectingForcesList.Count;
 
         foreach (AffectedByForces affected in affectedByForcesList)
         {
             // Sample X amount of affectors. If there aren't N affectors, don't oversample.
-            for (int i = 0; i < ForcesAffectorSamples && i < affectedByForcesList.Count; i++)
+            for (int i = 0; i < forcesAffectorSamples && i < affectedByForcesList.Count; i++)
             {
 
                 // Randomly sample all effecting forces and apply.
