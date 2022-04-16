@@ -21,9 +21,18 @@ public class Velocity : MonoBehaviour
     [SerializeField]
     private Vector3 lockedCoordinates = Vector3.zero; // Per second.
 
+    private Rigidbody rb;
+
+    [SerializeField]
+    bool useRigidbody;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     public void SetVelocity(Vector3 velocity)
     {
         this.velocity = velocity;
+        rb.velocity = velocity;
     }
 
     public Vector3 GetVelocity()
@@ -33,29 +42,54 @@ public class Velocity : MonoBehaviour
 
     public void AffectVelocity(Func<Vector3, Vector3> doWithVelocity)
     {
-        velocity = doWithVelocity(velocity);
+        if (useRigidbody)
+        {
+
+            velocity = doWithVelocity(rb.velocity);
+        }
+        else
+        {
+
+            velocity = doWithVelocity(velocity);
+        }
         // velocity = Vector3.Min(velocity, maxVelocity);
+    }
+
+    private void FixedUpdate()
+    {
+        if (useRigidbody)
+        {
+
+            Vector3 velocityToApply = this.velocity * Time.deltaTime;
+            //Vector3 newPos = transform.position + velocityToApply;
+
+            rb.AddForce(this.velocity - rb.velocity, ForceMode.Impulse);
+        }
     }
 
     void Update()
     {
-        // Divide the velocity by a fraction of a second since the velocity is in terms of a single second.
-        Vector3 velocityToApply = this.velocity * Time.deltaTime;
-        Vector3 newPos = transform.position + velocityToApply;
+        if (!useRigidbody)
+        {
 
-        if (xLocked)
-        {
-            newPos.x = lockedCoordinates.x;
-        }
-        if (yLocked)
-        {
-            newPos.y = lockedCoordinates.y;
-        }
-        if (zLocked)
-        {
-            newPos.z = lockedCoordinates.z;
-        }
+            // Divide the velocity by a fraction of a second since the velocity is in terms of a single second.
+            Vector3 velocityToApply = this.velocity * Time.deltaTime;
+            Vector3 newPos = transform.position + velocityToApply;
 
-        transform.position = newPos;
+            if (xLocked)
+            {
+                newPos.x = lockedCoordinates.x;
+            }
+            if (yLocked)
+            {
+                newPos.y = lockedCoordinates.y;
+            }
+            if (zLocked)
+            {
+                newPos.z = lockedCoordinates.z;
+            }
+
+            transform.position = newPos;
+        }
     }
 }
