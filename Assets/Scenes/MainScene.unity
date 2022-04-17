@@ -298,6 +298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Binary Templar
       objectReference: {fileID: 0}
+    - target: {fileID: 5179039431650410112, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
 --- !u!1001 &1257657646
@@ -355,6 +359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 1866087784612422884, guid: a54c14db816fac849b208cbc026965bc, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1558578699}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a54c14db816fac849b208cbc026965bc, type: 3}
 --- !u!1 &1558578699 stripped
@@ -501,7 +509,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -901589500}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -651,7 +659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072590, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: fireRate
-      value: 300
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072590, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: bulletPattern

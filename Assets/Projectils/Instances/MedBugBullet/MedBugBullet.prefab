@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 940911679}
   - component: {fileID: 8091507209016722444}
   - component: {fileID: 443363547332983966}
+  - component: {fileID: -4632873212380672607}
   m_Layer: 7
   m_Name: MedBugBullet
   m_TagString: Untagged
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ef759d667d537468f131d0656c46a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTimeInSeconds: -1
+  lifeTimeInSeconds: 20
 --- !u!114 &940911678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +123,21 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: -0.15}
+--- !u!114 &-4632873212380672607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3860606280122334915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9911fd051247b9b4aafbb520c376c59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageClass: {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
+  damageAmount: 5
+  destroyedOnDamage: 0
 --- !u!1001 &3860606280782735974
 PrefabInstance:
   m_ObjectHideFlags: 0

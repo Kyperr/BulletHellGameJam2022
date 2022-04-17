@@ -4,8 +4,28 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    private static EnemySpawner _instance;
+
+    public static EnemySpawner Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<EnemySpawner>();
+            }
+
+            return _instance;
+        }
+    }
+
+    [SerializeField]
+    private GameObject target;
+    public GameObject Target => target;
+
     [SerializeField]
     EnemySpawnLogic spawnLogic;
+
     int currentRound = 0;
     public int CurrentRound { get { return currentRound; } }
     List<SpawnableEnemy> enemyList = new List<SpawnableEnemy>();
@@ -37,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
         if (enemyList.Contains(enemy))
         {
             enemyList.Remove(enemy);
-            if(enemyList.Count == 0)
+            if (enemyList.Count == 0)
             {
                 generateNextRound();
             }

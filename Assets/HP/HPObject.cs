@@ -6,12 +6,14 @@ public class HPObject : MonoBehaviour
 {
     [SerializeField]
     float maxHP;
+    [SerializeField]
     float currentHP;
     bool isDead;
     HPBar hpBar;
     ExplosionSpawner explosion;
     EnemySpawner enemySpawner;
-    public void getDamage(float d)
+
+    public void DoDamage(float d)
     {
         if (isDead)
         {
@@ -23,8 +25,12 @@ public class HPObject : MonoBehaviour
         {
             Die();
         }
-        //update HPBar
-        hpBar.update(currentHP);
+
+        if (hpBar)
+        {
+            //update HPBar
+            hpBar.update(currentHP);
+        }
     }
     void Die()
     {
@@ -35,9 +41,19 @@ public class HPObject : MonoBehaviour
         isDead = true;
         //explosion
         explosion.spawn();
-        Destroy(gameObject.transform.parent.gameObject, 1);
+        DisableMesheRenderers();
+        Destroy(gameObject, 1);
         enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
     }
+
+    private void DisableMesheRenderers()
+    {
+        foreach (Renderer r in this.GetComponentsInChildren(typeof(Renderer)))
+        {
+            r.enabled = false;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +82,7 @@ public class HPObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             //getDamage(50);
-            getDamage(Random.Range(30, 100));
+            DoDamage(Random.Range(30, 100));
         }
     }
 }

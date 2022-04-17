@@ -12,7 +12,6 @@ public class BinaryTemplar : MonoBehaviour
 
     private const float DISTANCE_THRESHOLD = 1.0f;
 
-    [SerializeField]
     private GameObject target;
 
     [SerializeField]
@@ -36,8 +35,6 @@ public class BinaryTemplar : MonoBehaviour
 
     private Phase phase = Phase.CIRCLING;
 
-    private bool rotating = true;
-
     private float desiredAngle = 0;
 
     private float timeSpentOnPhase = 0;
@@ -47,6 +44,7 @@ public class BinaryTemplar : MonoBehaviour
 
     void Start()
     {
+        this.target = EnemySpawner.Instance.Target;
         desiredAngle = Random.Range(0, 360);
         timeSpentOnPhase = 0;
         phase = Phase.CIRCLING;
@@ -55,23 +53,26 @@ public class BinaryTemplar : MonoBehaviour
 
     void Update()
     {
-        timeSpentOnPhase += Time.deltaTime;
-
-        if (phase == Phase.CIRCLING)
+        if (target != null)
         {
-            CirclingLogic();
-        }
+            timeSpentOnPhase += Time.deltaTime;
 
-        if (phase == Phase.FOCUSSING)
-        {
-            FocussingLogic();
-        }
+            if (phase == Phase.CIRCLING)
+            {
+                CirclingLogic();
+            }
 
-        // OLD STUFF: Just for reference.
-        // 1) Enemy should circle the player for N seconds
-        // 2) After N seconds, stop, turn and face player.
-        // 3) Shoot bullets towards player and wait for X amount of seconds (configurable)
-        // 4) Continue circling the player, randomly choose clockwise or counter clockwise.
+            if (phase == Phase.FOCUSSING)
+            {
+                FocussingLogic();
+            }
+
+            // OLD STUFF: Just for reference.
+            // 1) Enemy should circle the player for N seconds
+            // 2) After N seconds, stop, turn and face player.
+            // 3) Shoot bullets towards player and wait for X amount of seconds (configurable)
+            // 4) Continue circling the player, randomly choose clockwise or counter clockwise.
+        }
     }
 
     private void CirclingLogic()
