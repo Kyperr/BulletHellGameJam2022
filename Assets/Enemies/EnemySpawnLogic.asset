@@ -15,4 +15,4 @@ MonoBehaviour:
   enemyList:
   - {fileID: 8911593014640269885, guid: b63dc4581db0bd249973ccfb1332ad9a, type: 3}
   - {fileID: 8911593014640269885, guid: fed85d421b1803c4e8c1d142c5cc5d75, type: 3}
-  roundBudgets: 020000000400000006000000
+  roundBudgets: e80300000400000006000000

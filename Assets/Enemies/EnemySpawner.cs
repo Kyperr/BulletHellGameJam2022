@@ -9,11 +9,14 @@ public class EnemySpawner : MonoBehaviour
     int currentRound = 0;
     public int CurrentRound { get { return currentRound; } }
     List<SpawnableEnemy> enemyList = new List<SpawnableEnemy>();
+
+    Arena arena;
     // Start is called before the first frame update
     void Start()
     {
-
+        arena = GameObject.FindObjectOfType<Arena>();
     }
+    public float ArenaRadius { get { return arena.ArenaRadius; } }
 
     //just a test function for simulate multiple rounds while enemy can't be killed now
     public void clearEnemies()

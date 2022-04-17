@@ -10,7 +10,6 @@ public class EnemySpawnLogic : ScriptableObject
     [SerializeField]
     List<int> roundBudgets;
 
-    float radius = 10;//todo read from arena
 
     float calcualteMinBudget()
     {
@@ -25,6 +24,7 @@ public class EnemySpawnLogic : ScriptableObject
 
     public void generateEnemies(EnemySpawner es)
     {
+        float radius = es.ArenaRadius;
         var minimalBudget = calcualteMinBudget();
         float budge = roundBudgets[Mathf.Min(es.CurrentRound, roundBudgets.Count - 1)];
         int loopCount = 0;//in case for any reason we get into infinite loop
@@ -33,9 +33,10 @@ public class EnemySpawnLogic : ScriptableObject
             var enemy = enemyList[Random.Range(0, enemyList.Count)];
             if (budge - enemy.SpawnCost >= 0)
             {
+                Vector2 position = Random.insideUnitCircle * radius;
                 //todo make sure enemies wont collide each other
-                Vector3 position = new Vector3(Random.Range(-radius, radius), 0, Random.Range(-radius, radius));
-                var go = Instantiate(enemy.gameObject, position, Quaternion.identity, es.transform);
+                //Vector3 position = new Vector3(Random.Range(-radius, radius), 0, Random.Range(-radius, radius));
+                var go = Instantiate(enemy.gameObject, new Vector3(position.x,0,position.y), Quaternion.identity, es.transform);
                 es.addEnemy(go.GetComponent<SpawnableEnemy>());
                 budge -= enemy.SpawnCost;
             }

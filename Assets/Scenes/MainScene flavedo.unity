@@ -281,15 +281,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034269377402249132, guid: a54c14db816fac849b208cbc026965bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 203.6166
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1034269377402249132, guid: a54c14db816fac849b208cbc026965bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -244.38826
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1034269377402249132, guid: a54c14db816fac849b208cbc026965bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 68.32077
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1034269377402249132, guid: a54c14db816fac849b208cbc026965bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -323,10 +323,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 1866087784612422884, guid: a54c14db816fac849b208cbc026965bc, type: 3}
-      propertyPath: spawnLogic
-      value: 
-      objectReference: {fileID: 11400000, guid: 33816da4699223d439c7374b0d80ca29, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a54c14db816fac849b208cbc026965bc, type: 3}
 --- !u!1 &1558578699 stripped
