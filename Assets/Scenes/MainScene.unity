@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46924fcbebca8054988949982316b966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcesAffectorSamples: 10
+  sampleCount: 25
   numberOfAffected: 0
   numberOfAffecting: 0
 --- !u!4 &1250193354
@@ -768,12 +768,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072590, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: fireRate
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898470440425072590, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: bulletPattern
       value: 
       objectReference: {fileID: 11400000, guid: 246ffa2cd02d8f54f858a674d842db3d, type: 2}
     - target: {fileID: 3898470440425072591, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: multiplier
-      value: 10
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898470440425072591, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: maxForceStrength
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898470440425072591, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: minForceStrength
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898470440425072593, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: forceStrength
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072598, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: m_Name

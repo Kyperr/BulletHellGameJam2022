@@ -33,6 +33,7 @@ public class SimpleControls : MonoBehaviour
         //rb.MovePosition(rb.position+ new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
         // rb.AddForce(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed*10 * Time.deltaTime);
     }
+    
     // Update is called once per frame
     void Update()
     {

@@ -39,9 +39,9 @@ public class RadialSprayBulletPattern : BulletPattern
             spawnPositon = source.transform.position + (spawnDirection * projectileFireDistance);
             GameObject go = Instantiate(projectile, spawnPositon, source.transform.rotation);
 
-            if (go.GetComponent<Velocity>())
+            if (go.GetComponent<Rigidbody>())
             {
-                go.GetComponent<Velocity>().SetVelocity(spawnDirection * initialProjectileVelocity);
+                go.GetComponent<Rigidbody>().AddForce(spawnDirection * initialProjectileVelocity);
             }
 
             yield return new WaitForSeconds(delayBetweenShots);
@@ -49,7 +49,7 @@ public class RadialSprayBulletPattern : BulletPattern
             // After waiting, set the new angle.
             spawnDirection = Quaternion.AngleAxis(shotAngle, Vector3.up) * spawnDirection;
         }
-        
+
         yield break;
     }
 }

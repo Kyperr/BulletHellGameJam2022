@@ -32,9 +32,9 @@ public class ForwardShootingBulletPattern : BulletPattern
 
         GameObject go = Instantiate(projectile, spawnPositon, source.transform.rotation);
 
-        if (go.GetComponent<Velocity>())
+        if (go.GetComponent<Rigidbody>())
         {
-            go.GetComponent<Velocity>().SetVelocity(spawnDirection * initialProjectileVelocity);
+            go.GetComponent<Rigidbody>().AddForce(spawnDirection * initialProjectileVelocity);
         }
 
         yield break;

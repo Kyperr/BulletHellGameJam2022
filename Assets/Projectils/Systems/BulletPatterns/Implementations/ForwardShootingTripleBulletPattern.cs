@@ -42,19 +42,19 @@ public class ForwardShootingTripleBulletPattern : BulletPattern
         GameObject go2 = Instantiate(projectile, spawnPositon2, source.transform.rotation);
         GameObject go3 = Instantiate(projectile, spawnPositon3, source.transform.rotation);
 
-        if (go1.GetComponent<Velocity>())
+        if (go1.GetComponent<Rigidbody>())
         {
-            go1.GetComponent<Velocity>().SetVelocity(spawnDirection1 * initialProjectileVelocity);
+            go1.GetComponent<Rigidbody>().AddForce(spawnDirection1 * initialProjectileVelocity);
         }
 
-        if (go2.GetComponent<Velocity>())
+        if (go2.GetComponent<Rigidbody>())
         {
-            go2.GetComponent<Velocity>().SetVelocity(spawnDirection2 * initialProjectileVelocity);
+            go2.GetComponent<Rigidbody>().AddForce(spawnDirection2 * initialProjectileVelocity);
         }
 
-        if (go3.GetComponent<Velocity>())
+        if (go3.GetComponent<Rigidbody>())
         {
-            go3.GetComponent<Velocity>().SetVelocity(spawnDirection3 * initialProjectileVelocity);
+            go3.GetComponent<Rigidbody>().AddForce(spawnDirection3 * initialProjectileVelocity);
         }
 
         yield break;

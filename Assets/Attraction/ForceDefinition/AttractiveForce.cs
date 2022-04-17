@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
+using Unity.Burst;
+using Unity.Jobs;
+using System;
 
 /*
     Calculating true Forces would be unavoidably n^2 for something like bullets.
@@ -15,30 +19,64 @@ public class AttractiveForce : Force
     [SerializeField]
     private float distanceSensitivity = 0.5f;
 
-    public override void ApplyForce(AffectingForce affectingForce, AffectedByForces affected)
+    public override JobHandle CalculateForces(AffectingForce affectingForce, NativeAffectedByForceArray affectedByForces, NativeArray<Vector3> forceVectors)
     {
-        Vector3 affectedPosition = affected.transform.position;
-        float affectedForceStrength = affected.ForceStrength;
 
-        Vector3 affectingForcePosition = affectingForce.transform.position;
-        float affectingForceStrength = affectingForce.ForceStrength;
-
-        // No apply the cumulative force on the affectedForce.
-        float distance = Vector3.Distance(affectedPosition, affectingForcePosition);
-
-        // Don't wanna be dividing by zero.
-        if (distance > FORCE_MIN_DISTANCE_CONSTANT)
+        AttractiveForceJob job = new AttractiveForceJob
         {
-            float netForceStrength = FORCE_CONSTANT * affectedForceStrength * affectingForceStrength / Mathf.Pow(distance, distanceSensitivity);// Something sorta like gravity.
+            affectedPositions = affectedByForces.affectedPositions,
+            affectedForceStrengths = affectedByForces.affectedForceStrengths,
+            affectingForcePosition = affectingForce.transform.position,
+            affectingForceStrength = affectingForce.ForceStrength,
+            deltaTime = Time.deltaTime,
+            distanceSensitivity = distanceSensitivity,
+            netForces = forceVectors
+        };
 
-            Vector3 forceDirection = (affectingForcePosition - affectedPosition).normalized;
+        JobHandle handle = job.Schedule(affectedByForces.affectedPositions.Length, 8);
+        return handle;
+    }
 
-            Vector3 netForce = forceDirection * netForceStrength * Time.deltaTime;
+    [BurstCompile]
+    public struct AttractiveForceJob : ForceJob
+    {
 
-            affected.GetComponent<Velocity>().AffectVelocity(velocity =>
+        [ReadOnly]
+        public NativeArray<Vector3> affectedPositions;
+
+        [ReadOnly]
+        public NativeArray<float> affectedForceStrengths;
+
+        [ReadOnly]
+        public Vector3 affectingForcePosition;
+
+        [ReadOnly]
+        public float affectingForceStrength;
+
+        [ReadOnly]
+        public float deltaTime;
+
+        [ReadOnly]
+        public float distanceSensitivity;
+
+        public NativeArray<Vector3> netForces;
+
+        public NativeArray<Vector3> NetForces { get => netForces; }
+
+        public void Execute(int i)
+        {
+            // No apply the cumulative force on the affectedForce.
+            float distance = Vector3.Distance(affectedPositions[i], affectingForcePosition);
+
+            // Don't wanna be dividing by zero.
+            if (distance > FORCE_MIN_DISTANCE_CONSTANT)
             {
-                return velocity + netForce;
-            });
+                float netForceStrength = FORCE_CONSTANT * affectedForceStrengths[i] * affectingForceStrength / Mathf.Pow(distance, distanceSensitivity);// Something sorta like gravity.
+
+                Vector3 forceDirection = (affectingForcePosition - affectedPositions[i]).normalized;
+
+                netForces[i] = forceDirection * netForceStrength * deltaTime;
+            }
         }
     }
 }

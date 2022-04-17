@@ -205,7 +205,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &672534189483499478
@@ -217,9 +217,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 672534189483499479}
-  - component: {fileID: 7660165332414783675}
   - component: {fileID: 6541605883924151940}
   - component: {fileID: 7192211427531564885}
+  - component: {fileID: 7527001429637024082}
   m_Layer: 0
   m_Name: BlackHole
   m_TagString: Untagged
@@ -246,24 +246,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7660165332414783675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672534189483499478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3441cfa3aab413b46b97b8d9ee0889e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
-  maxVelocity: {x: 0, y: 0, z: 0}
-  xLocked: 0
-  yLocked: 1
-  zLocked: 0
-  lockedCoordinates: {x: 0, y: 0, z: 0}
 --- !u!114 &6541605883924151940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7f0c63991a804f8b1c70c318fe996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 0.05
+  forceStrength: 0.5
 --- !u!114 &7192211427531564885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,8 +271,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545e9fc2bd89041418fe929862840f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 50000
+  forceStrength: 500000
   force: {fileID: 11400000, guid: df82e776b29a7954da1075c01185ae58, type: 2}
+--- !u!54 &7527001429637024082
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672534189483499478}
+  serializedVersion: 2
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 36
+  m_CollisionDetection: 0
 --- !u!1 &672534189888027923
 GameObject:
   m_ObjectHideFlags: 0

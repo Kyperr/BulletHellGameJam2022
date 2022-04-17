@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925b79ba406048a4e90a59be253b58a3, type: 3}
   m_Name: Repulsion
   m_EditorClassIdentifier: 
+  forceSampleCount: 15
   distanceSensitivity: 2.75

@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Jobs;
+using System;
+using Unity.Collections;
 
 public class AffectingForce : AnnouncesDestroy
 {
@@ -17,12 +20,9 @@ public class AffectingForce : AnnouncesDestroy
         ForceDriver.Instance.RegisterAffectingForce(this);
     }
 
-    public void ApplyForce(AffectedByForces affected)
+    public JobHandle CalculateForces(NativeAffectedByForceArray affectedByForces, NativeArray<Vector3> forceVectors)
     {
-        if (force != null)
-        {
-            force.ApplyForce(this, affected);
-        }
+        return force.CalculateForces(this, affectedByForces, forceVectors);
     }
 
 }
