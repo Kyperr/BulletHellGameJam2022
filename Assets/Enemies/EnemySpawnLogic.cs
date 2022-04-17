@@ -67,7 +67,6 @@ public class EnemySpawnLogic : ScriptableObject
                     Debug.LogError("can't find a good position for enemy");
                     return;
                 }
-                //todo make sure enemies wont collide each other
                 var go = Instantiate(enemy.gameObject, position, Quaternion.identity, es.transform);
                 es.addEnemy(go.GetComponent<SpawnableEnemy>());
                 avoidCollisionList.Add(position);
