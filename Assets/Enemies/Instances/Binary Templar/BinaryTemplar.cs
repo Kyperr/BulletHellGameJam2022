@@ -40,7 +40,6 @@ public class BinaryTemplar : MonoBehaviour
 
     private float desiredAngle = 0;
 
-    [SerializeField]
     private float timeSpentOnPhase = 0;
 
     private float timeToCircle = 0;
@@ -68,6 +67,7 @@ public class BinaryTemplar : MonoBehaviour
             FocussingLogic();
         }
 
+        // OLD STUFF: Just for reference.
         // 1) Enemy should circle the player for N seconds
         // 2) After N seconds, stop, turn and face player.
         // 3) Shoot bullets towards player and wait for X amount of seconds (configurable)
