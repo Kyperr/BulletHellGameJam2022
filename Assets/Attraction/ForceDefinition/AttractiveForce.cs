@@ -38,7 +38,7 @@ public class AttractiveForce : Force
         return handle;
     }
 
-    [BurstCompile]
+    // [BurstCompile]
     public struct AttractiveForceJob : ForceJob
     {
 

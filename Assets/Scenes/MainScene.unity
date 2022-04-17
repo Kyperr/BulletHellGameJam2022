@@ -250,7 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46924fcbebca8054988949982316b966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sampleCount: 15
+  sampleCount: 50
+  gravityIntensityModifier: 2
   numberOfAffected: 0
   numberOfAffecting: 0
 --- !u!4 &1250193354
@@ -462,7 +463,7 @@ MonoBehaviour:
   target: {fileID: 1558578699}
   distance: 25
   minDistance: 5
-  maxDistance: 60
+  maxDistance: 80
   distanceChangeAmount: 5
   lerpSpeed: 10
 --- !u!1 &1956979663
@@ -776,20 +777,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 246ffa2cd02d8f54f858a674d842db3d, type: 2}
     - target: {fileID: 3898470440425072591, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898470440425072591, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: multiplier
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072591, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: maxForceStrength
-      value: 500
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072591, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: minForceStrength
-      value: 50
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898470440425072593, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: force
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e41c9b978cbbb14e8ce58d5603ea15e, type: 2}
+    - target: {fileID: 3898470440425072593, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072593, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: forceStrength
-      value: 150
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072598, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: m_Name
@@ -804,6 +817,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856094697, guid: 33adbc7b95e46d7488e52e7e0bc5b4c7, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: f2fa3c4a0acb4454aaa173f171f1cb47, type: 2}
     - target: {fileID: 4714899146745418274, guid: 33adbc7b95e46d7488e52e7e0bc5b4c7, type: 3}
       propertyPath: m_Name
       value: Arena
@@ -851,6 +868,18 @@ PrefabInstance:
     - target: {fileID: 4714899146745418275, guid: 33adbc7b95e46d7488e52e7e0bc5b4c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6297923412020760097, guid: 33adbc7b95e46d7488e52e7e0bc5b4c7, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6297923412020760097, guid: 33adbc7b95e46d7488e52e7e0bc5b4c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2fa3c4a0acb4454aaa173f171f1cb47, type: 2}
+    - target: {fileID: 6297923412020760097, guid: 33adbc7b95e46d7488e52e7e0bc5b4c7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33adbc7b95e46d7488e52e7e0bc5b4c7, type: 3}

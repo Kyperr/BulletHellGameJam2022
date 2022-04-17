@@ -29,6 +29,7 @@ public class ForceDriver : MonoBehaviour
     */
     [SerializeField]
     private int sampleCount = 0;
+    private int effectiveSampleCount = 0;
 
     [SerializeField]
     private float gravityIntensityModifier = 1.0f;
@@ -46,6 +47,13 @@ public class ForceDriver : MonoBehaviour
     // To start, this is going to simply approximate gravity.
     void Update()
     {
+        if (affectedByForcesList.Count == 0)
+        {
+            return;
+        }
+
+        effectiveSampleCount = Math.Min(affectedByForcesList.Count, sampleCount);
+
         numberOfAffected = affectedByForcesList.Count;
         numberOfAffecting = affectingForcesList.Count;
 
@@ -72,20 +80,20 @@ public class ForceDriver : MonoBehaviour
             affectingForce = affectingForcesList[x];
 
             // Choose a random sampling of things to affect and record the indices to be changed.
-            affectedIndices = new NativeArray<int>(sampleCount, Allocator.TempJob);
+            affectedIndices = new NativeArray<int>(effectiveSampleCount, Allocator.TempJob);
             affectedIndiciesList.Add(affectedIndices);
-            for (int i = 0; i < sampleCount; i++)
+            for (int i = 0; i < effectiveSampleCount; i++)
             {
                 randomIndex = UnityEngine.Random.Range(0, affectedByForcesList.Count);
                 affectedIndices[i] = randomIndex;
             }
 
             // The native array to get populated
-            forceVectors = new NativeArray<Vector3>(sampleCount, Allocator.TempJob);
+            forceVectors = new NativeArray<Vector3>(effectiveSampleCount, Allocator.TempJob);
             forceVectorList.Add(forceVectors);
 
             // Choose which ones to sample this frame. Add the random index to a list so we can use it as a reference later.
-            List<AffectedByForces> sampledList = new List<AffectedByForces>(sampleCount);
+            List<AffectedByForces> sampledList = new List<AffectedByForces>(effectiveSampleCount);
             jobs[x] = affectingForce.CalculateForces(nativeAffectedByForceArray, affectedIndiciesList[x], forceVectors);
         }
 
