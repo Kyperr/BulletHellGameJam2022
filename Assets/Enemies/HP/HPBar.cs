@@ -47,6 +47,6 @@ public class HPBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

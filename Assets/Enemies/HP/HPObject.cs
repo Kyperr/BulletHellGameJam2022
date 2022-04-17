@@ -32,18 +32,26 @@ public class HPObject : MonoBehaviour
         }
         isDead = true;
         //explosion
-        Destroy(gameObject,1);
+
+        Destroy(gameObject, 1);
     }
     // Start is called before the first frame update
     void Start()
     {
-        if(maxHP <= 0)
+        if (maxHP <= 0)
         {
             Debug.LogError("max hp should not be 0");
         }
         currentHP = maxHP;
         hpBar = GetComponentInChildren<HPBar>();
-        hpBar.init(maxHP);
+        if (!hpBar)
+        {
+            Debug.LogError("hp bar component does not existed as a child");
+        }
+        else
+        {
+            hpBar.init(maxHP);
+        }
     }
 
     // Update is called once per frame
