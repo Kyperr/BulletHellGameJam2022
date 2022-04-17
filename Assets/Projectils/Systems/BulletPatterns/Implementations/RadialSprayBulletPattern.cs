@@ -39,6 +39,8 @@ public class RadialSprayBulletPattern : BulletPattern
             spawnPositon = source.transform.position + (spawnDirection * projectileFireDistance);
             GameObject go = Instantiate(projectile, spawnPositon, source.transform.rotation);
 
+            go.transform.rotation = Quaternion.LookRotation(spawnDirection);
+
             if (go.GetComponent<Rigidbody>())
             {
                 go.GetComponent<Rigidbody>().AddForce(spawnDirection * initialProjectileVelocity);

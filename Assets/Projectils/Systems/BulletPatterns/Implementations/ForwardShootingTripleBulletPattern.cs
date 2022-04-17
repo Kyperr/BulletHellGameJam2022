@@ -27,8 +27,6 @@ public class ForwardShootingTripleBulletPattern : BulletPattern
         // We are translating the y position of the mouse to the z position in the world.
         float directionZ = mousePos.y - (Screen.height / 2);
 
-        // float directionZ = transform.position.y;
-
 
         Vector3 spawnDirection1 = Quaternion.AngleAxis(-shotAngle, Vector3.up) * new Vector3(directionX, 0, directionZ).normalized;
         Vector3 spawnDirection2 = new Vector3(directionX, 0, directionZ).normalized;
@@ -41,6 +39,10 @@ public class ForwardShootingTripleBulletPattern : BulletPattern
         GameObject go1 = Instantiate(projectile, spawnPositon1, source.transform.rotation);
         GameObject go2 = Instantiate(projectile, spawnPositon2, source.transform.rotation);
         GameObject go3 = Instantiate(projectile, spawnPositon3, source.transform.rotation);
+
+        go1.transform.rotation = Quaternion.LookRotation(spawnDirection1);
+        go2.transform.rotation = Quaternion.LookRotation(spawnDirection2);
+        go3.transform.rotation = Quaternion.LookRotation(spawnDirection3);
 
         if (go1.GetComponent<Rigidbody>())
         {

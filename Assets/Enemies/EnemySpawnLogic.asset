@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: EnemySpawnLogic
   m_EditorClassIdentifier: 
   enemyList:
-  - {fileID: 8911593014640269885, guid: b63dc4581db0bd249973ccfb1332ad9a, type: 3}
-  - {fileID: 8911593014640269885, guid: fed85d421b1803c4e8c1d142c5cc5d75, type: 3}
+  - {fileID: 5735861513588916122, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
   roundBudgets: 02000000040000000a000000
   enemyRadius: 100

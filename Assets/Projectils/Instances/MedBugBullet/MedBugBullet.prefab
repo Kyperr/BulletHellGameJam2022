@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 940911678}
   - component: {fileID: 940911679}
   - component: {fileID: 8091507209016722444}
+  - component: {fileID: 443363547332983966}
   m_Layer: 7
   m_Name: MedBugBullet
   m_TagString: Untagged
@@ -107,6 +108,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   differenceTolerance: 0.5
+--- !u!136 &443363547332983966
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3860606280122334915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.15
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.15}
 --- !u!1001 &3860606280782735974
 PrefabInstance:
   m_ObjectHideFlags: 0
