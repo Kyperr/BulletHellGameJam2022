@@ -20,9 +20,9 @@ public class AffectingForce : AnnouncesDestroy
         ForceDriver.Instance.RegisterAffectingForce(this);
     }
 
-    public JobHandle CalculateForces(NativeAffectedByForceArray affectedByForces, NativeArray<Vector3> forceVectors)
+    public JobHandle CalculateForces(NativeAffectedByForceArray affectedByForces, NativeArray<int> indicesToCalculate, NativeArray<Vector3> forceVectors)
     {
-        return force.CalculateForces(this, affectedByForces, forceVectors);
+        return force.CalculateForces(this, affectedByForces, indicesToCalculate, forceVectors);
     }
 
 }

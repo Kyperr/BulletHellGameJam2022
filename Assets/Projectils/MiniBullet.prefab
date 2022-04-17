@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 423118593022880735}
   - component: {fileID: 7469542768186647448}
   - component: {fileID: 8096371573213408181}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiniBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545e9fc2bd89041418fe929862840f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 10
+  forceStrength: 5
   force: {fileID: 11400000, guid: df82e776b29a7954da1075c01185ae58, type: 2}
 --- !u!114 &423118593022880735
 MonoBehaviour:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7f0c63991a804f8b1c70c318fe996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 10
+  forceStrength: 20
 --- !u!114 &7469542768186647448
 MonoBehaviour:
   m_ObjectHideFlags: 0

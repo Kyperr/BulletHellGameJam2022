@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arenaTransform: {fileID: 1426788932658752308}
   minimalRadius: 0.3
-  radiusChangeSpeed: 30
+  radiusChangeSpeed: 40
 --- !u!114 &856094697
 MonoBehaviour:
   m_ObjectHideFlags: 0

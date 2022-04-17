@@ -13,11 +13,16 @@ public class Arena : MonoBehaviour
     [SerializeField]
     float radiusChangeSpeed = 1f;
 
+    float currentRadius = 1;
+
+    public float ArenaRadius { get { return currentRadius * 100; } }
+
     [ContextMenu("Set Random Arena Radius")]
 
     public void setRandomArenaRadius()
     {
         float r = Random.Range(minimalRadius, 1);
+        currentRadius = r;
         setArenaRadius(r);
     }
     public void setArenaRadius(float r)

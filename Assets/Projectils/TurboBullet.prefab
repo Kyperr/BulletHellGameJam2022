@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6342806024075511228}
   - component: {fileID: 315922637945403070}
   - component: {fileID: -5725108580178529086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TurboBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

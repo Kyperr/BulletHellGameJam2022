@@ -1,0 +1,42 @@
+//To-Do
+
+//Player Projectiles
+
+Player Ship - Model, Texture
+
+//Enemy Projectiles
+
+Black Hole - Texture
+
+Laser - Texture
+
+Mine - Texture
+
+Orb Shot - Texture
+
+Rocket - Texture
+
+
+//Pickups
+
+Health - Texture
+
+
+//Enemies
+
+Enemy Fighter Model, Texture
+
+Enemy Brig - Greybox, Model, Texture
+
+
+//Props
+
+Asteroid - Greybox, Model, Texture
+
+Space Debris - Greybox, Model, Texture
+
+Satelite - Greybox, Model, Texture
+
+Ringed Planet - Greybox, Model, Texture
+
+Planet - Greybox, Model, Texture

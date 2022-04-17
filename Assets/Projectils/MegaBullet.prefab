@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8789812947836987328}
   - component: {fileID: 848209120201296062}
   - component: {fileID: -1095844085760143625}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MegaBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
