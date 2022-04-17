@@ -11,10 +11,13 @@ public class EnemySpawner : MonoBehaviour
     List<SpawnableEnemy> enemyList = new List<SpawnableEnemy>();
 
     Arena arena;
+    SimpleControls player;
+    public Vector3 PlayerPosition { get { return player.transform.position; } }
     // Start is called before the first frame update
     void Start()
     {
         arena = GameObject.FindObjectOfType<Arena>();
+        player = GameObject.FindObjectOfType<SimpleControls>();
     }
     public float ArenaRadius { get { return arena.ArenaRadius; } }
 
