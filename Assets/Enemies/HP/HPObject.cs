@@ -33,7 +33,7 @@ public class HPObject : MonoBehaviour
         isDead = true;
         //explosion
 
-        Destroy(gameObject, 1);
+        Destroy(gameObject.transform.parent.gameObject, 1);
     }
     // Start is called before the first frame update
     void Start()
