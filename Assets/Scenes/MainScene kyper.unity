@@ -141,6 +141,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1429186265}
+  desiredDistance: 25
+  circlingAngle: 90
+  circlingTimeRange: {x: 3, y: 10}
+  focusOnPlayerTimeRange: {x: 2, y: 5}
+  moveSpeed: 1
+  circlingSpeed: 30
+  timeSpentOnPhase: 0
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +550,10 @@ PrefabInstance:
     - target: {fileID: 5179039431650410112, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
       propertyPath: m_Name
       value: Binary Templar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179039431650410112, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6283912971733620981, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
       propertyPath: force
