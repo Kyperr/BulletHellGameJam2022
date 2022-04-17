@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MedBulletTriple
   m_EditorClassIdentifier: 
   description: 
-  projectile: {fileID: 423118593022880732, guid: 8af295b43fbdf08458dc72fbac22e06a, type: 3}
+  projectile: {fileID: 3860606280122334915, guid: fcb92300f2cfd5142983b270d0db4e52, type: 3}
   projectileFireDistance: 3
   initialProjectileVelocity: 2500
   shotAngle: 5

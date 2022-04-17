@@ -23,14 +23,6 @@ public class ForceDriver : MonoBehaviour
         }
     }
 
-    /*
-        Instead of n^2 operations, each force will affect completely random affected objects.
-        Instead of being accurate with horrible performance, we are being approximate with reasonable performance.
-    */
-    [SerializeField]
-    private int sampleCount = 0;
-    private int effectiveSampleCount = 0;
-
     [SerializeField]
     private float gravityIntensityModifier = 1.0f;
 
@@ -52,8 +44,6 @@ public class ForceDriver : MonoBehaviour
             return;
         }
 
-        effectiveSampleCount = Math.Min(affectedByForcesList.Count, sampleCount);
-
         numberOfAffected = affectedByForcesList.Count;
         numberOfAffecting = affectingForcesList.Count;
 
@@ -61,14 +51,11 @@ public class ForceDriver : MonoBehaviour
         NativeArray<JobHandle> jobs = new NativeArray<JobHandle>(affectingForcesList.Count, Allocator.TempJob);
 
         // These two match up to tell us which affectedByForce the force should apply to.
-        List<NativeArray<int>> affectedIndiciesList = new List<NativeArray<int>>(affectingForcesList.Count);
         List<NativeArray<Vector3>> forceVectorList = new List<NativeArray<Vector3>>(affectingForcesList.Count);
 
         // Some intialization of variables.
         AffectingForce affectingForce;
         NativeArray<Vector3> forceVectors;
-        NativeArray<int> affectedIndices;
-        int randomIndex;
 
         // Build the native affectedArray
         NativeAffectedByForceArray nativeAffectedByForceArray = BuildNativeAffectedArray(affectedByForcesList);
@@ -79,22 +66,13 @@ public class ForceDriver : MonoBehaviour
             // The affecting force for this iteration
             affectingForce = affectingForcesList[x];
 
-            // Choose a random sampling of things to affect and record the indices to be changed.
-            affectedIndices = new NativeArray<int>(effectiveSampleCount, Allocator.TempJob);
-            affectedIndiciesList.Add(affectedIndices);
-            for (int i = 0; i < effectiveSampleCount; i++)
-            {
-                randomIndex = UnityEngine.Random.Range(0, affectedByForcesList.Count);
-                affectedIndices[i] = randomIndex;
-            }
-
             // The native array to get populated
-            forceVectors = new NativeArray<Vector3>(effectiveSampleCount, Allocator.TempJob);
+            forceVectors = new NativeArray<Vector3>(affectingForcesList.Count, Allocator.TempJob);
             forceVectorList.Add(forceVectors);
 
             // Choose which ones to sample this frame. Add the random index to a list so we can use it as a reference later.
-            List<AffectedByForces> sampledList = new List<AffectedByForces>(effectiveSampleCount);
-            jobs[x] = affectingForce.CalculateForces(nativeAffectedByForceArray, affectedIndiciesList[x], forceVectors);
+            List<AffectedByForces> sampledList = new List<AffectedByForces>(affectingForcesList.Count);
+            jobs[x] = affectingForce.CalculateForces(nativeAffectedByForceArray, forceVectors);
         }
 
         // COMPLETE ALL THE JOBS
@@ -104,7 +82,7 @@ public class ForceDriver : MonoBehaviour
         nativeAffectedByForceArray.affectedForceStrengths.Dispose();
 
         // Now apply all of the calculated forces.
-        ApplyCalculatedForces(affectedIndiciesList, forceVectorList);
+        ApplyCalculatedForces(forceVectorList);
 
 
         // Now clean up this massive mess
@@ -112,55 +90,42 @@ public class ForceDriver : MonoBehaviour
         {
             nativeContainer.Dispose();
         }
-        foreach (NativeArray<int> nativeContainer in affectedIndiciesList)
-        {
-            nativeContainer.Dispose();
-        }
 
     }
 
-    private void ApplyCalculatedForces(List<NativeArray<int>> affectedIndiciesList, List<NativeArray<Vector3>> forceVectorList)
+    private void ApplyCalculatedForces(List<NativeArray<Vector3>> forceVectorList)
     {
 
         // A cache so we are N^2'ing GetComponents
         Dictionary<int, Rigidbody> rigidBodyCache = new Dictionary<int, Rigidbody>();
 
         //Init some vars
-        NativeArray<int> affectedIndices;
-        NativeArray<Vector3> forceVectors;
-        int affectedIndex;
+        int forceVectorListCount = forceVectorList.Count;
         AffectedByForces affected;
         Vector3 vectorForce;
 
-        // For each effecting force, there will be a list of affected indicies and forceVectors
-        for (int i = 0; i < affectingForcesList.Count; i++)
+        // For each affected force, there will be a forceVector in the forceVectorList
+        for (int i = 0; i < affectedByForcesList.Count; i++)
         {
-            affectedIndices = affectedIndiciesList[i];
-            forceVectors = forceVectorList[i];
-
-            // For each affected index, get the force vector and apply to that rigid body.
-            for (int x = 0; x < affectedIndices.Length; x++)
+            // Get the rigid body
+            Rigidbody rb;
+            if (!rigidBodyCache.TryGetValue(i, out rb))
             {
-                // This affected, index-proxied by the affectedIndices array,
-                affectedIndex = affectedIndices[x];
+                affected = affectedByForcesList[i];
+                rb = affected.GetComponent<Rigidbody>();
+                rigidBodyCache[i] = rb;
+            }
 
-                //The force for this affected entity.
-                vectorForce = forceVectors[x] * gravityIntensityModifier;
-
-                // Get the rigid body and add the force.
-                Rigidbody rb;
-                if (rigidBodyCache.TryGetValue(affectedIndex, out rb))
+            // Add all forceVectors to this rigidbody.
+            for (int x = 0; x < forceVectorListCount; x++)
+            {
+                vectorForce = forceVectorList[x][i];
+                if (rb)
                 {
-                    rb.AddForce(vectorForce);
-                }
-                else
-                {
-                    affected = affectedByForcesList[affectedIndex];
-                    rb = affected.GetComponent<Rigidbody>();
-                    rigidBodyCache[affectedIndex] = rb;
                     rb.AddForce(vectorForce);
                 }
             }
+
         }
 
     }

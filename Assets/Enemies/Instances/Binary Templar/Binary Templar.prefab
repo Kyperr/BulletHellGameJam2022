@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285686033694986277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0, z: 0}
+  m_LocalPosition: {x: -3.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceStrength: 10000
-  force: {fileID: 11400000, guid: d2d23b1c98b40264796368bfa6cad5cc, type: 2}
+  force: {fileID: 11400000, guid: b3e563891b7fa6348a965ccacc0a0de9, type: 2}
 --- !u!1 &2929366392180976199
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2929366392180976199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0, z: 0}
+  m_LocalPosition: {x: 3.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceStrength: 10000
-  force: {fileID: 11400000, guid: d2d23b1c98b40264796368bfa6cad5cc, type: 2}
+  force: {fileID: 11400000, guid: b3e563891b7fa6348a965ccacc0a0de9, type: 2}
 --- !u!1 &5179039431650410112
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2743962357652922373}
+  - component: {fileID: 24483490}
   m_Layer: 0
   m_Name: Binary Templar
   m_TagString: Untagged
@@ -258,6 +259,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &24483490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179039431650410112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674512eb699428c469b9571e7260a673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  desiredDistance: 25
+  circlingAngle: 90
+  circlingTimeRange: {x: 3, y: 10}
+  focusOnPlayerTimeRange: {x: 2, y: 5}
+  moveSpeed: 1
+  circlingSpeed: 30
 --- !u!1001 &3805462318544970289
 PrefabInstance:
   m_ObjectHideFlags: 0
