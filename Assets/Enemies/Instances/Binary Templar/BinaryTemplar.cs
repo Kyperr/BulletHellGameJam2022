@@ -60,13 +60,11 @@ public class BinaryTemplar : MonoBehaviour
 
         if (phase == Phase.CIRCLING)
         {
-            Debug.Log("CIRCLING");
             CirclingLogic();
         }
 
         if (phase == Phase.FOCUSSING)
         {
-            Debug.Log("FOCUSSING");
             FocussingLogic();
         }
 
@@ -85,7 +83,6 @@ public class BinaryTemplar : MonoBehaviour
         // Is it time to swap phases?
         if (timeSpentOnPhase >= timeToCircle)
         {
-            Debug.Log("timeSpentOnPhase >= timeToCircle: " + timeSpentOnPhase + " >= " + timeToCircle);
             SwapToPhase(Phase.FOCUSSING);
             timeToCircle = Random.Range(focusOnPlayerTimeRange.x, focusOnPlayerTimeRange.y);
         }
