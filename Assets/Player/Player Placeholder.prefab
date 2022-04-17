@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3898470440425072591}
   - component: {fileID: 3898470440425072585}
   m_Layer: 0
-  m_Name: Player Placeholder 1
+  m_Name: Player Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 25
   fireRate: 300
-  bulletPattern: {fileID: 11400000, guid: f32ffcdb954dfea429235276aa1a861a, type: 2}
+  bulletPattern: {fileID: 11400000, guid: 246ffa2cd02d8f54f858a674d842db3d, type: 2}
 --- !u!114 &3898470440425072593
 MonoBehaviour:
   m_ObjectHideFlags: 0
