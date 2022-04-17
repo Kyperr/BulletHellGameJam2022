@@ -32,6 +32,22 @@ public class EnemySpawner : MonoBehaviour
         enemyList.Clear();
     }
 
+    public void destroy(SpawnableEnemy enemy)
+    {
+        if (enemyList.Contains(enemy))
+        {
+            enemyList.Remove(enemy);
+            if(enemyList.Count == 0)
+            {
+                generateNextRound();
+            }
+        }
+        else
+        {
+            Debug.LogError("enemy is not in the list");
+        }
+    }
+
     [ContextMenu("generate next round")]
     public void generateNextRound()
     {

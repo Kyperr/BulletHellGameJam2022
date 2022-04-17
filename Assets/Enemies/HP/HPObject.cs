@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(ExplosionSpawner))]
 public class HPObject : MonoBehaviour
 {
     [SerializeField]
@@ -9,6 +9,8 @@ public class HPObject : MonoBehaviour
     float currentHP;
     bool isDead;
     HPBar hpBar;
+    ExplosionSpawner explosion;
+    EnemySpawner enemySpawner;
     public void getDamage(float d)
     {
         if (isDead)
@@ -32,8 +34,9 @@ public class HPObject : MonoBehaviour
         }
         isDead = true;
         //explosion
-
+        explosion.spawn();
         Destroy(gameObject.transform.parent.gameObject, 1);
+        enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
     }
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,8 @@ public class HPObject : MonoBehaviour
         {
             hpBar.init(maxHP);
         }
+        explosion = GetComponent<ExplosionSpawner>();
+        enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -61,7 +66,7 @@ public class HPObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             //getDamage(50);
-            getDamage(Random.Range(1, 100));
+            getDamage(Random.Range(30, 100));
         }
     }
 }
