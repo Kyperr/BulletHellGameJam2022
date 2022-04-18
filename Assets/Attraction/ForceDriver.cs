@@ -93,8 +93,17 @@ public class ForceDriver : MonoBehaviour
 
     }
 
-    private void ApplyCalculatedForces(List<NativeArray<Vector3>> forceVectorList)
+    private void ApplyCalculatedForces(List<NativeArray<Vector3>> nativeForceVectorList)
     {
+
+        List<Vector3[]> forceVectorList = new List<Vector3[]>();
+        foreach (NativeArray<Vector3> forceArray in nativeForceVectorList)
+        {
+            Vector3[] list = new Vector3[forceArray.Length];
+            NativeArray<Vector3>.Copy(forceArray, list, forceArray.Length);
+            forceVectorList.Add(list);
+        }
+
 
         // A cache so we are N^2'ing GetComponents
         Dictionary<int, Rigidbody> rigidBodyCache = new Dictionary<int, Rigidbody>();
