@@ -45,7 +45,15 @@ public class HPObject : MonoBehaviour
         DisableMesheRenderers();
         Destroy(hpBar.gameObject);
         Destroy(gameObject);
-        enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
+        if (!GetComponent<SimpleControls>())
+        {
+            //if not player
+            enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
+        }
+        else
+        {
+            //game over
+        }
     }
 
     private void DisableMesheRenderers()

@@ -40,7 +40,11 @@ public class HPBar : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.position = hpObject.position + offset;
+        if (hpObject)
+        {
+
+            transform.position = hpObject.position + offset;
+        }
     }
 
     void destroy()
