@@ -28,6 +28,12 @@ public class BinaryTemplar : MonoBehaviour
     private Vector2 focusOnPlayerTimeRange = new Vector2(5, 8);
 
     [SerializeField]
+    private BulletPattern focusPhaseBulletPattern;
+
+    [SerializeField]
+    private float focusPhaseShotRate = 600;
+
+    [SerializeField]
     private float moveSpeed = 10;
 
     [SerializeField]
@@ -38,6 +44,7 @@ public class BinaryTemplar : MonoBehaviour
     private float desiredAngle = 0;
 
     private float timeSpentOnPhase = 0;
+    private float timeSinceLastShot = 0;
 
     private float timeToCircle = 0;
 
@@ -94,6 +101,13 @@ public class BinaryTemplar : MonoBehaviour
 
         transform.LookAt(target.transform.position, Vector3.up);
 
+        // timeSinceLastShot += Time.deltaTime;
+        // if (timeSinceLastShot > (60f / (float)focusPhaseShotRate))
+        // {
+        //     StartCoroutine(focusPhaseBulletPattern.TriggerBulletPattern(this.gameObject));
+        //     timeSinceLastShot = 0;
+        // }
+
         // Is it time to swap phases?
         if (timeSpentOnPhase >= timeToCircle)
         {
@@ -106,6 +120,7 @@ public class BinaryTemplar : MonoBehaviour
     {
         this.phase = phase;
         timeSpentOnPhase = 0;
+        timeSinceLastShot = 0;
     }
 
     private void UpdateDesiredAngle()

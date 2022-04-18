@@ -280,6 +280,8 @@ MonoBehaviour:
   circlingAngle: 90
   circlingTimeRange: {x: 3, y: 10}
   focusOnPlayerTimeRange: {x: 1, y: 3}
+  focusPhaseBulletPattern: {fileID: 11400000, guid: b344f041728e7ef44be5a8419234a52d, type: 2}
+  focusPhaseShotRate: 600
   moveSpeed: 1
   circlingSpeed: 50
 --- !u!114 &5735861513588916122
