@@ -509,7 +509,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -901589500}
+  m_BoundingSphereOverride: {x: 0, y: 0.05078125, z: -0.078125, w: 0.000000138053}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -600,6 +600,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3689362180958667078, guid: 4dbb5a5cd3d1fa0439330d3f9bfda5ef, type: 3}
+      propertyPath: gravityIntensityModifier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3689362180958667079, guid: 4dbb5a5cd3d1fa0439330d3f9bfda5ef, type: 3}
       propertyPath: m_Name
       value: ForceDriver
@@ -662,9 +666,13 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072590, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: moveSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898470440425072590, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: bulletPattern
       value: 
-      objectReference: {fileID: 11400000, guid: 246ffa2cd02d8f54f858a674d842db3d, type: 2}
+      objectReference: {fileID: 11400000, guid: a1e3338af85b6a346931d8ce9ebe879a, type: 2}
     - target: {fileID: 3898470440425072591, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -754,6 +762,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1558578699}
+    - target: {fileID: 4524153286095641699, guid: 6e30d0eeae8fb824a8099584be3a0fd0, type: 3}
+      propertyPath: maxDistance
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 4524153286095641709, guid: 6e30d0eeae8fb824a8099584be3a0fd0, type: 3}
       propertyPath: m_Name
       value: Main Camera

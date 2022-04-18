@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ForwardShootingTripleBulletPattern", menuName = "ScriptableObjects/BulletPatterns/ForwardShootingTriple", order = 1)]
-public class ForwardShootingTripleBulletPattern : BulletPattern
+[CreateAssetMenu(fileName = "ForwardShootingTripleEnemyBulletPattern", menuName = "ScriptableObjects/BulletPatterns/Enemy/ForwardShootingTripleEnemyBulletPattern", order = 1)]
+public class ForwardShootingTripleEnemyBulletPattern : BulletPattern
 {
 
     [SerializeField]
@@ -20,17 +20,22 @@ public class ForwardShootingTripleBulletPattern : BulletPattern
 
     public override IEnumerator TriggerBulletPattern(GameObject source)
     {
-        Vector3 mousePos = Input.mousePosition;
+        Vector3 baseDirection = new Vector3();
 
-        float directionX = mousePos.x - (Screen.width / 2);
+        Target target = source.GetComponent<Target>();
+        if (target)
+        {
+            baseDirection = target.GetTarget().transform.position - source.transform.position;
+        }
+        else
+        {
+            baseDirection = source.transform.rotation.eulerAngles - source.transform.position;
+        }
 
-        // We are translating the y position of the mouse to the z position in the world.
-        float directionZ = mousePos.y - (Screen.height / 2);
 
-
-        Vector3 spawnDirection1 = Quaternion.AngleAxis(-shotAngle, Vector3.up) * new Vector3(directionX, 0, directionZ).normalized;
-        Vector3 spawnDirection2 = new Vector3(directionX, 0, directionZ).normalized;
-        Vector3 spawnDirection3 = Quaternion.AngleAxis(shotAngle, Vector3.up) * new Vector3(directionX, 0, directionZ).normalized;
+        Vector3 spawnDirection1 = Quaternion.AngleAxis(-shotAngle, Vector3.up) * new Vector3(baseDirection.x, 0, baseDirection.z).normalized;
+        Vector3 spawnDirection2 = new Vector3(baseDirection.x, 0, baseDirection.z).normalized;
+        Vector3 spawnDirection3 = Quaternion.AngleAxis(shotAngle, Vector3.up) * new Vector3(baseDirection.x, 0, baseDirection.z).normalized;
 
         Vector3 spawnPositon1 = source.transform.position + (spawnDirection1 * projectileFireDistance);
         Vector3 spawnPositon2 = source.transform.position + (spawnDirection2 * projectileFireDistance);

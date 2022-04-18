@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10445c154db8b7c4c8c79cea4bf6e04d, type: 3}
-  m_Name: MedBulletSingleShot
+  m_Script: {fileID: 11500000, guid: 854bf2b353a253f46ac53c448078a838, type: 3}
+  m_Name: ForwardShootingTriplePlayerBulletPattern
   m_EditorClassIdentifier: 
   description: 
   projectile: {fileID: 3860606280122334915, guid: fcb92300f2cfd5142983b270d0db4e52, type: 3}
   projectileFireDistance: 3
-  initialProjectileVelocity: 30
+  initialProjectileVelocity: 3500
+  shotAngle: 10

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HPObject))]
 public class ExplosionSpawner : MonoBehaviour
 {
     [SerializeField]
@@ -14,7 +15,9 @@ public class ExplosionSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.GetComponent<HPObject>().OnDeath += () => {
+            spawn();
+        };
     }
 
     // Update is called once per frame

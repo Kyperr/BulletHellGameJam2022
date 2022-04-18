@@ -7,6 +7,7 @@ public class TakesDamage : MonoBehaviour
 {
     [SerializeField]
     private List<DamageClass> takesDamageFromClasses;
+    public List<DamageClass> TakesDamageFromClasses => takesDamageFromClasses;
 
     private HPObject hpObject;
 

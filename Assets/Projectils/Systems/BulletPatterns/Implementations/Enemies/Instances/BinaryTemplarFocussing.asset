@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970177561ff1ed247a9639b7374e2c88, type: 3}
-  m_Name: MedBulletTriple
+  m_Script: {fileID: 11500000, guid: cc0d17a512274b74dbad868d2e2c64e3, type: 3}
+  m_Name: BinaryTemplarFocussing
   m_EditorClassIdentifier: 
   description: 
-  projectile: {fileID: 3860606280122334915, guid: fcb92300f2cfd5142983b270d0db4e52, type: 3}
-  projectileFireDistance: 3
+  projectile: {fileID: 4842620349521795652, guid: c4cbcb5cd59a7d94ca7221966ad2cd96, type: 3}
+  projectileFireDistance: 5
   initialProjectileVelocity: 2500
-  shotAngle: 5
+  shotAngle: 10

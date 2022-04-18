@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "RadialSpray", menuName = "ScriptableObjects/BulletPatterns/RadialSpray", order = 1)]
-public class RadialSprayBulletPattern : BulletPattern
+[CreateAssetMenu(fileName = "RadialSprayPlayerBulletPattern", menuName = "ScriptableObjects/BulletPatterns/Player/RadialSprayPlayerBulletPattern", order = 1)]
+public class RadialSprayPlayerBulletPattern : BulletPattern
 {
 
     [SerializeField]

@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(ExplosionSpawner))]
+
 public class HPObject : MonoBehaviour
 {
+    public delegate void OnDeathDelegate();
+    public event OnDeathDelegate OnDeath = delegate { };
+
     [SerializeField]
     float maxHP;
     [SerializeField]
     float currentHP;
     bool isDead;
     HPBar hpBar;
-    ExplosionSpawner explosion;
     EnemySpawner enemySpawner;
 
     public void DoDamage(float d)
@@ -39,8 +41,7 @@ public class HPObject : MonoBehaviour
             return;
         }
         isDead = true;
-        //explosion
-        explosion.spawn();
+        OnDeath();
         DisableMesheRenderers();
         Destroy(gameObject);
         enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
@@ -71,7 +72,6 @@ public class HPObject : MonoBehaviour
         {
             hpBar.init(maxHP);
         }
-        explosion = GetComponent<ExplosionSpawner>();
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
     }
 

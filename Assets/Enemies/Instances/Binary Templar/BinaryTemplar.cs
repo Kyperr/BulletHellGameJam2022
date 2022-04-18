@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Target))]
 public class BinaryTemplar : MonoBehaviour
 {
     public enum Phase
@@ -51,7 +52,8 @@ public class BinaryTemplar : MonoBehaviour
 
     void Start()
     {
-        this.target = EnemySpawner.Instance.Target;
+        target = EnemySpawner.Instance.Target;
+        this.GetComponent<Target>().SetTarget(EnemySpawner.Instance.Target);
         desiredAngle = Random.Range(0, 360);
         timeSpentOnPhase = 0;
         phase = Phase.CIRCLING;
@@ -101,12 +103,12 @@ public class BinaryTemplar : MonoBehaviour
 
         transform.LookAt(target.transform.position, Vector3.up);
 
-        // timeSinceLastShot += Time.deltaTime;
-        // if (timeSinceLastShot > (60f / (float)focusPhaseShotRate))
-        // {
-        //     StartCoroutine(focusPhaseBulletPattern.TriggerBulletPattern(this.gameObject));
-        //     timeSinceLastShot = 0;
-        // }
+        timeSinceLastShot += Time.deltaTime;
+        if (timeSinceLastShot > (60f / (float)focusPhaseShotRate))
+        {
+            StartCoroutine(focusPhaseBulletPattern.TriggerBulletPattern(this.gameObject));
+            timeSinceLastShot = 0;
+        }
 
         // Is it time to swap phases?
         if (timeSpentOnPhase >= timeToCircle)

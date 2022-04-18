@@ -67,7 +67,7 @@ public class ForceDriver : MonoBehaviour
             affectingForce = affectingForcesList[x];
 
             // The native array to get populated
-            forceVectors = new NativeArray<Vector3>(affectingForcesList.Count, Allocator.TempJob);
+            forceVectors = new NativeArray<Vector3>(affectedByForcesList.Count, Allocator.TempJob);
             forceVectorList.Add(forceVectors);
 
             // Choose which ones to sample this frame. Add the random index to a list so we can use it as a reference later.

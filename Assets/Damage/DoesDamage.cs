@@ -18,7 +18,7 @@ public class DoesDamage : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         TakesDamage takesDamage = other.gameObject.GetComponent<TakesDamage>();
-        if (takesDamage)
+        if (takesDamage && takesDamage.TakesDamageFromClasses.Contains(damageClass))
         {
             takesDamage.Damage(damageAmount);
 

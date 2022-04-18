@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ForwardShootingBulletPattern", menuName = "ScriptableObjects/BulletPatterns/ForwardShootingSingle", order = 1)]
-public class ForwardShootingBulletPattern : BulletPattern
+[CreateAssetMenu(fileName = "ForwardShootingPlayerBulletPattern", menuName = "ScriptableObjects/BulletPatterns/Player/ForwardShootingPlayerBulletPattern", order = 1)]
+public class ForwardShootingPlayerBulletPattern : BulletPattern
 {
 
     [SerializeField]
