@@ -33,11 +33,11 @@ public class AttractiveForce : Force
             netForces = forceVectors
         };
 
-        JobHandle handle = job.Schedule(affectedByForces.affectedPositions.Length, 128);
+        JobHandle handle = job.Schedule(affectedByForces.affectedPositions.Length, 32);
         return handle;
     }
 
-    // [BurstCompile]
+    [BurstCompile]
     public struct AttractiveForceJob : ForceJob
     {
 
