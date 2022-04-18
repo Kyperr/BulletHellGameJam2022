@@ -42,7 +42,7 @@ public class HPObject : MonoBehaviour
         //explosion
         explosion.spawn();
         DisableMesheRenderers();
-        Destroy(gameObject, 1);
+        Destroy(gameObject);
         enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
     }
 
