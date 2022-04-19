@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7f0c63991a804f8b1c70c318fe996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 35
+  forceStrength: 50
 --- !u!114 &8091507209016722444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3860606280122334915}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.15
   m_Height: 1
