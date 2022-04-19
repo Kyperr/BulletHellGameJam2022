@@ -14,10 +14,16 @@ public class HPBar : MonoBehaviour
     float maxValue;
     float currentValue;
 
+    Transform hpObject;
+    Vector3 offset;
 
-    public void init(float maxV)
+
+    public void init(float maxV,HPObject obj)
     {
         maxValue = currentValue = maxV;
+        hpObject = obj.transform;
+        offset = transform.localPosition;
+        transform.parent = hpObject.parent;
         updateUI();
     }
 
@@ -31,6 +37,19 @@ public class HPBar : MonoBehaviour
     {
         DOTween.To(() => barFilling.fillAmount, x => barFilling.fillAmount = x, currentValue / maxValue, changeTime);
 
+    }
+    private void FixedUpdate()
+    {
+        if (hpObject)
+        {
+
+            transform.position = hpObject.position + offset;
+        }
+    }
+
+    void destroy()
+    {
+        Destroy(gameObject);
     }
     //Transform cam;
     // Start is called before the first frame update

@@ -43,8 +43,17 @@ public class HPObject : MonoBehaviour
         isDead = true;
         OnDeath();
         DisableMesheRenderers();
+        Destroy(hpBar.gameObject);
         Destroy(gameObject);
-        enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
+        if (!GetComponent<SimpleControls>())
+        {
+            //if not player
+            enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
+        }
+        else
+        {
+            //game over
+        }
     }
 
     private void DisableMesheRenderers()
@@ -70,7 +79,7 @@ public class HPObject : MonoBehaviour
         }
         else
         {
-            hpBar.init(maxHP);
+            hpBar.init(maxHP,this);
         }
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
     }
