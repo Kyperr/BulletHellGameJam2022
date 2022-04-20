@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6342806024075511227}
   - component: {fileID: 6342806024075511224}
   - component: {fileID: 6342806024075511225}
-  - component: {fileID: 6342806024075511230}
   - component: {fileID: 6342806024075511228}
   - component: {fileID: 315922637945403070}
   - component: {fileID: -5725108580178529086}
+  - component: {fileID: 5399382015620523295}
   m_Layer: 7
-  m_Name: TurboBullet
+  m_Name: HopliteSniperBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,25 +96,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6342806024075511229}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6342806024075511230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6342806024075511229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 545e9fc2bd89041418fe929862840f63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceStrength: 0
-  force: {fileID: 0}
 --- !u!114 &6342806024075511228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7f0c63991a804f8b1c70c318fe996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 1000
+  forceStrength: 250
 --- !u!114 &315922637945403070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ef759d667d537468f131d0656c46a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTimeInSeconds: -1
+  lifeTimeInSeconds: 56
 --- !u!54 &-5725108580178529086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,3 +143,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 36
   m_CollisionDetection: 0
+--- !u!114 &5399382015620523295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6342806024075511229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9911fd051247b9b4aafbb520c376c59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageClass: {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
+  damageAmount: 15
+  destroyedOnDamage: 0
