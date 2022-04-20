@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList:
   - {fileID: 5735861513588916122, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
+  - {fileID: 587210458561225613, guid: e149de835cd49ab40a78bb340a8a9807, type: 3}
   roundBudgets: 0300000006000000090000000c0000000f0000001200000015000000
   enemyRadius: 100

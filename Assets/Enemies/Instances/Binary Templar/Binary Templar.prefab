@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 5179039431650410112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50.475697, y: 69.76523, z: -167.8405}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3694375203266921946}
@@ -278,14 +278,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674512eb699428c469b9571e7260a673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredDistance: 50
-  circlingAngle: 90
+  circlingDistance: 20
+  circlingAngle: 150
   circlingTimeRange: {x: 3, y: 10}
-  focusOnPlayerTimeRange: {x: 1, y: 3}
+  focusOnPlayerTimeRange: {x: 3, y: 10}
+  focussingDistance: 35
   focusPhaseBulletPattern: {fileID: 11400000, guid: 8e2e5ca2f6383a54095885184531adce, type: 2}
-  focusPhaseShotRate: 300
-  moveSpeed: 1
-  circlingSpeed: 50
+  focusPhaseShotRate: 100
+  moveSpeed: 3
+  circlingAngleDelta: 50
 --- !u!114 &5735861513588916122
 MonoBehaviour:
   m_ObjectHideFlags: 0

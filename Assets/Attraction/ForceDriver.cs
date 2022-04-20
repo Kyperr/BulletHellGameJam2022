@@ -24,7 +24,7 @@ public class ForceDriver : MonoBehaviour
     }
 
     [SerializeField]
-    private float gravityIntensityModifier = 1.0f;
+    private float forceIntensityModifier = 1.0f;
 
     [SerializeField]
     private int numberOfAffected = 0;
@@ -128,7 +128,7 @@ public class ForceDriver : MonoBehaviour
             // Add all forceVectors to this rigidbody.
             for (int x = 0; x < forceVectorListCount; x++)
             {
-                vectorForce = forceVectorList[x][i];
+                vectorForce = forceVectorList[x][i] * forceIntensityModifier;
                 if (rb)
                 {
                     rb.AddForce(vectorForce);

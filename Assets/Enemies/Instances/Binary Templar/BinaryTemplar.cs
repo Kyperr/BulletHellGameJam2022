@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Target))]
-public class BinaryTemplar : MonoBehaviour
+public class BinaryTemplar : BaseEnemyAI
 {
+    private const float DESIRED_POSITION_THRESHOLD = 5.0f;
     public enum Phase
     {
-        CIRCLING,
+        CIRCLING_CLOCKWISE,
+        CIRCLING_COUNTER_CLOCKWISE,
+        DISTANCING,
         FOCUSSING
     }
 
@@ -16,7 +18,7 @@ public class BinaryTemplar : MonoBehaviour
     private GameObject target;
 
     [SerializeField]
-    private float desiredDistance = 10f;
+    private float circlingDistance = 10f;
 
     [SerializeField]
     private float circlingAngle = 30f;
@@ -28,19 +30,23 @@ public class BinaryTemplar : MonoBehaviour
     [SerializeField]
     private Vector2 focusOnPlayerTimeRange = new Vector2(5, 8);
 
+
+    [SerializeField]
+    private float focussingDistance = 25f;
+
     [SerializeField]
     private BulletPattern focusPhaseBulletPattern;
 
     [SerializeField]
-    private float focusPhaseShotRate = 600;
+    private float focusPhaseShotRate = 300;
 
     [SerializeField]
     private float moveSpeed = 10;
 
     [SerializeField]
-    private float circlingSpeed = 30;
+    private float circlingAngleDelta = 5;
 
-    private Phase phase = Phase.CIRCLING;
+    private Phase phase;
 
     private float desiredAngle = 0;
 
@@ -56,7 +62,7 @@ public class BinaryTemplar : MonoBehaviour
         this.GetComponent<Target>().SetTarget(EnemySpawner.Instance.Target);
         desiredAngle = Random.Range(0, 360);
         timeSpentOnPhase = 0;
-        phase = Phase.CIRCLING;
+        this.phase = ChooseRandomCirclingLogic();
         timeToCircle = Random.Range(circlingTimeRange.x, circlingTimeRange.y);
     }
 
@@ -66,9 +72,19 @@ public class BinaryTemplar : MonoBehaviour
         {
             timeSpentOnPhase += Time.deltaTime;
 
-            if (phase == Phase.CIRCLING)
+            if (phase == Phase.CIRCLING_CLOCKWISE)
             {
-                CirclingLogic();
+                CWCirclingLogic();
+            }
+
+            if (phase == Phase.CIRCLING_COUNTER_CLOCKWISE)
+            {
+                CCWCirclingLogic();
+            }
+
+            if (phase == Phase.DISTANCING)
+            {
+                DistancingLogic();
             }
 
             if (phase == Phase.FOCUSSING)
@@ -84,17 +100,53 @@ public class BinaryTemplar : MonoBehaviour
         }
     }
 
-    private void CirclingLogic()
+    private Phase ChooseRandomCirclingLogic()
+    {
+        if (Random.Range(0, 1) == 0)
+        {
+            return Phase.CIRCLING_COUNTER_CLOCKWISE;
+        }
+        else
+        {
+            return Phase.CIRCLING_CLOCKWISE;
+        }
+    }
+
+    private void CWCirclingLogic()
     {
         // The core of the logic
         UpdateDesiredAngle();
-        MoveToDesiredPosition();
+        MoveToDesiredPosition(GetNextPositionInCirclingPlayer(), moveSpeed);
 
         // Is it time to swap phases?
         if (timeSpentOnPhase >= timeToCircle)
         {
-            SwapToPhase(Phase.FOCUSSING);
+            SwapToPhase(Phase.DISTANCING);
             timeToCircle = Random.Range(focusOnPlayerTimeRange.x, focusOnPlayerTimeRange.y);
+        }
+    }
+
+    private void CCWCirclingLogic()
+    {
+        // The core of the logic
+        UpdateDesiredAngle();
+        MoveToDesiredPosition(GetNextPositionInCirclingPlayer(), moveSpeed);
+
+        // Is it time to swap phases?
+        if (timeSpentOnPhase >= timeToCircle)
+        {
+            SwapToPhase(Phase.DISTANCING);
+            timeToCircle = Random.Range(focusOnPlayerTimeRange.x, focusOnPlayerTimeRange.y);
+        }
+    }
+
+    private void DistancingLogic()
+    {
+        Vector3 directionalVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad * desiredAngle), 0, Mathf.Sin(Mathf.Deg2Rad * desiredAngle));
+        Vector3 desiredPosition = this.target.transform.position + (directionalVector * focussingDistance);
+        if (MoveToDesiredPosition(desiredPosition, moveSpeed))
+        {
+            SwapToPhase(Phase.FOCUSSING);
         }
     }
 
@@ -113,7 +165,7 @@ public class BinaryTemplar : MonoBehaviour
         // Is it time to swap phases?
         if (timeSpentOnPhase >= timeToCircle)
         {
-            SwapToPhase(Phase.CIRCLING);
+            SwapToPhase(ChooseRandomCirclingLogic());
             timeToCircle = Random.Range(circlingTimeRange.x, circlingTimeRange.y);
         }
     }
@@ -125,19 +177,23 @@ public class BinaryTemplar : MonoBehaviour
         timeSinceLastShot = 0;
     }
 
-    private void UpdateDesiredAngle()
+    private void UpdateDesiredAngle(bool clockWise = true)
     {
-        desiredAngle += Time.deltaTime * circlingSpeed;
+        if (clockWise)
+        {
+            desiredAngle += Time.deltaTime * circlingAngleDelta;
+        }
+        else
+        {
+            desiredAngle -= Time.deltaTime * circlingAngleDelta;
+        }
     }
 
-    private void MoveToDesiredPosition()
+    private Vector3 GetNextPositionInCirclingPlayer()
     {
         Vector3 directionalVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad * desiredAngle), 0, Mathf.Sin(Mathf.Deg2Rad * desiredAngle));
-        Vector3 desiredPosition = this.target.transform.position + (directionalVector * desiredDistance);
-
-        transform.LookAt(desiredPosition, Vector3.up);
-
-        this.transform.position = Vector3.Lerp(this.transform.position, desiredPosition, Time.deltaTime * moveSpeed);
+        Vector3 desiredPosition = this.target.transform.position + (directionalVector.normalized * circlingDistance);
+        return desiredPosition;
     }
 
 }
