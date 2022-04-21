@@ -53,7 +53,6 @@ public class HPObject : MonoBehaviour
         else
         {
             //game over
-            GameObject.FindObjectOfType<GameOverView>(true).onGameOver();
         }
     }
 
