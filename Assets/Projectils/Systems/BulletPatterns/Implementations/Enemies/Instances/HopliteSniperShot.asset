@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HopliteSniperShot
   m_EditorClassIdentifier: 
   description: 
-  projectile: {fileID: 6342806024075511229, guid: 8471c3d8691ee9541afac0da27d148ae, type: 3}
+  projectile: {fileID: 6342806024075511229, guid: 8471c3d8691ee9541afac0da27d148ae,
+    type: 3}
   projectileFireDistance: 7
-  initialProjectileVelocity: 3500
+  initialProjectileVelocity: 2500
