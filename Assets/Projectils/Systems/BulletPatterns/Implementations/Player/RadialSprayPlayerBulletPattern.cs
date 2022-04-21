@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "RadialSprayPlayerBulletPattern", menuName = "ScriptableObjects/BulletPatterns/Player/RadialSprayPlayerBulletPattern", order = 1)]
 public class RadialSprayPlayerBulletPattern : BulletPattern
@@ -24,7 +25,7 @@ public class RadialSprayPlayerBulletPattern : BulletPattern
     [SerializeField]
     private float delayBetweenShots = .1f;
 
-    public override IEnumerator TriggerBulletPattern(GameObject source)
+    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null)
     {
         Vector3 mousePos = Input.mousePosition;
 
@@ -52,6 +53,7 @@ public class RadialSprayPlayerBulletPattern : BulletPattern
             spawnDirection = Quaternion.AngleAxis(shotAngle, Vector3.up) * spawnDirection;
         }
 
+        if (whenDone != null) whenDone();
         yield break;
     }
 }

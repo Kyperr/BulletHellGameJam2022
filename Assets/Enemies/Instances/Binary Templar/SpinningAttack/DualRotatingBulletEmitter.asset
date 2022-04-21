@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411333cb48fa6e24e983172f695998cb, type: 3}
+  m_Name: DualRotatingBulletEmitter
+  m_EditorClassIdentifier: 
+  description: 
+  projectile: {fileID: 4950807594881469820, guid: 515ba0621d5931947b43f6f41050c79d,
+    type: 3}
+  projectileFireDistance: 1
+  initialProjectileVelocity: 1000
+  numberOfShots: 30
+  rateOfFire: 250
+  angleDelta: 20

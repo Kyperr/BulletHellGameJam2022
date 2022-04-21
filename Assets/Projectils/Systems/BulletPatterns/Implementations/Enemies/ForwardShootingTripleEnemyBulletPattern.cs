@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "ForwardShootingTripleEnemyBulletPattern", menuName = "ScriptableObjects/BulletPatterns/Enemy/ForwardShootingTripleEnemyBulletPattern", order = 1)]
-public class ForwardShootingTripleEnemyBulletPattern : BulletPattern
+public class ForwardShootingTripleEnemyBulletPattern : EnemyBulletPattern
 {
 
     [SerializeField]
@@ -18,19 +19,9 @@ public class ForwardShootingTripleEnemyBulletPattern : BulletPattern
     [SerializeField]
     private float shotAngle = 10f;
 
-    public override IEnumerator TriggerBulletPattern(GameObject source)
+    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null)
     {
-        Vector3 baseDirection = new Vector3();
-
-        Target target = source.GetComponent<Target>();
-        if (target)
-        {
-            baseDirection = target.GetTarget().transform.position - source.transform.position;
-        }
-        else
-        {
-            baseDirection = source.transform.rotation.eulerAngles - source.transform.position;
-        }
+        Vector3 baseDirection = GetBaseDirection(source);
 
 
         Vector3 spawnDirection1 = Quaternion.AngleAxis(-shotAngle, Vector3.up) * new Vector3(baseDirection.x, 0, baseDirection.z).normalized;
@@ -64,6 +55,7 @@ public class ForwardShootingTripleEnemyBulletPattern : BulletPattern
             go3.GetComponent<Rigidbody>().AddForce(spawnDirection3 * initialProjectileVelocity);
         }
 
+        if (whenDone != null) whenDone();
         yield break;
     }
 }

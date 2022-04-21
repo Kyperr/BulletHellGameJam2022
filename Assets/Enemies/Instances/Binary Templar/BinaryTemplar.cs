@@ -35,10 +35,16 @@ public class BinaryTemplar : BaseEnemyAI
     private float focussingDistance = 25f;
 
     [SerializeField]
-    private BulletPattern focusPhaseBulletPattern;
+    private EnemyBulletPattern focusPhaseBulletPattern;
 
     [SerializeField]
-    private float focusPhaseShotRate = 300;
+    private EnemyBulletPattern circlingPhaseBulletPattern;
+
+    [SerializeField]
+    private float focusPhaseShotRate = 10;
+
+    [SerializeField]
+    private float circlingPhaseShotRate = 30;
 
     [SerializeField]
     private float moveSpeed = 10;
@@ -71,6 +77,7 @@ public class BinaryTemplar : BaseEnemyAI
         if (target != null)
         {
             timeSpentOnPhase += Time.deltaTime;
+            timeSinceLastShot += Time.deltaTime;
 
             if (phase == Phase.CIRCLING_CLOCKWISE)
             {
@@ -118,6 +125,8 @@ public class BinaryTemplar : BaseEnemyAI
         UpdateDesiredAngle();
         MoveToDesiredPosition(GetNextPositionInCirclingPlayer(), moveSpeed);
 
+        TryCirclingAttack();
+
         // Is it time to swap phases?
         if (timeSpentOnPhase >= timeToCircle)
         {
@@ -132,11 +141,23 @@ public class BinaryTemplar : BaseEnemyAI
         UpdateDesiredAngle();
         MoveToDesiredPosition(GetNextPositionInCirclingPlayer(), moveSpeed);
 
+        TryCirclingAttack();
+
         // Is it time to swap phases?
         if (timeSpentOnPhase >= timeToCircle)
         {
             SwapToPhase(Phase.DISTANCING);
             timeToCircle = Random.Range(focusOnPlayerTimeRange.x, focusOnPlayerTimeRange.y);
+        }
+    }
+
+    private void TryCirclingAttack()
+    {
+        timeSinceLastShot += Time.deltaTime;
+        if (timeSinceLastShot > (60f / (float) circlingPhaseShotRate))
+        {
+            StartCoroutine(circlingPhaseBulletPattern.TriggerBulletPattern(this.gameObject));
+            timeSinceLastShot = 0;
         }
     }
 

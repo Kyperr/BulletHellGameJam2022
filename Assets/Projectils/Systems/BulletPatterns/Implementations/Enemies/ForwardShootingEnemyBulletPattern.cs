@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "ForwardShootingEnemyBulletPattern", menuName = "ScriptableObjects/BulletPatterns/Enemy/ForwardShootingEnemyBulletPattern", order = 1)]
-public class ForwardShootingEnemyBulletPattern : BulletPattern
+public class ForwardShootingEnemyBulletPattern : EnemyBulletPattern
 {
 
     [SerializeField]
@@ -15,7 +16,7 @@ public class ForwardShootingEnemyBulletPattern : BulletPattern
     [SerializeField]
     private float initialProjectileVelocity = 10f;
 
-    public override IEnumerator TriggerBulletPattern(GameObject source)
+    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null)
     {
         Vector3 baseDirection = new Vector3();
 
@@ -42,6 +43,7 @@ public class ForwardShootingEnemyBulletPattern : BulletPattern
             go.GetComponent<Rigidbody>().AddForce(spawnDirection * initialProjectileVelocity);
         }
 
+        if(whenDone != null) whenDone();
         yield break;
     }
 }

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BinaryTemplarFocussing
   m_EditorClassIdentifier: 
   description: 
-  projectile: {fileID: 4842620349521795652, guid: c4cbcb5cd59a7d94ca7221966ad2cd96, type: 3}
+  projectile: {fileID: 4842620349521795652, guid: c4cbcb5cd59a7d94ca7221966ad2cd96,
+    type: 3}
   projectileFireDistance: 5
-  initialProjectileVelocity: 2500
+  initialProjectileVelocity: 500
   shotAngle: 10

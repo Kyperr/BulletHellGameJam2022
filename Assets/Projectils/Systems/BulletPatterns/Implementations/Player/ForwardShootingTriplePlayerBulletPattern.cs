@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "ForwardShootingTriplePlayerBulletPattern", menuName = "ScriptableObjects/BulletPatterns/Player/ForwardShootingTriplePlayerBulletPattern", order = 1)]
 public class ForwardShootingTriplePlayerBulletPattern : BulletPattern
@@ -18,7 +19,7 @@ public class ForwardShootingTriplePlayerBulletPattern : BulletPattern
     [SerializeField]
     private float shotAngle = 10f;
 
-    public override IEnumerator TriggerBulletPattern(GameObject source)
+    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null)
     {
         Vector3 mousePos = Input.mousePosition;
 
@@ -59,6 +60,7 @@ public class ForwardShootingTriplePlayerBulletPattern : BulletPattern
             go3.GetComponent<Rigidbody>().AddForce(spawnDirection3 * initialProjectileVelocity);
         }
 
+        if(whenDone != null) whenDone();
         yield break;
     }
 }

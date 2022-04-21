@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9afc0321dba4ab94baf36c0e8930110a, type: 3}
-  m_Name: HopliteSniperShot
+  m_Script: {fileID: 11500000, guid: f08cc90e2fce3cd4d8231c3e6877757d, type: 3}
+  m_Name: FirstShot
   m_EditorClassIdentifier: 
   description: 
-  projectile: {fileID: 6342806024075511229, guid: 8471c3d8691ee9541afac0da27d148ae,
+  projectile: {fileID: 8944702582084737554, guid: da36d16039b6bf347a52017c825f4a99,
     type: 3}
-  projectileFireDistance: 7
-  initialProjectileVelocity: 2500
+  projectileFireDistance: 6
+  initialProjectileVelocity: 500
+  shotAngle: 30

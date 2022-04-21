@@ -25,8 +25,13 @@ public class Hoplite : BaseEnemyAI
     private float bulletShotRate = 20;
 
     [SerializeField]
-    private BulletPattern attackingBulletPattern;
+    private float chargeUpAnimationTime = 3;
 
+    [SerializeField]
+    private GameObject chargeUpProjectiles;
+
+    [SerializeField]
+    private EnemyBulletPattern attackingBulletPattern;
 
     [SerializeField]
     private float fleeTriggerDistance = 10;
@@ -45,6 +50,8 @@ public class Hoplite : BaseEnemyAI
 
     private bool repositioning = false;
 
+    private bool attacking = false;
+
     void Start()
     {
         target = EnemySpawner.Instance.Target;
@@ -52,6 +59,7 @@ public class Hoplite : BaseEnemyAI
         phase = Phase.REPOSITIONING;
         timeSpentOnPhase = 0;
         timeToSpendOnPhase = -1;
+        timeSinceLastAttack = float.MaxValue;
     }
 
     void Update()
@@ -59,7 +67,7 @@ public class Hoplite : BaseEnemyAI
         if (target != null)
         {
             timeSpentOnPhase += Time.deltaTime;
-            CheckIfShouldFlee();
+            // CheckIfShouldFlee(); // Fleeing disabled for now. Needs some sort of animation.
 
             timeSpentOnPhase += Time.deltaTime;
 
@@ -95,15 +103,28 @@ public class Hoplite : BaseEnemyAI
         timeSinceLastAttack += Time.deltaTime;
         if (timeSinceLastAttack > (60f / (float)bulletShotRate))
         {
-            // TODO charge up animation
-            StartCoroutine(attackingBulletPattern.TriggerBulletPattern(this.gameObject));
+            StartCoroutine(ChargeAndAttack());
             timeSinceLastAttack = 0;
         }
 
-        if (timeSpentOnPhase > timeToSpendOnPhase)
+        if (timeSpentOnPhase > timeToSpendOnPhase && !attacking)
         {
             SwapToPhase(Phase.REPOSITIONING);
         }
+    }
+
+    private IEnumerator ChargeAndAttack()
+    {
+
+        attacking = true;
+        chargeUpProjectiles.SetActive(true);
+
+        yield return new WaitForSeconds(chargeUpAnimationTime);
+
+        StartCoroutine(attackingBulletPattern.TriggerBulletPattern(this.gameObject));
+
+        chargeUpProjectiles.SetActive(false);
+        attacking = false;
     }
 
     private void FleeLogic()
