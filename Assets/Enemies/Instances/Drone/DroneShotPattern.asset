@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fabe6ba653ea8d44ca55e5c1e347583c, type: 3}
-  m_Name: EnemySpawnLogic
+  m_Script: {fileID: 11500000, guid: cc0d17a512274b74dbad868d2e2c64e3, type: 3}
+  m_Name: DroneShotPattern
   m_EditorClassIdentifier: 
-  enemyList:
-  - {fileID: 1560578993568146715, guid: dcc6c0c03d1b8734eb75fb417ad79360, type: 3}
-  startBudget: 6
-  increaseBudgetPerRound: 2
-  maxBudget: 12
-  enemyRadius: 100
+  description: 
+  projectile: {fileID: 979514755573047120, guid: 90c99acb68a4be74f923475b5e583661,
+    type: 3}
+  projectileFireDistance: 15
+  initialProjectileVelocity: 50
+  shotAngle: 10

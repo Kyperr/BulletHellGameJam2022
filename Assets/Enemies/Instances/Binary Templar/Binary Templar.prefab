@@ -241,7 +241,6 @@ GameObject:
   - component: {fileID: 6243696178157988315}
   - component: {fileID: 5447525040476425626}
   - component: {fileID: -2681687871730172654}
-  - component: {fileID: 8106294370561539584}
   m_Layer: 0
   m_Name: Binary Templar
   m_TagString: Untagged
@@ -349,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ac2423fc6db3f418676a063447e50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  takeDamage: 1
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
 --- !u!135 &6243696178157988315
@@ -391,20 +391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onAny: 0
   onDamageTaken: 1
---- !u!114 &8106294370561539584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5179039431650410112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b2b646dbedc4b489c6aea973d89ca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onAny: 0
-  onDamageTaken: 0
 --- !u!1 &5983816486848598931
 GameObject:
   m_ObjectHideFlags: 0
