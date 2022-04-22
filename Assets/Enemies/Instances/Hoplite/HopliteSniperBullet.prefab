@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -5725108580178529086}
   - component: {fileID: 5399382015620523295}
   - component: {fileID: 8482881331459415429}
+  - component: {fileID: -6185430626012163210}
   m_Layer: 7
   m_Name: HopliteSniperBullet
   m_TagString: Untagged
@@ -170,3 +171,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0cbb4e6b597b04dbf3a2d021e8e8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6185430626012163210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6342806024075511229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -489481220
+      Data2: 1190478732
+      Data3: 1221611696
+      Data4: -861790663
+    Path: event:/sfx/enemies/enemy1_shot
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 1200

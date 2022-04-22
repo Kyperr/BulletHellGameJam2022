@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{f97f402d-fb10-40ef-ae81-2a1455353ba0}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>alien_shot</value>
 		</property>
@@ -103,6 +106,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{a24d66d2-a33b-481c-95d3-0dffac39a1c9}">
+		<property name="volume">
+			<value>-19.5</value>
+		</property>
 		<property name="name">
 			<value>alien shot</value>
 		</property>
@@ -166,6 +172,19 @@
 	</object>
 	<object class="MixerBusPanner" id="{8b5658a8-1ba5-4eb7-853b-ccb8e7af6a22}" />
 	<object class="MixerBusFader" id="{fdccb8dc-9e4f-4062-bb4f-fea02674a675}" />
-	<object class="SpatialiserEffect" id="{31bb288b-882d-47ec-93d3-eb6cb44896e7}" />
+	<object class="SpatialiserEffect" id="{31bb288b-882d-47ec-93d3-eb6cb44896e7}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="minimumDistance">
+			<value>50</value>
+		</property>
+		<property name="maximumDistance">
+			<value>750</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{228ee51b-91dc-45aa-9bdb-c9f2ca48475d}" />
 </objects>
