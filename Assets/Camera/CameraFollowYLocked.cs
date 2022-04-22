@@ -6,7 +6,7 @@ public class CameraFollowYLocked : MonoBehaviour
 {
     [SerializeField]
     private GameObject target;
-    
+
     [SerializeField]
     private float distance = 25;
 
@@ -31,11 +31,6 @@ public class CameraFollowYLocked : MonoBehaviour
             distance += -1 * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")) * distanceChangeAmount;
             distance = Mathf.Clamp(distance, minDistance, maxDistance);
         }
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
 
         float x = target.transform.position.x;
         float y = target.transform.position.y + distance;

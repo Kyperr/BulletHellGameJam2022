@@ -118,21 +118,25 @@ public class ForceDriver : MonoBehaviour
         {
             // Get the rigid body
             Rigidbody rb;
+            affected = affectedByForcesList[i];
             if (!rigidBodyCache.TryGetValue(i, out rb))
             {
-                affected = affectedByForcesList[i];
                 rb = affected.GetComponent<Rigidbody>();
                 rigidBodyCache[i] = rb;
             }
 
-            // Add all forceVectors to this rigidbody.
-            for (int x = 0; x < forceVectorListCount; x++)
+            if (rb)
             {
-                vectorForce = forceVectorList[x][i] * forceIntensityModifier;
-                if (rb)
+                // Add all of the vector forces together for this RB
+                vectorForce = new Vector3();
+
+                // Add all forceVectors to this rigidbody.
+                for (int x = 0; x < forceVectorListCount; x++)
                 {
-                    rb.AddForce(vectorForce);
+                    vectorForce += forceVectorList[x][i] * forceIntensityModifier;
                 }
+
+                rb.AddForce(vectorForce.normalized * affected.ForceStrength);
             }
 
         }

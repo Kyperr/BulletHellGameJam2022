@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 315922637945403070}
   - component: {fileID: -5725108580178529086}
   - component: {fileID: 5399382015620523295}
+  - component: {fileID: 8482881331459415429}
   m_Layer: 7
   m_Name: HopliteSniperBullet
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6342806024075511229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.59, y: -0.40564138, z: 2.48}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7f0c63991a804f8b1c70c318fe996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 100
+  forceStrength: 25
 --- !u!114 &315922637945403070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ Rigidbody:
   m_GameObject: {fileID: 6342806024075511229}
   serializedVersion: 2
   m_Mass: 0.5
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -157,4 +158,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageClass: {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
   damageAmount: 15
-  destroyedOnDamage: 0
+--- !u!114 &8482881331459415429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6342806024075511229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0cbb4e6b597b04dbf3a2d021e8e8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

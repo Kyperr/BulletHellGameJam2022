@@ -37,10 +37,18 @@ public class ForwardShootingPlayerBulletPattern : BulletPattern
 
         if (go.GetComponent<Rigidbody>())
         {
-            go.GetComponent<Rigidbody>().AddForce(spawnDirection * initialProjectileVelocity);
+            go.GetComponent<Rigidbody>().velocity = spawnDirection * initialProjectileVelocity;
         }
 
-        if(whenDone != null) whenDone();
+        if (this.particleSystemPrefab)
+        {
+            ParticleSystem particleSystem = Instantiate(particleSystemPrefab);
+            particleSystem.transform.rotation = Quaternion.LookRotation(spawnDirection);
+
+            particleSystem.transform.position = spawnPositon;
+        }
+
+        if (whenDone != null) whenDone();
         yield break;
     }
 }

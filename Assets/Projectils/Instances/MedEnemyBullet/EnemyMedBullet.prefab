@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 4842620349521795652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.37, y: -0.40564138, z: -2.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7f0c63991a804f8b1c70c318fe996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 35
+  forceStrength: 10
 --- !u!114 &2396596699741327872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ Rigidbody:
   m_GameObject: {fileID: 4842620349521795652}
   serializedVersion: 2
   m_Mass: 0.5
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -172,4 +172,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageClass: {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
   damageAmount: 7
-  destroyedOnDamage: 0

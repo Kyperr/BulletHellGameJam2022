@@ -11,9 +11,6 @@ public class DoesDamage : MonoBehaviour
     [SerializeField]
     private int damageAmount = 1;
 
-    [SerializeField]
-    private bool destroyedOnDamage = false;
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,11 +18,6 @@ public class DoesDamage : MonoBehaviour
         if (takesDamage && takesDamage.TakesDamageFromClasses.Contains(damageClass))
         {
             takesDamage.Damage(damageAmount);
-
-            if (destroyedOnDamage)
-            {
-                Destroy(this);
-            }
         }
     }
 }

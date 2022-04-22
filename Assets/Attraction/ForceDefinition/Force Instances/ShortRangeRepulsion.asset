@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925b79ba406048a4e90a59be253b58a3, type: 3}
   m_Name: ShortRangeRepulsion
   m_EditorClassIdentifier: 
-  distanceSensitivity: 2
+  distanceSensitivity: 0.4

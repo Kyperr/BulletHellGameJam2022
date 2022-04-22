@@ -153,7 +153,6 @@ public class BinaryTemplar : BaseEnemyAI
 
     private void TryCirclingAttack()
     {
-        timeSinceLastShot += Time.deltaTime;
         if (timeSinceLastShot > (60f / (float) circlingPhaseShotRate))
         {
             StartCoroutine(circlingPhaseBulletPattern.TriggerBulletPattern(this.gameObject));
@@ -167,6 +166,7 @@ public class BinaryTemplar : BaseEnemyAI
         Vector3 desiredPosition = this.target.transform.position + (directionalVector * focussingDistance);
         if (MoveToDesiredPosition(desiredPosition, moveSpeed))
         {
+            timeSinceLastShot = float.MaxValue;
             SwapToPhase(Phase.FOCUSSING);
         }
     }
@@ -176,7 +176,6 @@ public class BinaryTemplar : BaseEnemyAI
 
         transform.LookAt(target.transform.position, Vector3.up);
 
-        timeSinceLastShot += Time.deltaTime;
         if (timeSinceLastShot > (60f / (float)focusPhaseShotRate))
         {
             StartCoroutine(focusPhaseBulletPattern.TriggerBulletPattern(this.gameObject));
@@ -195,7 +194,6 @@ public class BinaryTemplar : BaseEnemyAI
     {
         this.phase = phase;
         timeSpentOnPhase = 0;
-        timeSinceLastShot = 0;
     }
 
     private void UpdateDesiredAngle(bool clockWise = true)

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 784719897220233697}
   - component: {fileID: 8800818611073534147}
   - component: {fileID: -7923600972732722878}
+  - component: {fileID: 809412569902198874}
   m_Layer: 7
   m_Name: SplittingBullet
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 8944702582084737554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.37, y: -0.40564138, z: -2.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7f0c63991a804f8b1c70c318fe996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 5
+  forceStrength: 1
 --- !u!114 &2186473531368903254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +154,7 @@ Rigidbody:
   m_GameObject: {fileID: 8944702582084737554}
   serializedVersion: 2
   m_Mass: 0.5
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -174,7 +175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageClass: {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
   damageAmount: 7
-  destroyedOnDamage: 0
 --- !u!114 &8800818611073534147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +203,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &809412569902198874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944702582084737554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0cbb4e6b597b04dbf3a2d021e8e8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

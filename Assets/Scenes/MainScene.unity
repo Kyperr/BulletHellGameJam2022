@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.00023269569, g: 0.019041855, b: 0.046372056, a: 1}
+  m_IndirectSpecularColor: {r: 0.0001870334, g: 0.012763684, b: 0.03118718, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -416,33 +416,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3898470439537844701}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1558578711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558578699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a8252ada6eff9c449907110a1065dca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  differenceTolerance: 0
---- !u!135 &1558578712
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558578699}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0.04}
 --- !u!1 &1956979663
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,16 +668,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3869372804085603803, guid: dd216df18191a6240b3fb2abc6a5ae56,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3898470440425072585, guid: dd216df18191a6240b3fb2abc6a5ae56,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072589, guid: dd216df18191a6240b3fb2abc6a5ae56,
         type: 3}
       propertyPath: m_RootOrder
@@ -760,24 +723,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3898470440425072590, guid: dd216df18191a6240b3fb2abc6a5ae56,
-        type: 3}
-      propertyPath: bulletPattern
-      value: 
-      objectReference: {fileID: 11400000, guid: 5bd78484e3cc2924d8ab17a5c4e10b2c,
-        type: 2}
     - target: {fileID: 3898470440425072598, guid: dd216df18191a6240b3fb2abc6a5ae56,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8211866232850508814, guid: dd216df18191a6240b3fb2abc6a5ae56,
-        type: 3}
-      propertyPath: maxHP
-      value: 1000000
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3744793535925064617, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
 --- !u!1001 &4524153287648483768
 PrefabInstance:

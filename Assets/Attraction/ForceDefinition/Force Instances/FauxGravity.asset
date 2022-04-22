@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac84841981f79f459162be2a9165f7e, type: 3}
   m_Name: FauxGravity
   m_EditorClassIdentifier: 
-  distanceSensitivity: 0.5
+  distanceSensitivity: 0.1

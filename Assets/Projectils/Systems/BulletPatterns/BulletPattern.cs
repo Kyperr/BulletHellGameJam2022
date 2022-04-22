@@ -9,5 +9,8 @@ public abstract class BulletPattern : ScriptableObject
     [TextArea(3, 5)]
     private string description;
 
+    [SerializeField]
+    protected ParticleSystem particleSystemPrefab;
+
     public abstract IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null);
 }

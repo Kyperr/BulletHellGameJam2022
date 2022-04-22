@@ -58,12 +58,12 @@ public class DualRotatingBulletEmitter : EnemyBulletPattern
 
             if (go1.GetComponent<Rigidbody>())
             {
-                go1.GetComponent<Rigidbody>().AddForce(spawnDirection1 * initialProjectileVelocity);
+                go1.GetComponent<Rigidbody>().velocity = spawnDirection1 * initialProjectileVelocity;
             }
 
             if (go2.GetComponent<Rigidbody>())
             {
-                go2.GetComponent<Rigidbody>().AddForce(spawnDirection2 * initialProjectileVelocity);
+                go2.GetComponent<Rigidbody>().velocity = spawnDirection2 * initialProjectileVelocity;
             }
 
             baseDirection = Quaternion.AngleAxis(angleDelta, Vector3.up) * baseDirection;

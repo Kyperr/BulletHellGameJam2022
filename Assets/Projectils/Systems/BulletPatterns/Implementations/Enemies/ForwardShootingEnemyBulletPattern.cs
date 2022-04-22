@@ -40,7 +40,7 @@ public class ForwardShootingEnemyBulletPattern : EnemyBulletPattern
 
         if (go.GetComponent<Rigidbody>())
         {
-            go.GetComponent<Rigidbody>().AddForce(spawnDirection * initialProjectileVelocity);
+            go.GetComponent<Rigidbody>().velocity = spawnDirection * initialProjectileVelocity;
         }
 
         if(whenDone != null) whenDone();

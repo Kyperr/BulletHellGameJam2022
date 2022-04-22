@@ -42,17 +42,17 @@ public class ForwardShootingTripleEnemyBulletPattern : EnemyBulletPattern
 
         if (go1.GetComponent<Rigidbody>())
         {
-            go1.GetComponent<Rigidbody>().AddForce(spawnDirection1 * initialProjectileVelocity);
+            go1.GetComponent<Rigidbody>().velocity = spawnDirection1 * initialProjectileVelocity;
         }
 
         if (go2.GetComponent<Rigidbody>())
         {
-            go2.GetComponent<Rigidbody>().AddForce(spawnDirection2 * initialProjectileVelocity);
+            go2.GetComponent<Rigidbody>().velocity = spawnDirection2 * initialProjectileVelocity;
         }
 
         if (go3.GetComponent<Rigidbody>())
         {
-            go3.GetComponent<Rigidbody>().AddForce(spawnDirection3 * initialProjectileVelocity);
+            go3.GetComponent<Rigidbody>().velocity = spawnDirection3 * initialProjectileVelocity;
         }
 
         if (whenDone != null) whenDone();
