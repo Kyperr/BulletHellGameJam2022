@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverView : MonoBehaviour
 {
+    public GameObject gameoverObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,15 @@ public class GameOverView : MonoBehaviour
 
     public void onGameOver()
     {
-        gameObject.SetActive(true);
+        StartCoroutine(showGameover());
         //GetComponent<UIView>().Show();
+    }
+
+    IEnumerator showGameover()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        gameoverObject.SetActive(true);
+
     }
 
     public void onRestartButton()

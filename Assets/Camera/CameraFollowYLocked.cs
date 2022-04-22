@@ -36,7 +36,10 @@ public class CameraFollowYLocked : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        if (!target)
+        {
+            return;
+        }
         float x = target.transform.position.x;
         float y = target.transform.position.y + distance;
         float z = target.transform.position.z;
