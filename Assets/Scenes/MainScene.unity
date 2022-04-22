@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.00023528587, g: 0.019525232, b: 0.0475516, a: 1}
+  m_IndirectSpecularColor: {r: 0.0001819591, g: 0.012263082, b: 0.029978089, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -258,6 +258,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34254d137afaa143a11e1656ea27030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1062523268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062523254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 1062523254}
+  ListenerNumber: -1
 --- !u!1 &1222624674
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034269377402249133, guid: a54c14db816fac849b208cbc026965bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1866087784612422884, guid: a54c14db816fac849b208cbc026965bc,
         type: 3}
@@ -751,6 +770,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1429186277, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072589, guid: dd216df18191a6240b3fb2abc6a5ae56,
         type: 3}
       propertyPath: m_RootOrder
@@ -818,6 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3744793535925064617, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
+    - {fileID: 1429186277, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd216df18191a6240b3fb2abc6a5ae56, type: 3}
 --- !u!1001 &4524153287648483768
 PrefabInstance:

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{fa090984-c03c-4b62-8653-e5a954079085}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>alien_bullet_loop</value>
 		</property>
@@ -75,6 +78,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{35eeca00-233c-439f-a058-30b9b654c428}">
+		<property name="volume">
+			<value>-6.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{cedac91e-bc15-4378-9952-f955402aaf73}</destination>
 		</relationship>
@@ -118,6 +124,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{a27749f4-23e8-41f2-ba6a-a359a0000efb}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -221,6 +230,16 @@
 	</object>
 	<object class="MixerBusPanner" id="{c90ef962-c416-40b6-9329-aeff8773d4ad}" />
 	<object class="MixerBusFader" id="{95278a1c-82d6-4eb5-9429-77e1b0691ad9}" />
-	<object class="SpatialiserEffect" id="{f4f23d84-a310-4763-90c8-e81746029284}" />
+	<object class="SpatialiserEffect" id="{f4f23d84-a310-4763-90c8-e81746029284}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="minimumDistance">
+			<value>50</value>
+		</property>
+		<property name="maximumDistance">
+			<value>750</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{208a1ed2-f72f-4df6-bc55-0f298af4b988}" />
 </objects>

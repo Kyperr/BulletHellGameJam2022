@@ -7,13 +7,59 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000021A3C4CDFC8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000016F01BA6618 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 141)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 7774592
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 26624
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000004AFAEFF0C8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFDFCA0AD0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFDFCA0AA0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFDFCA0BA0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFDFCA0C60
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000016DE7D9FCD8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='enemy2_shot2', format=5, channels=2, frequency=48000, lengthbytes=103008, lengthpcm=366752, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.944288.
+[LOG] SoundI::release                          :  (0000016BAF6318A8)
+[LOG] SoundI::release                          :     alien_shot_2 (0000016BAEB30BA8)
+[LOG] SoundI::release                          :  (0000016E0BA37858)
+[LOG] SoundI::release                          :     alien_shot_3 (0000016E0BBB3888)
+[LOG] SoundI::release                          :  (0000016E0BA37B38)
+[LOG] SoundI::release                          :     alien_shot_4 (0000016BAEB30868)
+[LOG] SoundI::release                          :  (0000016BAF631CF8)
+[LOG] SoundI::release                          :     alien_shot_5 (0000016EEE68E248)
+[LOG] SoundI::release                          :  (0000016BAF631B88)
+[LOG] SoundI::release                          :     alien_shot_6 (0000016EEE68E588)
+[LOG] SoundI::release                          :  (0000016BAF631738)
+[LOG] SoundI::release                          :     alien_shot_7 (0000016E16D1E7A8)
+[LOG] SoundI::release                          :  (0000016E0BA379C8)
+[LOG] SoundI::release                          :     alien_bullet_loop_1 (0000016E0BBB3A28)
+[LOG] SoundI::release                          :  (0000016BAC2F0798)
+[LOG] SoundI::release                          :     enemy2_shot2 (0000016BABB18F28)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -21,3 +67,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

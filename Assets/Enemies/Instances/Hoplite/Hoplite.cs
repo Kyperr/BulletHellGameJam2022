@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD;
 
 public class Hoplite : BaseEnemyAI
 {
@@ -118,6 +119,7 @@ public class Hoplite : BaseEnemyAI
 
         attacking = true;
         chargeUpProjectiles.SetActive(true);
+        chargeUpProjectiles.GetComponent<FMODUnity.StudioEventEmitter>().Play();
 
         yield return new WaitForSeconds(chargeUpAnimationTime);
 

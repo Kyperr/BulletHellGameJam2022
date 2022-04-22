@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{e2d31bfc-438c-46f5-b050-d048391ea2cc}">
+		<property name="color">
+			<value>Blue Light 1</value>
+		</property>
 		<property name="name">
 			<value>enemy1_shot</value>
 		</property>
@@ -97,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{31753259-d924-4e0a-936e-08ab61546030}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -125,6 +131,16 @@
 	</object>
 	<object class="MixerBusPanner" id="{2a388510-845c-483c-8dcb-170bd974198a}" />
 	<object class="MixerBusFader" id="{9e387dbc-8f0d-4b0a-98d6-b05fdbf3bce5}" />
-	<object class="SpatialiserEffect" id="{91abf351-251d-4933-99d8-7fcc36fb0e99}" />
+	<object class="SpatialiserEffect" id="{91abf351-251d-4933-99d8-7fcc36fb0e99}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="minimumDistance">
+			<value>50</value>
+		</property>
+		<property name="maximumDistance">
+			<value>750</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{d8c2145f-c3df-48cb-972a-66f235f72741}" />
 </objects>

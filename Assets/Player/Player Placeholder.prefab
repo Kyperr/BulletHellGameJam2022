@@ -395,7 +395,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 82fb5dbebd93f9445aec73a5deaed540,
         type: 3}
       propertyPath: m_Name
-      value: PlayerShip (1)
+      value: PlayerShip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82fb5dbebd93f9445aec73a5deaed540, type: 3}
@@ -405,6 +405,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7371487593179960778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7677970205481232539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82fb5dbebd93f9445aec73a5deaed540,
+    type: 3}
+  m_PrefabInstance: {fileID: 7371487593179960778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &80790125449392391
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677970205481232539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8db20c47ff945d40a18cabf116bdfba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7768296512518131001
 PrefabInstance:
   m_ObjectHideFlags: 0
