@@ -7,10 +7,18 @@ public class EnemySpawnLogic : ScriptableObject
 {
     [SerializeField]
     List<SpawnableEnemy> enemyList;
+    //[SerializeField]
+    //List<int> roundBudgets;
     [SerializeField]
-    List<int> roundBudgets;
+    int startBudget;
+    [SerializeField]
+    int increaseBudgetPerRound;
+    [SerializeField]
+    int maxBudget;
     [SerializeField]
     float enemyRadius = 2f;
+
+    Dictionary<string, bool> unlockedEnemy =  new Dictionary<string, bool>();
 
     float calcualteMinBudget()
     {
@@ -52,14 +60,17 @@ public class EnemySpawnLogic : ScriptableObject
     {
         float radius = es.ArenaRadius;
         var minimalBudget = calcualteMinBudget();
-        float budge = roundBudgets[Mathf.Min(es.CurrentRound, roundBudgets.Count - 1)];
+        float budget = startBudget + es.CurrentRound * increaseBudgetPerRound;
+        budget = Mathf.Min(budget, maxBudget);
+        //Debug.Log("current budge " + budget);
         int loopCount = 0;//in case for any reason we get into infinite loop
 
         List<Vector3> avoidCollisionList = new List<Vector3>() { es.PlayerPosition };
-        while (loopCount < 100 && budge >= minimalBudget)
+        List<GameObject> enemies = new List<GameObject>();
+        while (loopCount < 100 && budget >= minimalBudget)
         {
             var enemy = enemyList[Random.Range(0, enemyList.Count)];
-            if (budge - enemy.SpawnCost >= 0)
+            if (budget - enemy.SpawnCost >= 0)
             {
                 var position = validGenerationPosition(avoidCollisionList, radius);
                 if(position == Vector3.positiveInfinity)
@@ -67,10 +78,21 @@ public class EnemySpawnLogic : ScriptableObject
                     Debug.LogError("can't find a good position for enemy");
                     return;
                 }
+                if(!unlockedEnemy.ContainsKey(enemy.name))
+                {
+                    //if enemy not unlocked. remove others and stop here.
+                    es.clearEnemies();
+                }
                 var go = Instantiate(enemy.gameObject, position, Quaternion.identity, es.transform);
                 es.addEnemy(go.GetComponent<SpawnableEnemy>());
                 avoidCollisionList.Add(position);
-                budge -= enemy.SpawnCost;
+                budget -= enemy.SpawnCost;
+                if (!unlockedEnemy.ContainsKey(enemy.name))
+                {
+                    unlockedEnemy[enemy.name] = true;
+                    break;
+                }
+
             }
             loopCount++;
         }
