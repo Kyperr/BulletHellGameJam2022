@@ -34,7 +34,6 @@ public class GameOverView : MonoBehaviour
 
     public void onRestartButton()
     {
-
         SceneManager.LoadScene(1);
         //GetComponent<UIView>().Hide();
     }

@@ -18,7 +18,6 @@ public class EnemySpawnLogic : ScriptableObject
     [SerializeField]
     float enemyRadius = 2f;
 
-    Dictionary<string, bool> unlockedEnemy =  new Dictionary<string, bool>();
 
     float calcualteMinBudget()
     {
@@ -78,7 +77,7 @@ public class EnemySpawnLogic : ScriptableObject
                     Debug.LogError("can't find a good position for enemy");
                     return;
                 }
-                if(!unlockedEnemy.ContainsKey(enemy.name))
+                if(!EnemyManager.Instance.isEnemyUnlocked( enemy.name))
                 {
                     //if enemy not unlocked. remove others and stop here.
                     es.clearEnemies();
@@ -87,9 +86,9 @@ public class EnemySpawnLogic : ScriptableObject
                 es.addEnemy(go.GetComponent<SpawnableEnemy>());
                 avoidCollisionList.Add(position);
                 budget -= enemy.SpawnCost;
-                if (!unlockedEnemy.ContainsKey(enemy.name))
+                if (!EnemyManager.Instance.isEnemyUnlocked(enemy.name))
                 {
-                    unlockedEnemy[enemy.name] = true;
+                    EnemyManager.Instance.unlockEnemy(enemy.name);
                     break;
                 }
 

@@ -21,7 +21,7 @@ public class ForwardShootingEnemyBulletPattern : EnemyBulletPattern
         Vector3 baseDirection = new Vector3();
 
         Target target = source.GetComponent<Target>();
-        if (target)
+        if (target && target.GetTarget())
         {
             baseDirection = target.GetTarget().transform.position - source.transform.position;
         }
