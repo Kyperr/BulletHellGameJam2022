@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 1558578708}
   - component: {fileID: 1558578712}
   - component: {fileID: 1558578711}
+  - component: {fileID: 1429186277}
   m_Layer: 0
   m_Name: Player Placeholder
   m_TagString: Untagged
@@ -132,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 3898470440425072598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.30121243, y: -0.40564138, z: 2.2672677}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2733412256760892662}
@@ -195,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36357a7b45195b3489d14f3c1ac10988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 250
   primaryFireRate: 200
   primaryBulletPattern: {fileID: 11400000, guid: 5bd78484e3cc2924d8ab17a5c4e10b2c,
     type: 2}
@@ -315,6 +316,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   differenceTolerance: 0
+--- !u!114 &1429186277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898470440425072598}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 3898470440425072598}
+  ListenerNumber: -1
 --- !u!1001 &7371487593179960778
 PrefabInstance:
   m_ObjectHideFlags: 0

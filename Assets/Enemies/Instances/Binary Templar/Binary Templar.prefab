@@ -291,7 +291,7 @@ MonoBehaviour:
     type: 2}
   focusPhaseShotRate: 10
   circlingPhaseShotRate: 20
-  moveSpeed: 3
+  moveSpeed: 2
   circlingAngleDelta: 50
 --- !u!114 &5735861513588916122
 MonoBehaviour:

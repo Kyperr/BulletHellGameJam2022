@@ -25,12 +25,15 @@ public class CameraFollowYLocked : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             distance += -1 * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")) * distanceChangeAmount;
             distance = Mathf.Clamp(distance, minDistance, maxDistance);
         }
+    }
+    
+    private void FixedUpdate()
+    {
 
         float x = target.transform.position.x;
         float y = target.transform.position.y + distance;

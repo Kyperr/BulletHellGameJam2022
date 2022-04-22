@@ -34,9 +34,7 @@ public class SimpleControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        rb.AddForce((new Vector3(horizontalInput, 0, verticalInput).normalized * moveSpeed) - rb.velocity, ForceMode.VelocityChange);
+        rb.velocity = new Vector3(horizontalInput, 0, verticalInput).normalized * moveSpeed;
         //rb.MovePosition(rb.position+ new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
         // rb.AddForce(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed*10 * Time.deltaTime);
     }
@@ -44,6 +42,9 @@ public class SimpleControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
 
         timeSinceLastPrimaryFire += Time.deltaTime;
         timeSinceLastAltFire += Time.deltaTime;

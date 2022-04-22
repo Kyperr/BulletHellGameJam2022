@@ -104,7 +104,7 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Frequency: 5
-    - _FresnelStrength: 3
+    - _FresnelStrength: 1.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -127,6 +127,6 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 0.6099918, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PlayerPosition: {r: -141.51176, g: 0, b: -171.22751, a: 0}
+    - _PlayerPosition: {r: 161.93594, g: -0.40564138, b: 101.05761, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
