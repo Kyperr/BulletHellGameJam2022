@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fabe6ba653ea8d44ca55e5c1e347583c, type: 3}
-  m_Name: EnemySpawnLogic
+  m_Script: {fileID: 11500000, guid: dbc104d2b77050b408caa7d2c99742b5, type: 3}
+  m_Name: GravitonShot
   m_EditorClassIdentifier: 
-  enemyList:
-  - {fileID: 6057746480281386074, guid: 64ff682bc9c515e43885178a53b15811, type: 3}
-  startBudget: 6
-  increaseBudgetPerRound: 2
-  maxBudget: 12
-  enemyRadius: 100
+  description: 
+  projectile: {fileID: 6743612845596485395, guid: e3364ec048e6c734c9f2783e9ffaad65,
+    type: 3}
+  projectileFireDistance: 15
+  initialProjectileVelocity: 75
+  shotAngle: 90

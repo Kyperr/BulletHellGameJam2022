@@ -5,11 +5,15 @@ using UnityEngine;
 public class DoesDamage : MonoBehaviour
 {
 
+    public delegate void OnDamageDoneDelegate();
+    public event OnDamageDoneDelegate OnDamageDone = delegate { };
+
     [SerializeField]
     private DamageClass damageClass;
 
     [SerializeField]
     private int damageAmount = 1;
+    public int DamageAmount => damageAmount;
 
 
     void OnTriggerEnter(Collider other)
@@ -17,7 +21,8 @@ public class DoesDamage : MonoBehaviour
         TakesDamage takesDamage = other.gameObject.GetComponent<TakesDamage>();
         if (takesDamage && takesDamage.TakesDamageFromClasses.Contains(damageClass))
         {
-            takesDamage.Damage(damageAmount);
+            takesDamage.Damage(this);
+            OnDamageDone();
         }
     }
 }

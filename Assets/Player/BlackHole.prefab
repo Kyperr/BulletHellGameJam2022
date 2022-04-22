@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 672534188674373496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 672534189483499479}
@@ -203,7 +203,7 @@ MeshCollider:
   m_GameObject: {fileID: 672534189420335516}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545e9fc2bd89041418fe929862840f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 100000
+  forceStrength: 1000
   force: {fileID: 11400000, guid: 4ead0634275d6c448a79c6845245bc75, type: 2}
 --- !u!54 &7527001429637024082
 Rigidbody:
@@ -305,6 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b2b646dbedc4b489c6aea973d89ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAny: 1
+  onDamageTaken: 0
 --- !u!135 &5470830765227375876
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -313,7 +315,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672534189483499478}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.88
@@ -454,7 +456,7 @@ SphereCollider:
   m_GameObject: {fileID: 672534189888027923}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

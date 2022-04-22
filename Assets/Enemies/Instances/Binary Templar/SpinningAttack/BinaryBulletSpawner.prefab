@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 614994798665884831}
   - component: {fileID: -2152441052909746011}
   - component: {fileID: 7112128935982780398}
+  - component: {fileID: 1639197123664439818}
   m_Layer: 7
   m_Name: BinaryBulletSpawner
   m_TagString: Untagged
@@ -123,6 +124,20 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 50
   OverrideMaxDistance: 750
+--- !u!114 &1639197123664439818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851885698033747321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9911fd051247b9b4aafbb520c376c59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageClass: {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
+  damageAmount: 10
 --- !u!1001 &2851885697272962480
 PrefabInstance:
   m_ObjectHideFlags: 0

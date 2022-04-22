@@ -10,7 +10,7 @@ public class AffectingForce : AnnouncesDestroy
 
     [SerializeField]
     protected float forceStrength = 0.0f;
-    public float ForceStrength => forceStrength;
+    public float ForceStrength { get => forceStrength; set => forceStrength = value; }
 
     [SerializeField]
     private Force force;

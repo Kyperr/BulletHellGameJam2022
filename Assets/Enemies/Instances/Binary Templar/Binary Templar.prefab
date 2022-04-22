@@ -240,6 +240,8 @@ GameObject:
   - component: {fileID: 1159043389522854327}
   - component: {fileID: 6243696178157988315}
   - component: {fileID: 5447525040476425626}
+  - component: {fileID: -2681687871730172654}
+  - component: {fileID: 8106294370561539584}
   m_Layer: 0
   m_Name: Binary Templar
   m_TagString: Untagged
@@ -291,7 +293,7 @@ MonoBehaviour:
     type: 2}
   focusPhaseShotRate: 10
   circlingPhaseShotRate: 20
-  moveSpeed: 2
+  moveSpeed: 150
   circlingAngleDelta: 50
 --- !u!114 &5735861513588916122
 MonoBehaviour:
@@ -375,6 +377,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &-2681687871730172654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179039431650410112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b2b646dbedc4b489c6aea973d89ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAny: 0
+  onDamageTaken: 1
+--- !u!114 &8106294370561539584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179039431650410112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b2b646dbedc4b489c6aea973d89ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAny: 0
+  onDamageTaken: 0
 --- !u!1 &5983816486848598931
 GameObject:
   m_ObjectHideFlags: 0

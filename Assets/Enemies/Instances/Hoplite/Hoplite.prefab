@@ -9705,6 +9705,7 @@ GameObject:
   - component: {fileID: 5655568160999780360}
   - component: {fileID: 657815716283708926}
   - component: {fileID: 6710600158730717034}
+  - component: {fileID: -7825372353942957260}
   m_Layer: 0
   m_Name: Hoplite
   m_TagString: Untagged
@@ -9814,7 +9815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80b05304c6ac434eac246000d70e026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 150
   rangeOfAttackingDistances: {x: 200, y: 300}
   timeToSpendAttacking: {x: 12, y: 20}
   bulletShotRate: 10
@@ -9850,6 +9851,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.7012053, y: 1, z: 2.673149}
   m_Center: {x: 0.07574061, y: 0, z: 0.98099387}
+--- !u!114 &-7825372353942957260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27104651591672471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b2b646dbedc4b489c6aea973d89ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAny: 0
+  onDamageTaken: 1
 --- !u!1 &2706010429105667504
 GameObject:
   m_ObjectHideFlags: 0
@@ -10044,6 +10059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b2b646dbedc4b489c6aea973d89ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAny: 1
+  onDamageTaken: 0
 --- !u!65 &4995313156240701809
 BoxCollider:
   m_ObjectHideFlags: 0

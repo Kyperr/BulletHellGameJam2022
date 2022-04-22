@@ -60,7 +60,7 @@ public class Hoplite : BaseEnemyAI
         phase = Phase.REPOSITIONING;
         timeSpentOnPhase = 0;
         timeToSpendOnPhase = -1;
-        timeSinceLastAttack = float.MaxValue;
+        timeSinceLastAttack = Random.Range(0, 60 / bulletShotRate);
     }
 
     void Update()
@@ -68,9 +68,7 @@ public class Hoplite : BaseEnemyAI
         if (target != null)
         {
             timeSpentOnPhase += Time.deltaTime;
-            // CheckIfShouldFlee(); // Fleeing disabled for now. Needs some sort of animation.
-
-            timeSpentOnPhase += Time.deltaTime;
+            timeSinceLastAttack += Time.deltaTime;
 
             if (phase == Phase.ATTACKING)
             {
@@ -88,7 +86,6 @@ public class Hoplite : BaseEnemyAI
             }
         }
     }
-
     private void CheckIfShouldFlee()
     {
         if (Vector3.Distance(target.transform.position, this.transform.position) < fleeTriggerDistance)
@@ -99,9 +96,9 @@ public class Hoplite : BaseEnemyAI
 
     private void AttackLogic()
     {
-        transform.LookAt(target.transform.position, Vector3.up);
+        Quaternion toRotation = Quaternion.LookRotation((target.transform.position - transform.position), transform.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, Time.deltaTime * 5);
 
-        timeSinceLastAttack += Time.deltaTime;
         if (timeSinceLastAttack > (60f / (float)bulletShotRate))
         {
             StartCoroutine(ChargeAndAttack());

@@ -17,4 +17,4 @@ MonoBehaviour:
     type: 3}
   projectileFireDistance: 30
   initialProjectileVelocity: 250
-  shotAngle: 30
+  shotAngle: 15

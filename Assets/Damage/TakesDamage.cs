@@ -5,6 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(HPObject))]
 public class TakesDamage : MonoBehaviour
 {
+
+    public delegate void OnDamageTakenDelegate(DoesDamage doesDamage);
+    public event OnDamageTakenDelegate OnDamageTaken = delegate { };
+
+
+    [SerializeField]
+    private bool takeDamage = true;
+    public bool TakeDamage { get => takeDamage; set => takeDamage = value; }
+
+
     [SerializeField]
     private List<DamageClass> takesDamageFromClasses;
     public List<DamageClass> TakesDamageFromClasses => takesDamageFromClasses;
@@ -16,9 +26,13 @@ public class TakesDamage : MonoBehaviour
         hpObject = this.GetComponent<HPObject>();
     }
 
-    public void Damage(int damageAmount)
+    public void Damage(DoesDamage doesDamage)
     {
-        hpObject.DoDamage(damageAmount);
+        if (takeDamage)
+        {
+            hpObject.DoDamage(doesDamage.DamageAmount);
+            OnDamageTaken(doesDamage);
+        }
     }
 
 }

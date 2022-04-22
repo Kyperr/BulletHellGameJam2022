@@ -136,7 +136,7 @@ public class ForceDriver : MonoBehaviour
                     vectorForce += forceVectorList[x][i] * forceIntensityModifier;
                 }
 
-                rb.AddForce(vectorForce.normalized * affected.ForceStrength);
+                rb.AddForce(vectorForce);
             }
 
         }

@@ -67,7 +67,7 @@ public class BinaryTemplar : BaseEnemyAI
         target = EnemySpawner.Instance.Target;
         this.GetComponent<Target>().SetTarget(EnemySpawner.Instance.Target);
         desiredAngle = Random.Range(0, 360);
-        timeSpentOnPhase = 0;
+        timeSpentOnPhase = Random.Range(circlingTimeRange.x, circlingTimeRange.y);
         this.phase = ChooseRandomCirclingLogic();
         timeToCircle = Random.Range(circlingTimeRange.x, circlingTimeRange.y);
     }
@@ -153,7 +153,7 @@ public class BinaryTemplar : BaseEnemyAI
 
     private void TryCirclingAttack()
     {
-        if (timeSinceLastShot > (60f / (float) circlingPhaseShotRate))
+        if (timeSinceLastShot > (60f / (float)circlingPhaseShotRate))
         {
             StartCoroutine(circlingPhaseBulletPattern.TriggerBulletPattern(this.gameObject));
             timeSinceLastShot = 0;
@@ -174,7 +174,8 @@ public class BinaryTemplar : BaseEnemyAI
     private void FocussingLogic()
     {
 
-        transform.LookAt(target.transform.position, Vector3.up);
+        Quaternion toRotation = Quaternion.LookRotation((target.transform.position - transform.position), transform.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, Time.deltaTime * 5);
 
         if (timeSinceLastShot > (60f / (float)focusPhaseShotRate))
         {

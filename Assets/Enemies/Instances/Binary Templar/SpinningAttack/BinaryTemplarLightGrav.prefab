@@ -80,12 +80,17 @@ PrefabInstance:
     - target: {fileID: 8908484350887742761, guid: a9571703ee80cbc4385ba056ba09b858,
         type: 3}
       propertyPath: forceStrength
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8908484350887742762, guid: a9571703ee80cbc4385ba056ba09b858,
         type: 3}
       propertyPath: m_Name
       value: BinaryTemplarLightGrav
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908484350887742767, guid: a9571703ee80cbc4385ba056ba09b858,
+        type: 3}
+      propertyPath: forceStrength
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9571703ee80cbc4385ba056ba09b858, type: 3}
