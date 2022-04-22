@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainScene flavedo mainMenu.unity
     guid: 53d0a2d1ac1083a408aa5f0fc29537aa
-  - enabled: 0
-    path: Assets/Scenes/MainScene flavedo menus.unity
-    guid: 1034b3612151880489013c046eb6d018
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: ad8697154462561448a9d12d7f4b7f00
