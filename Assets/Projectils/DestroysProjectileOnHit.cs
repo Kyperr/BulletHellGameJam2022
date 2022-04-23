@@ -7,10 +7,18 @@ public class DestroysProjectileOnHit : MonoBehaviour
     public delegate void OnProjectileDestroyedDelegate();
     public event OnProjectileDestroyedDelegate OnProjectileDestroyed = delegate { };
 
+    [Header("On Any Collision")]
     [SerializeField]
     private bool onAny = false;
     public bool OnAny { get => onAny; set => onAny = value; }
 
+    [SerializeField]
+    private string onAnyText;
+
+    [SerializeField]
+    private Color onAnyTextColor = new Color(0, 222, 255);
+
+    [Header("On Damage Taken")]
     [SerializeField]
     private bool onDamageTaken = false;
     public bool OnDamageTaken { get => onDamageTaken; set => onDamageTaken = value; }
@@ -38,7 +46,16 @@ public class DestroysProjectileOnHit : MonoBehaviour
         {
             UnityEngine.Debug.Log("Destroying because " + gameObject.name + " destroys any.");
             Destroy(projectile.gameObject);
+            DisplayOnAnyTextIfSet();
             OnProjectileDestroyed();
+        }
+    }
+
+    private void DisplayOnAnyTextIfSet()
+    {
+        if (!string.IsNullOrEmpty(onAnyText))
+        {
+            PopupManager.Instance.createPopupText(transform.position, onAnyText, onAnyTextColor);
         }
     }
 }

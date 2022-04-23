@@ -9865,6 +9865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onAny: 0
+  onAnyText: 
+  onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
   onDamageTaken: 1
 --- !u!1 &2706010429105667504
 GameObject:
@@ -10061,6 +10063,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onAny: 1
+  onAnyText: Blocked
+  onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
   onDamageTaken: 0
 --- !u!65 &4995313156240701809
 BoxCollider:

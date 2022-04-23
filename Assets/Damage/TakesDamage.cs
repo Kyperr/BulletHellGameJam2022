@@ -30,6 +30,7 @@ public class TakesDamage : MonoBehaviour
     {
         if (takeDamage)
         {
+            PopupManager.Instance.createPopupText(transform.position, doesDamage.DamageAmount.ToString(), Color.white);
             hpObject.DoDamage(doesDamage.DamageAmount);
             OnDamageTaken(doesDamage);
         }

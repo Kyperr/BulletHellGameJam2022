@@ -2,21 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PopupText : MonoBehaviour
 {
-    string text;
-    Color color;
+    [SerializeField]
+    private TMP_Text text;
+
+    private Color color;
+
     public void init(string str, Color col)
     {
-        text = str;
         color = col;
+        text.SetText(str);
+        text.color = col;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        GetComponentInChildren<Text>().text = text;
-        GetComponentInChildren<Text>().color = color;
+    }
+
+    public void FadeOut(float time)
+    {
+        Debug.Log("Fading out over " + time + " seconds");
+        StartCoroutine(DisplayAndFadeOut(time));
+    }
+
+    IEnumerator DisplayAndFadeOut(float time)
+    {
+        float waitTime = 0;
+        while (waitTime < time)
+        {
+            text.color = Color.Lerp(color, Color.clear, waitTime / time);
+            waitTime += Time.deltaTime;
+            yield return null;
+        }
+        
+
     }
 
     // Update is called once per frame

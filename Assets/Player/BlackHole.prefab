@@ -306,6 +306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onAny: 1
+  onAnyText: Absorbed
+  onAnyTextColor: {r: 0, g: 0.5748584, b: 1, a: 1}
   onDamageTaken: 0
 --- !u!135 &5470830765227375876
 SphereCollider:
