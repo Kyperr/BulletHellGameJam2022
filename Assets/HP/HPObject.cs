@@ -21,6 +21,7 @@ public class HPObject : MonoBehaviour
         {
             return;
         }
+        PopupManager.Instance.createPopupText(hpBar.transform.position, d.ToString(), Color.white);
         currentHP -= d;
         Mathf.Clamp(currentHP, 0, maxHP);
         if (currentHP <= 0)
