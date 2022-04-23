@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c409e7e2c94955b499619274efbc7c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCost: 5
+  spawnCost: 6
 --- !u!114 &6012460371345358005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 100
-  rangeOfAttackingDistances: {x: 200, y: 300}
+  rangeOfAttackingDistances: {x: 150, y: 250}
   timeToSpendAttacking: {x: 6, y: 10}
   bulletShotRate: 8
   blackHoleDeletionRate: 10

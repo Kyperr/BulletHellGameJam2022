@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.00023488051, g: 0.019064303, b: 0.04644793, a: 1}
+  m_IndirectSpecularColor: {r: 0.00013425642, g: 0.009189641, b: 0.022469481, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -247,6 +247,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
+        type: 3}
+      propertyPath: TriggerOnce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7186987395056069049, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
         type: 3}
       propertyPath: m_RootOrder
@@ -561,6 +566,12 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1558578699}
+    - target: {fileID: 1866087784612422884, guid: a54c14db816fac849b208cbc026965bc,
+        type: 3}
+      propertyPath: spawnLogic
+      value: 
+      objectReference: {fileID: 11400000, guid: 1941ac5a9ee158a479fc0bab5c880363,
+        type: 2}
     - target: {fileID: 1866087784612422884, guid: a54c14db816fac849b208cbc026965bc,
         type: 3}
       propertyPath: musicObject

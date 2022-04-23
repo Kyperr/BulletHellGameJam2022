@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b7f0c63991a804f8b1c70c318fe996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceStrength: 25
+  forceStrength: 15
 --- !u!114 &6872341465635154107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ef759d667d537468f131d0656c46a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTimeInSeconds: 4
+  lifeTimeInSeconds: 3
 --- !u!54 &5236073078012780694
 Rigidbody:
   m_ObjectHideFlags: 0

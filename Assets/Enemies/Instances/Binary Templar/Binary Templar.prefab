@@ -285,7 +285,7 @@ MonoBehaviour:
   circlingAngle: 150
   circlingTimeRange: {x: 3, y: 10}
   focusOnPlayerTimeRange: {x: 3, y: 10}
-  focussingDistance: 250
+  focussingDistance: 200
   focusPhaseBulletPattern: {fileID: 11400000, guid: f645d9a02a819b5468966db3fb2da6ef,
     type: 2}
   circlingPhaseBulletPattern: {fileID: 11400000, guid: 89e5030fe467e0b4697d9dfad618aeaf,
@@ -390,6 +390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onAny: 0
+  onAnyText: 
+  onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
   onDamageTaken: 1
 --- !u!1 &5983816486848598931
 GameObject:

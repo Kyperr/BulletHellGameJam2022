@@ -187,7 +187,6 @@ public class Graviton : BaseEnemyAI
 
     private void OnDestroyProjectile()
     {
-        Debug.Log("Bullet absorbed.");
         absorbedBullets++;
     }
 
