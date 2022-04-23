@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupTextPrefab: {fileID: 1253100652648208382, guid: 6f846a5168ab8df43905ab3431a38556,
     type: 3}
-  jumpLeftRightRange: {x: 10, y: 25}
-  jumpHeight: 10
-  jumpForce: 10
-  stayTime: 4
+  jumpLeftRightRange: {x: -3.2494963e-19, y: 7.83e-43}
+  jumpHeight: 25
+  jumpForce: 0
+  stayTime: 3

@@ -173,7 +173,6 @@ public class Ward : BaseEnemyAI
         timeSinceBlackHoleDeletion += Time.deltaTime;
         if (timeSinceBlackHoleDeletion >= (60f / (float)blackHoleDeletionRate))
         {
-            Debug.Log("Deleting a black hole.");
             foreach (AffectingForce affectingForce in ForceDriver.Instance.AffectingForcesList)
             {
                 BlackHole blackHole = affectingForce.GetComponent<BlackHole>();

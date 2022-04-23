@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class AudioManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        bus = FMODUnity.RuntimeManager.GetBus("bus:/Music");
+        bus = RuntimeManager.GetBus("bus:/Music");
     }
 
     void Update()

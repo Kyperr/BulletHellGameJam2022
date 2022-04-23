@@ -48,12 +48,16 @@ public class HPObject : MonoBehaviour
             Destroy(hpBar.gameObject);
         }
         Destroy(gameObject);
-        if (!GetComponent<SimpleControls>())
+
+        // IF its an enemy, update the enemy spawner.
+        if (GetComponent<SpawnableEnemy>())
         {
             //if not player
             enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
         }
-        else
+        
+        // If its a player, oopsies.
+        if (GetComponent<SimpleControls>())
         {
             //game over
             GameObject.FindObjectOfType<GameOverView>(true).onGameOver();

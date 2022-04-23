@@ -651,7 +651,7 @@ MonoBehaviour:
   rangeOfAttackingDistances: {x: 200, y: 300}
   timeToSpendAttacking: {x: 6, y: 10}
   bulletShotRate: 8
-  blackHoleDeletionRate: 15
+  blackHoleDeletionRate: 10
   attackingBulletPattern: {fileID: 11400000, guid: b32d207c6f05e82439f9b8b9a0c1ebd6,
     type: 2}
   fleeTriggerDistance: 10
