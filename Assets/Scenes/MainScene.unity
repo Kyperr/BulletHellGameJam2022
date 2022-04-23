@@ -249,6 +249,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
         type: 3}
+      propertyPath: Preload
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
+        type: 3}
       propertyPath: TriggerOnce
       value: 1
       objectReference: {fileID: 0}
@@ -394,38 +399,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebe9021a9e17f7c439137ae1bafcb4ad, type: 3}
---- !u!1 &1062523254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4524153286095641709, guid: 6e30d0eeae8fb824a8099584be3a0fd0,
-    type: 3}
-  m_PrefabInstance: {fileID: 4524153287648483768}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1062523261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062523254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34254d137afaa143a11e1656ea27030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1062523268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062523254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 1062523254}
-  ListenerNumber: -1
 --- !u!1 &1222624674
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +543,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnLogic
       value: 
-      objectReference: {fileID: 11400000, guid: 1941ac5a9ee158a479fc0bab5c880363,
+      objectReference: {fileID: 11400000, guid: 33816da4699223d439c7374b0d80ca29,
         type: 2}
     - target: {fileID: 1866087784612422884, guid: a54c14db816fac849b208cbc026965bc,
         type: 3}
@@ -1096,16 +1069,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1558578699}
-    - target: {fileID: 4524153286095641699, guid: 6e30d0eeae8fb824a8099584be3a0fd0,
-        type: 3}
-      propertyPath: minDistance
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524153286095641699, guid: 6e30d0eeae8fb824a8099584be3a0fd0,
-        type: 3}
-      propertyPath: distanceChangeAmount
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 4524153286095641709, guid: 6e30d0eeae8fb824a8099584be3a0fd0,
         type: 3}
       propertyPath: m_Name
