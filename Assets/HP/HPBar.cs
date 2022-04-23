@@ -15,14 +15,15 @@ public class HPBar : MonoBehaviour
     float currentValue;
 
     Transform hpObject;
+
+    [SerializeField]
     Vector3 offset;
 
 
-    public void init(float maxV,HPObject obj)
+    public void init(float maxV, HPObject obj)
     {
         maxValue = currentValue = maxV;
         hpObject = obj.transform;
-        offset = transform.localPosition;
         transform.parent = hpObject.parent;
         updateUI();
     }

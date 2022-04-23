@@ -743,6 +743,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: hpBar
       objectReference: {fileID: 0}
+    - target: {fileID: 5629938729085960651, guid: 9f6fa6f63fc8f004099a0860400bdb53,
+        type: 3}
+      propertyPath: offset.z
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5629938729085960653, guid: 9f6fa6f63fc8f004099a0860400bdb53,
         type: 3}
       propertyPath: m_PresetInfoIsWorld

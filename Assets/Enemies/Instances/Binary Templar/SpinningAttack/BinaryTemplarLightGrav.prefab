@@ -100,7 +100,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4545686834557812822}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &735327731467165074
+--- !u!114 &4916212116136286248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +109,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4950807594881469820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0cbb4e6b597b04dbf3a2d021e8e8e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1638636601
+      Data2: 1318433479
+      Data3: 1453589132
+      Data4: 822007383
+    Path: event:/sfx/enemies/enemy2_bullet
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 50
+  OverrideMaxDistance: 750

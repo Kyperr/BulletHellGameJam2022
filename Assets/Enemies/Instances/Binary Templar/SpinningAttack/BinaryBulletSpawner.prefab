@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2152441052909746011}
   - component: {fileID: 7112128935982780398}
   - component: {fileID: 1639197123664439818}
+  - component: {fileID: 3294893522269549572}
   m_Layer: 7
   m_Name: BinaryBulletSpawner
   m_TagString: Untagged
@@ -51,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1
-  destroyWhenDone: 1
+  destroyWhenDone: 0
   bulletPattern: {fileID: 11400000, guid: b301d0872bae17b4484f94fd92fa2d1d, type: 2}
 --- !u!54 &-8123249951317962062
 Rigidbody:
@@ -138,6 +139,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageClass: {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
   damageAmount: 10
+--- !u!114 &3294893522269549572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851885698033747321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ef759d667d537468f131d0656c46a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTimeInSeconds: 7
 --- !u!1001 &2851885697272962480
 PrefabInstance:
   m_ObjectHideFlags: 0

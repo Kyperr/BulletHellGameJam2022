@@ -9788,6 +9788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ac2423fc6db3f418676a063447e50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  takeDamage: 1
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
 --- !u!114 &875545835373728141
@@ -10280,6 +10281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: hpBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5629938729085960651, guid: 9f6fa6f63fc8f004099a0860400bdb53,
+        type: 3}
+      propertyPath: offset.z
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5629938729085960653, guid: 9f6fa6f63fc8f004099a0860400bdb53,
         type: 3}

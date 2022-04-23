@@ -28,6 +28,9 @@ public class Drone : BaseEnemyAI
     [SerializeField]
     private float moveSpeed = 10;
 
+    [SerializeField]
+    private float distanceToAvoidOtherEnemies = 30f;
+
     private Phase phase;
 
     private float timeSinceLastShot = 0;
@@ -66,13 +69,21 @@ public class Drone : BaseEnemyAI
             Vector3 desiredPosition = target.transform.position + ((target.transform.position - transform.position).normalized * desiredDistanceFromPlayer);
 
             MoveToDesiredPosition(desiredPosition, moveSpeed);
+            ConsiderOtherEnemies();
 
         }
     }
 
     private void ConsiderOtherEnemies()
     {
-        // EnemySpawner.Instance.Eme
+        foreach (SpawnableEnemy enemy in EnemySpawner.Instance.EnemyList)
+        {
+            if (enemy.gameObject != this.gameObject && Vector3.Distance(enemy.transform.position, this.transform.position) <= distanceToAvoidOtherEnemies)
+            {
+                Vector3 desiredPosition = (this.transform.position - enemy.transform.position).normalized * distanceToAvoidOtherEnemies;
+                MoveToDesiredPosition(desiredPosition, moveSpeed);
+            }
+        }
     }
 
     private void TryAttack()
