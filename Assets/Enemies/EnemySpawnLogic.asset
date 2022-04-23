@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList:
   - {fileID: 1560578993568146715, guid: dcc6c0c03d1b8734eb75fb417ad79360, type: 3}
+  - {fileID: 5735861513588916122, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
+  - {fileID: 6057746480281386074, guid: 64ff682bc9c515e43885178a53b15811, type: 3}
+  - {fileID: 587210458561225613, guid: e149de835cd49ab40a78bb340a8a9807, type: 3}
   startBudget: 6
   increaseBudgetPerRound: 2
-  maxBudget: 12
-  enemyRadius: 100
+  maxBudget: 18
+  enemyRadius: 1000
