@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46924fcbebca8054988949982316b966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sampleCount: 50
-  gravityIntensityModifier: 2
+  forceIntensityModifier: 5
   numberOfAffected: 0
   numberOfAffecting: 0

@@ -200,6 +200,7 @@ public class Ward : BaseEnemyAI
         }
         Debug.Log("Did animation, deleting black hole now..");
         blackholeDeletingLineRenderer.gameObject.SetActive(false);
+        PopupManager.Instance.createPopupText(blackHole.transform.position, "DESTROYED", Color.red);
         Destroy(blackHole.gameObject);
 
         yield break;
