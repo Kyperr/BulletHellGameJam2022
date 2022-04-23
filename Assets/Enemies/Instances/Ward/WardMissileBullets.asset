@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1349148e55a57c4bac7f834ab31ac7e, type: 3}
+  m_Name: WardMissileBullets
+  m_EditorClassIdentifier: 
+  description: 
+  projectile: {fileID: 4407172088330805503, guid: 78874779ab224814ab6a53ff95294664,
+    type: 3}
+  projectileFireDistance: 15
+  initialProjectileVelocity: 2000
+  numberOfShots: 4
+  shotAngle: 90
+  delayBetweenShots: 0.1

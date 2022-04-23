@@ -35,6 +35,7 @@ public class ForceDriver : MonoBehaviour
     private List<AffectedByForces> affectedByForcesList = new List<AffectedByForces>();
 
     private List<AffectingForce> affectingForcesList = new List<AffectingForce>();
+    public List<AffectingForce> AffectingForcesList => affectingForcesList;
 
     // To start, this is going to simply approximate gravity.
     void Update()

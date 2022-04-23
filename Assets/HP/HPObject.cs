@@ -43,7 +43,10 @@ public class HPObject : MonoBehaviour
         isDead = true;
         OnDeath();
         DisableMesheRenderers();
-        Destroy(hpBar.gameObject);
+        if (hpBar)
+        {
+            Destroy(hpBar.gameObject);
+        }
         Destroy(gameObject);
         if (!GetComponent<SimpleControls>())
         {
@@ -75,13 +78,9 @@ public class HPObject : MonoBehaviour
         }
         currentHP = maxHP;
         hpBar = GetComponentInChildren<HPBar>();
-        if (!hpBar)
+        if (hpBar)
         {
-            Debug.LogError("hp bar component does not existed as a child");
-        }
-        else
-        {
-            hpBar.init(maxHP,this);
+            hpBar.init(maxHP, this);
         }
         enemySpawner = GameObject.FindObjectOfType<EnemySpawner>();
     }

@@ -24,7 +24,6 @@ public class PopupText : MonoBehaviour
 
     public void FadeOut(float time)
     {
-        Debug.Log("Fading out over " + time + " seconds");
         StartCoroutine(DisplayAndFadeOut(time));
     }
 

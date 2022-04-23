@@ -44,7 +44,6 @@ public class DestroysProjectileOnHit : MonoBehaviour
         Projectile projectile = other.gameObject.GetComponent<Projectile>();
         if (projectile && onAny)
         {
-            UnityEngine.Debug.Log("Destroying because " + gameObject.name + " destroys any.");
             Destroy(projectile.gameObject);
             DisplayOnAnyTextIfSet();
             OnProjectileDestroyed();
