@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c409e7e2c94955b499619274efbc7c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCost: 3
+  spawnCost: 4
 --- !u!114 &-1613703322162973452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5179039431650410112}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.08

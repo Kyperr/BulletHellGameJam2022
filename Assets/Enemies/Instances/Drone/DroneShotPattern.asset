@@ -16,5 +16,5 @@ MonoBehaviour:
   projectile: {fileID: 979514755573047120, guid: 90c99acb68a4be74f923475b5e583661,
     type: 3}
   projectileFireDistance: 15
-  initialProjectileVelocity: 50
+  initialProjectileVelocity: 150
   shotAngle: 10

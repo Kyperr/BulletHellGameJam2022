@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{15c0b604-5a63-40e1-af42-257639b79195}">
+		<property name="assetPath">
+			<value>bullets_dissolved_3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.63452083333333331</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6888575e-aaf8-4e4d-bc05-472f70f5cbe6}</destination>
+		</relationship>
+	</object>
+</objects>

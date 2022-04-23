@@ -56,14 +56,23 @@ public class Drone : BaseEnemyAI
     private void ChasingLogic()
     {
 
-        Vector3 desiredPosition = (target.transform.position - transform.position).normalized * desiredDistanceFromPlayer;
-
-        MoveToDesiredPosition(desiredPosition, moveSpeed);
-
         if (Vector3.Distance(target.transform.position, transform.position) <= distanceToAttackFrom)
         {
             TryAttack();
         }
+        else
+        {
+
+            Vector3 desiredPosition = target.transform.position + ((target.transform.position - transform.position).normalized * desiredDistanceFromPlayer);
+
+            MoveToDesiredPosition(desiredPosition, moveSpeed);
+
+        }
+    }
+
+    private void ConsiderOtherEnemies()
+    {
+        // EnemySpawner.Instance.Eme
     }
 
     private void TryAttack()

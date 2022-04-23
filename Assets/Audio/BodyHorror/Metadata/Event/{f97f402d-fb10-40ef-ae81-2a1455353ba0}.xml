@@ -56,7 +56,7 @@
 			<destination>{f084883a-d1bc-4559-80ad-e183121df1e0}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{9b0224a7-b3a9-4153-a214-7d44284e2f9c}</destination>
+			<destination>{469e106c-eb9b-437e-b6ad-f1d2fee88580}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{ac21ad35-2c4b-43a7-8b3b-9b685f61075b}" />
@@ -106,9 +106,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{a24d66d2-a33b-481c-95d3-0dffac39a1c9}">
-		<property name="volume">
-			<value>-19.5</value>
-		</property>
 		<property name="name">
 			<value>alien shot</value>
 		</property>
