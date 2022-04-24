@@ -39,6 +39,9 @@ public class Ward : BaseEnemyAI
     [SerializeField]
     private LineRenderer blackholeDeletingLineRenderer;
 
+    [SerializeField]
+    private FMODUnity.StudioEventEmitter deleteBlackHoleSound;
+
     private Vector3 desiredPosition;
 
     private GameObject target;
@@ -201,6 +204,7 @@ public class Ward : BaseEnemyAI
         blackholeDeletingLineRenderer.gameObject.SetActive(false);
         PopupManager.Instance.createPopupText(blackHole.transform.position, "DESTROYED", Color.red);
         Destroy(blackHole.gameObject);
+        deleteBlackHoleSound.Play();
 
         yield break;
     }

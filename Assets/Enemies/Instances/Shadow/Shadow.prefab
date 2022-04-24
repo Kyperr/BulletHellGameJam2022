@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 709037747283658383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50.475697, y: 69.76523, z: -167.8405}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4176030010973402986}
@@ -187,13 +187,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb68f80e3f9920e499d2d177d264d39d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredDistanceFromPlayer: 50
-  distanceToAttackFrom: 60
+  distanceToChaseTo: 50
+  rangeOfDistancing: {x: 300, y: 400}
   attackPattern: {fileID: 0}
   rateOfFire: 300
-  moveSpeed: 10
+  moveSpeed: 115
   distanceToAvoidOtherEnemies: 30
-  shadowClones: []
+  shadowClones:
+  - {fileID: 1789288430730641329}
 --- !u!1 &2626433613945248667
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 1
   destroyWhenDone: 0
-  fireAutomatically: 1
+  fireAutomatically: 0
   bulletPattern: {fileID: 0}
 --- !u!1001 &1587358611337784468
 PrefabInstance:

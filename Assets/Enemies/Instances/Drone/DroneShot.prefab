@@ -201,11 +201,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1638636601
-      Data2: 1318433479
-      Data3: 1453589132
-      Data4: 822007383
-    Path: event:/sfx/enemies/enemy2_bullet
+      Data1: 1292714593
+      Data2: 1248631497
+      Data3: 1241556151
+      Data4: -558804639
+    Path: event:/sfx/enemies/enemy5_bullets
   Event: 
   PlayEvent: 1
   StopEvent: 0
@@ -215,4 +215,4 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 50
-  OverrideMaxDistance: 750
+  OverrideMaxDistance: 1400

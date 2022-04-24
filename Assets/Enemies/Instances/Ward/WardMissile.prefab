@@ -109,11 +109,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1638636601
-      Data2: 1318433479
-      Data3: 1453589132
-      Data4: 822007383
-    Path: event:/sfx/enemies/enemy2_bullet
+      Data1: 1499710547
+      Data2: 1173381177
+      Data3: 2073802153
+      Data4: -1783982988
+    Path: event:/sfx/enemies/enemy3_missles
   Event: 
   PlayEvent: 1
   StopEvent: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 4
   destroyWhenDone: 1
+  fireAutomatically: 1
   bulletPattern: {fileID: 11400000, guid: a291b0202de8e4d44b3f8df78d280ff6, type: 2}
 --- !u!114 &2890430864047330299
 MonoBehaviour:
@@ -180,8 +181,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   takeDamage: 1
+  damageCooldown: 0
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
+  takeDamageSound: {fileID: 0}
 --- !u!114 &-7040388534290941739
 MonoBehaviour:
   m_ObjectHideFlags: 0

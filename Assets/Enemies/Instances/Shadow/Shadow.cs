@@ -15,13 +15,10 @@ public class Shadow : BaseEnemyAI
     private GameObject target;
 
     [SerializeField]
-    private float desiredDistanceFromPlayer = 50f;
+    private float distanceToChaseTo = 100f;
 
     [SerializeField]
-    private float distanceToAttackFrom = 60f;
-
-    [SerializeField]
-    private Vector2 rangeOfAttackingDistances = new Vector2(20, 60);
+    private Vector2 rangeOfDistancing = new Vector2(20, 60);
 
     [SerializeField]
     private EnemyBulletPattern attackPattern;
@@ -61,6 +58,8 @@ public class Shadow : BaseEnemyAI
         {
             timeSinceLastShot += Time.deltaTime;
 
+            MoveShadowClones();
+
             if (phase == Phase.CHASING)
             {
                 ChasingLogic();
@@ -78,6 +77,17 @@ public class Shadow : BaseEnemyAI
         }
     }
 
+    private void MoveShadowClones()
+    {
+        foreach (GameObject shadow in shadowClones)
+        {
+            float xPos = transform.position.x + Mathf.PingPong(Time.time, 5);
+            float zPos = transform.position.z + Mathf.PingPong(Time.time, 5);
+
+            shadow.transform.position = new Vector3(xPos, 0, zPos);
+        }
+    }
+
     private void DashingLogic()
     {
         SwapToPhase(Phase.CHASING);
@@ -87,7 +97,7 @@ public class Shadow : BaseEnemyAI
     {
         if (!distancing)
         {
-            float distance = Random.Range(rangeOfAttackingDistances.x, rangeOfAttackingDistances.y);
+            float distance = Random.Range(rangeOfDistancing.x, rangeOfDistancing.y);
             float newAngle = Random.Range(0, 360);
             Vector3 directionalVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad * newAngle), 0, Mathf.Sin(Mathf.Deg2Rad * newAngle));
             desiredPosition = this.target.transform.position + (directionalVector.normalized * distance);
@@ -103,14 +113,15 @@ public class Shadow : BaseEnemyAI
 
     private void ChasingLogic()
     {
+        if (Vector3.Distance(target.transform.position, transform.position) > distanceToChaseTo)
+        {
+            Vector3 desiredPosition = target.transform.position + ((target.transform.position - transform.position).normalized * distanceToChaseTo);
 
-        Vector3 desiredPosition = target.transform.position + ((target.transform.position - transform.position).normalized * desiredDistanceFromPlayer);
+            MoveToDesiredPosition(desiredPosition, moveSpeed);
+            ConsiderOtherEnemies();
 
-        MoveToDesiredPosition(desiredPosition, moveSpeed);
-        ConsiderOtherEnemies();
-
-
-        if (timeSpentOnPhase > timeToSpendOnPhase)
+        }
+        else
         {
             SwapToPhase(Phase.DISTANCING);
         }

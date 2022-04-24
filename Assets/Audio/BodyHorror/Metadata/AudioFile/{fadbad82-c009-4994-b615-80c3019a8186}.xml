@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{fadbad82-c009-4994-b615-80c3019a8186}">
+		<property name="assetPath">
+			<value>plasma_cannon_shot_54.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.704125</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6888575e-aaf8-4e4d-bc05-472f70f5cbe6}</destination>
+		</relationship>
+	</object>
+</objects>

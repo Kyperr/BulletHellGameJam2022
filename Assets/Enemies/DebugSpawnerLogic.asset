@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DebugSpawnerLogic
   m_EditorClassIdentifier: 
   enemyList:
-  - {fileID: 6057746480281386074, guid: 64ff682bc9c515e43885178a53b15811, type: 3}
+  - {fileID: 113004882044241813, guid: 740d82aa8ca13684ea1418539d3312ab, type: 3}
   startBudget: 10
   increaseBudgetPerRound: 2
   maxBudget: 20

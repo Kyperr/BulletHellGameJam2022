@@ -25,7 +25,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 750
+  MaxDistance: 2000
   Length: 1384
 --- !u!114 &-7190380003447298284
 MonoBehaviour:
@@ -52,7 +52,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 50
-  MaxDistance: 750
+  MaxDistance: 2000
   Length: 34102
 --- !u!114 &-7125587926106388038
 MonoBehaviour:
@@ -79,8 +79,35 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 750
+  MaxDistance: 2000
   Length: 324
+--- !u!114 &-6333234969017084325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/enemies/enemy3_missles
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/enemies/enemy3_missles
+  Guid:
+    Data1: 1499710547
+    Data2: 1173381177
+    Data3: 2073802153
+    Data4: -1783982988
+  Banks:
+  - {fileID: 1144076869637515250}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 50
+  MaxDistance: 2000
+  Length: 908
 --- !u!114 &-5112040453115567355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,10 +160,10 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2871809160352299201
+  MinDistance: 50
+  MaxDistance: 2000
+  Length: 9968
+--- !u!114 &-1510985182239151284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,14 +173,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/sfx/enemies/bullet_2
+  m_Name: event:/sfx/enemies/enemy5_bullets
   m_EditorClassIdentifier: 
-  Path: event:/sfx/enemies/bullet_2
+  Path: event:/sfx/enemies/enemy5_bullets
   Guid:
-    Data1: 1651290900
-    Data2: 1269129045
-    Data3: 1803588254
-    Data4: 335767220
+    Data1: 1292714593
+    Data2: 1248631497
+    Data3: 1241556151
+    Data4: -558804639
   Banks:
   - {fileID: 1144076869637515250}
   IsStream: 0
@@ -161,8 +188,8 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 750
-  Length: 0
+  MaxDistance: 2000
+  Length: 1368
 --- !u!114 &-705309643811216018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,60 +214,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-624590373387172838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/sfx/enemies/enemy3_shot1
-  m_EditorClassIdentifier: 
-  Path: event:/sfx/enemies/enemy3_shot1
-  Guid:
-    Data1: 1499710547
-    Data2: 1173381177
-    Data3: 2073802153
-    Data4: -1783982988
-  Banks:
-  - {fileID: 1144076869637515250}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 50
-  MaxDistance: 750
-  Length: 0
---- !u!114 &-361301996323095445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/sfx/enemies/bullet_1
-  m_EditorClassIdentifier: 
-  Path: event:/sfx/enemies/bullet_1
-  Guid:
-    Data1: 1862337097
-    Data2: 1281215634
-    Data3: 483549615
-    Data4: -2046381548
-  Banks:
-  - {fileID: 1144076869637515250}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 50
-  MaxDistance: 750
-  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,29 +230,30 @@ MonoBehaviour:
   - {fileID: 281623748567207396}
   - {fileID: 1144076869637515250}
   EditorEvents:
-  - {fileID: -2871809160352299201}
   - {fileID: 5581291446161454796}
   - {fileID: 1783904133675006293}
   - {fileID: -3540772221862672311}
-  - {fileID: -361301996323095445}
-  - {fileID: -624590373387172838}
   - {fileID: 9123231242015701993}
   - {fileID: -5112040453115567355}
-  - {fileID: 5543541709522341788}
   - {fileID: -7190380003447298284}
   - {fileID: -7125587926106388038}
-  - {fileID: 2527646033845787298}
   - {fileID: -8615789601256272459}
   - {fileID: 2316960643049413232}
   - {fileID: 7118856213451235528}
   - {fileID: 5261414927306364933}
   - {fileID: 6100183525977876150}
+  - {fileID: 7235619291548056667}
+  - {fileID: -6333234969017084325}
+  - {fileID: -1510985182239151284}
+  - {fileID: 2678484835828567271}
+  - {fileID: 7354990178131604977}
+  - {fileID: 4992345353810297560}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1144076869637515250}
   StringsBanks:
   - {fileID: 281623748567207396}
-  cacheTime: 637864029545949991
+  cacheTime: 637864081020000000
   cacheVersion: 10
 --- !u!114 &281623748567207396
 MonoBehaviour:
@@ -296,10 +270,10 @@ MonoBehaviour:
   Path: Assets/Audio/BodyHorror/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637864029545949991
+  lastModified: 637864067780000000
   FileSizes:
   - Name: Desktop
-    Value: 1722
+    Value: 1786
   Exists: 1
 --- !u!114 &1144076869637515250
 MonoBehaviour:
@@ -316,10 +290,10 @@ MonoBehaviour:
   Path: Assets/Audio/BodyHorror/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637864029545924968
+  lastModified: 637864081020000000
   FileSizes:
   - Name: Desktop
-    Value: 9275872
+    Value: 9618880
   Exists: 1
 --- !u!114 &1783904133675006293
 MonoBehaviour:
@@ -346,7 +320,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 1400
+  MaxDistance: 2000
   Length: 913
 --- !u!114 &2316960643049413232
 MonoBehaviour:
@@ -373,9 +347,9 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 3400
+  MaxDistance: 2000
   Length: 2999
---- !u!114 &2527646033845787298
+--- !u!114 &2678484835828567271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -385,14 +359,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/sfx/enemies/bullet_3
+  m_Name: event:/sfx/enemies/enemy3_blackhole_cancel
   m_EditorClassIdentifier: 
-  Path: event:/sfx/enemies/bullet_3
+  Path: event:/sfx/enemies/enemy3_blackhole_cancel
   Guid:
-    Data1: 1877231783
-    Data2: 1149492716
-    Data3: 2022827924
-    Data4: -1684997611
+    Data1: 1050267773
+    Data2: 1175013545
+    Data3: -178196335
+    Data4: 1313730197
   Banks:
   - {fileID: 1144076869637515250}
   IsStream: 0
@@ -400,8 +374,35 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 750
-  Length: 0
+  MaxDistance: 2000
+  Length: 1016
+--- !u!114 &4992345353810297560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/enemies/enemy4_charge
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/enemies/enemy4_charge
+  Guid:
+    Data1: -882495035
+    Data2: 1330234481
+    Data3: 543026603
+    Data4: 428475878
+  Banks:
+  - {fileID: 1144076869637515250}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 50
+  MaxDistance: 2000
+  Length: 9056
 --- !u!114 &5261414927306364933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,35 +428,8 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 1000
+  MaxDistance: 2000
   Length: 6987
---- !u!114 &5543541709522341788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/sfx/enemies/enemy3_shot2
-  m_EditorClassIdentifier: 
-  Path: event:/sfx/enemies/enemy3_shot2
-  Guid:
-    Data1: 1050267773
-    Data2: 1175013545
-    Data3: -178196335
-    Data4: 1313730197
-  Banks:
-  - {fileID: 1144076869637515250}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 50
-  MaxDistance: 750
-  Length: 0
 --- !u!114 &5581291446161454796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +455,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 750
+  MaxDistance: 2000
   Length: 1717
 --- !u!114 &6100183525977876150
 MonoBehaviour:
@@ -508,7 +482,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 1600
+  MaxDistance: 2000
   Length: 772
 --- !u!114 &7118856213451235528
 MonoBehaviour:
@@ -535,8 +509,62 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 750
-  Length: 0
+  MaxDistance: 2000
+  Length: 1688
+--- !u!114 &7235619291548056667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/enemies/enemy4_bullet
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/enemies/enemy4_bullet
+  Guid:
+    Data1: -1249164508
+    Data2: 1172755151
+    Data3: -1639304534
+    Data4: -19742995
+  Banks:
+  - {fileID: 1144076869637515250}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 50
+  MaxDistance: 2000
+  Length: 1859
+--- !u!114 &7354990178131604977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/enemies/enemy3_energy_bullets
+  m_EditorClassIdentifier: 
+  Path: event:/sfx/enemies/enemy3_energy_bullets
+  Guid:
+    Data1: 195797444
+    Data2: 1218683211
+    Data3: 886179211
+    Data4: -1985107749
+  Banks:
+  - {fileID: 1144076869637515250}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 50
+  MaxDistance: 2000
+  Length: 582
 --- !u!114 &9123231242015701993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,5 +590,5 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 50
-  MaxDistance: 1200
+  MaxDistance: 2000
   Length: 640

@@ -32,6 +32,9 @@ public class Graviton : BaseEnemyAI
     private Vector2 timeToSpendAbsorbing = new Vector2(3, 8);
 
     [SerializeField]
+    private FMODUnity.StudioEventEmitter absorbingSoundEffect;
+
+    [SerializeField]
     private GameObject suckingParticleSystem;
 
     [SerializeField]
@@ -170,6 +173,7 @@ public class Graviton : BaseEnemyAI
             GetComponent<DestroysProjectileOnHit>().OnAny = true;
             GetComponent<DestroysProjectileOnHit>().OnProjectileDestroyed += OnDestroyProjectile;
             suckingParticleSystem.SetActive(true);
+            absorbingSoundEffect.Play();
             absorbing = true;
         }
 
