@@ -12,9 +12,6 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{b7c4ff02-535b-463b-9770-7c65e89b9814}">
-		<property name="parameterType">
-			<value>1</value>
-		</property>
 		<property name="minimum">
 			<value>1</value>
 		</property>
@@ -23,6 +20,9 @@
 		</property>
 		<property name="initialValue">
 			<value>1</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>1.7000000476837158</value>
 		</property>
 	</object>
 </objects>

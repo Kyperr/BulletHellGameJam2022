@@ -11,7 +11,6 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         unlockedEnemy[n] = true;
         currentEnemyIndex++;
-        Debug.Log("curent enemy index increase to " + currentEnemyIndex);
     }
 
     public SpawnableEnemy nextUnlockEnemy(List<SpawnableEnemy> enemyList)

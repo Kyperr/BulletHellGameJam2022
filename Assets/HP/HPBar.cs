@@ -24,7 +24,7 @@ public class HPBar : MonoBehaviour
     {
         maxValue = currentValue = maxV;
         hpObject = obj.transform;
-        transform.parent = hpObject.parent;
+        transform.SetParent(hpObject.parent);
         updateUI();
     }
 

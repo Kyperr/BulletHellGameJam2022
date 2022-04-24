@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 2950990201463020582}
   - component: {fileID: 3480534054855970068}
   - component: {fileID: 1558578725}
+  - component: {fileID: 1558578715}
   m_Layer: 0
   m_Name: Player Placeholder
   m_TagString: Untagged
@@ -301,7 +302,7 @@ MonoBehaviour:
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
   - {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
-  timeSinceLastDamage: 3.4028235e+38
+  takeDamageSound: {fileID: 1558578715}
 --- !u!114 &8211866232850508814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +428,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db9ca4b231f984479ccf457c96b02d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1558578715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898470440425072598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 67844005
+      Data2: 1244654107
+      Data3: -1411475069
+      Data4: -411930696
+    Path: event:/sfx/player/damage_taken
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 50
+  OverrideMaxDistance: 750
 --- !u!1001 &7472957856750377041
 PrefabInstance:
   m_ObjectHideFlags: 0

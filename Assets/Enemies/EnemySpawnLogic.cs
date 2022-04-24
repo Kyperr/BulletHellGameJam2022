@@ -65,7 +65,6 @@ public class EnemySpawnLogic : ScriptableObject
         var minimalBudget = calcualteMinBudget();
         float budget = startBudget + es.CurrentRound * increaseBudgetPerRound;
         budget = Mathf.Min(budget, maxBudget);
-        Debug.Log("current budge " + budget);
         int loopCount = 0;//in case for any reason we get into infinite loop
 
         List<Vector3> avoidCollisionList = new List<Vector3>() { es.PlayerPosition };
@@ -79,7 +78,6 @@ public class EnemySpawnLogic : ScriptableObject
             if (nextUnlockedEnemy && nextUnlockedEnemy.SpawnCost <= budget)
             {
                 enemy = nextUnlockedEnemy;
-                Debug.Log("force generate new enemy " + enemy);
             }
 
             if (budget - enemy.SpawnCost >= 0)

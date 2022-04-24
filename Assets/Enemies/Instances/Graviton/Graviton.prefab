@@ -19866,6 +19866,7 @@ GameObject:
   - component: {fileID: -4520702628555205451}
   - component: {fileID: 4245872324805337806}
   - component: {fileID: -4752617860656212250}
+  - component: {fileID: 706079296923760074}
   m_Layer: 0
   m_Name: Graviton
   m_TagString: Untagged
@@ -19955,7 +19956,7 @@ MonoBehaviour:
   damageCooldown: 0
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
-  timeSinceLastDamage: 3.4028235e+38
+  takeDamageSound: {fileID: 706079296923760074}
 --- !u!114 &5769622212904668762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19985,9 +19986,9 @@ MonoBehaviour:
   distanceToMaintainFromPlayer: {x: 150, y: 250}
   attackingBulletPattern: {fileID: 11400000, guid: cefba49423ef34047b696c2d603a71b6,
     type: 2}
-  usualGravity: 0
+  usualGravity: 75
   absorbingGravity: 100000
-  timeToSpendAbsorbing: {x: 4, y: 8}
+  timeToSpendAbsorbing: {x: 6, y: 6}
   suckingParticleSystem: {fileID: 4406685260080836815}
   absorbedVisualEffect: {fileID: 8561187700615848823}
   shootParticleSystem: {fileID: 8977139070112225309}
@@ -20064,6 +20065,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountToHeal: 20
+--- !u!114 &706079296923760074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653799139547364672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1883700392
+      Data2: 1306405429
+      Data3: 1228712101
+      Data4: 886087633
+    Path: event:/sfx/enemies/enemy_hit
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 50
+  OverrideMaxDistance: 750
 --- !u!1 &7814928599993860530
 GameObject:
   m_ObjectHideFlags: 0
@@ -20257,7 +20288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barFilling: {fileID: 7814928600623455455}
-  offset: {x: 0, y: 0, z: 40}
+  offset: {x: 0, y: 0, z: 50}
 --- !u!1 &7814928600623455453
 GameObject:
   m_ObjectHideFlags: 0

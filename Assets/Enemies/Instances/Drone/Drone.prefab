@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 907340550541144922}
   - component: {fileID: 1272525086346794779}
   - component: {fileID: 70138865361446803}
+  - component: {fileID: 7976813732790062302}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -114,8 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   takeDamage: 1
+  damageCooldown: 0
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
+  takeDamageSound: {fileID: 7976813732790062302}
 --- !u!135 &907340550541144922
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -159,6 +162,36 @@ MonoBehaviour:
   onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
   onAnySoundEffect: {fileID: 0}
   onDamageTaken: 1
+--- !u!114 &7976813732790062302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156715250515092481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1883700392
+      Data2: 1306405429
+      Data3: 1228712101
+      Data4: 886087633
+    Path: event:/sfx/enemies/enemy_hit
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 50
+  OverrideMaxDistance: 750
 --- !u!1 &3300309699520846067
 GameObject:
   m_ObjectHideFlags: 0

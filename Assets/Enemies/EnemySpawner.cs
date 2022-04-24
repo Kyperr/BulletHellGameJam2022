@@ -34,6 +34,10 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField]
     private string musicThreatVarName = "Threat";
+    private float threat = 0;
+
+    [SerializeField]
+    private float threatLerpSpeed = 3.0f;
 
     int currentRound = 0;
     public int CurrentRound { get { return currentRound; } }
@@ -88,7 +92,6 @@ public class EnemySpawner : MonoBehaviour
         spawnLogic.generateEnemies(this);
         currentRound++;
         OnWaveChange(currentRound);
-        musicObject.SetParameter(musicThreatVarName, currentRound);
     }
 
     public void addEnemy(SpawnableEnemy enemy)
@@ -102,6 +105,12 @@ public class EnemySpawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y))
         {
             generateNextRound();
+        }
+
+        if (threat != currentRound)
+        {
+            threat = Mathf.Lerp(threat, currentRound, Time.deltaTime * threatLerpSpeed);
+            musicObject.SetParameter(musicThreatVarName, threat);
         }
     }
 }

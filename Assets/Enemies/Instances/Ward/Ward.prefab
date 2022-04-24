@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 1564593582809714233}
   - component: {fileID: 464826217085347454}
   - component: {fileID: -5873994852126217372}
+  - component: {fileID: 8698681571495675783}
   m_Layer: 0
   m_Name: Ward
   m_TagString: Untagged
@@ -579,7 +580,7 @@ MonoBehaviour:
   damageCooldown: 0
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
-  timeSinceLastDamage: 3.4028235e+38
+  takeDamageSound: {fileID: 8698681571495675783}
 --- !u!135 &7803723498562429338
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -674,6 +675,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountToHeal: 20
+--- !u!114 &8698681571495675783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022347597968307905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1883700392
+      Data2: 1306405429
+      Data3: 1228712101
+      Data4: 886087633
+    Path: event:/sfx/enemies/enemy_hit
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 50
+  OverrideMaxDistance: 750
 --- !u!1001 &6661464128455624621
 PrefabInstance:
   m_ObjectHideFlags: 0

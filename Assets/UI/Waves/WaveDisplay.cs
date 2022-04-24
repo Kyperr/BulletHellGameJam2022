@@ -26,9 +26,6 @@ public class WaveDisplay : MonoBehaviour
     [SerializeField]
     private float twinkleScaleSpeed = 1f;
 
-    [SerializeField]
-    private float twinkleFadeSpeed = .5f;
-
     private WaveFrameStep currentWaveStep;
 
     void Start()
@@ -70,7 +67,7 @@ public class WaveDisplay : MonoBehaviour
     private IEnumerator TwinkleAnimation(WaveFrameStep step)
     {
         Image image = twinkle.GetComponent<Image>();
-        float alpha = 175;
+        float alpha = 150;
 
         twinkle.SetActive(true);
         image.color = new Color(step.color.r, step.color.g, step.color.b, alpha);
@@ -93,7 +90,7 @@ public class WaveDisplay : MonoBehaviour
         // Reverse it
         while (timeScaling < twinkleTime)
         {
-            twinkle.transform.localScale = Vector3.Lerp(twinkle.transform.localScale, new Vector3(1, 1, 1), twinkleScaleSpeed * timeScaling);
+            twinkle.transform.localScale = Vector3.Lerp(twinkle.transform.localScale, new Vector3(0, 0, 0), twinkleScaleSpeed * timeScaling);
             twinkle.transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * 10);
             timeScaling += Time.deltaTime;
             yield return 0;

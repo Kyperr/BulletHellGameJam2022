@@ -19,12 +19,16 @@ public class TakesDamage : MonoBehaviour
 
     [SerializeField]
     private List<DamageClass> takesDamageFromClasses;
+
+    [SerializeField]
+    FMODUnity.StudioEventEmitter takeDamageSound;
+
     public List<DamageClass> TakesDamageFromClasses => takesDamageFromClasses;
 
     private HPObject hpObject;
 
-    [SerializeField]
     private float timeSinceLastDamage = float.MaxValue;
+
 
     void Start()
     {
@@ -44,6 +48,10 @@ public class TakesDamage : MonoBehaviour
             PopupManager.Instance.createPopupText(transform.position, doesDamage.DamageAmount.ToString(), Color.white);
             OnDamageTaken(doesDamage);
             timeSinceLastDamage = 0;
+            if (takeDamageSound)
+            {
+                takeDamageSound.Play();
+            }
             return hpObject.DoDamage(doesDamage.DamageAmount);
         }
         return false;

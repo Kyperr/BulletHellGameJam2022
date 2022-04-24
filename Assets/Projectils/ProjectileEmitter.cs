@@ -12,6 +12,9 @@ public class ProjectileEmitter : MonoBehaviour
     private bool destroyWhenDone = true;
 
     [SerializeField]
+    private bool fireAutomatically = true;
+
+    [SerializeField]
     private EnemyBulletPattern bulletPattern;
 
     private float timeSinceStarted = 0;
@@ -20,20 +23,38 @@ public class ProjectileEmitter : MonoBehaviour
     {
         timeSinceStarted += Time.deltaTime;
 
-        if (timeSinceStarted > delay)
+        if (fireAutomatically)
         {
-            if (destroyWhenDone)
+            if (timeSinceStarted > delay)
             {
-                StartCoroutine(bulletPattern.TriggerBulletPattern(this.gameObject, () =>
+                if (destroyWhenDone)
                 {
-                    Destroy(this.gameObject);
-                }));
+                    StartCoroutine(bulletPattern.TriggerBulletPattern(this.gameObject, () =>
+                    {
+                        Destroy(this.gameObject);
+                    }));
+                }
+                else
+                {
+                    StartCoroutine(bulletPattern.TriggerBulletPattern(this.gameObject));
+                }
+                this.enabled = false;
             }
-            else
+        }
+    }
+
+    public void Fire()
+    {
+        if (destroyWhenDone)
+        {
+            StartCoroutine(bulletPattern.TriggerBulletPattern(this.gameObject, () =>
             {
-                StartCoroutine(bulletPattern.TriggerBulletPattern(this.gameObject));
-            }
-            this.enabled = false;
+                Destroy(this.gameObject);
+            }));
+        }
+        else
+        {
+            StartCoroutine(bulletPattern.TriggerBulletPattern(this.gameObject));
         }
     }
 

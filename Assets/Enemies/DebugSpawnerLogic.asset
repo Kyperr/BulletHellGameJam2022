@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList:
   - {fileID: 6057746480281386074, guid: 64ff682bc9c515e43885178a53b15811, type: 3}
-  startBudget: 6
+  startBudget: 10
   increaseBudgetPerRound: 2
   maxBudget: 20
   enemyRadius: 1000

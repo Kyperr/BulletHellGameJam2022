@@ -120,8 +120,8 @@ public class Graviton : BaseEnemyAI
 
         absorbedVisualEffect.gameObject.SetActive(false);
 
-        int bulletsToShoot = (int)(Mathf.Max(absorbedBullets, minBulletsToShoot) * suckedBulletMultiplier);
-        absorbedBullets = 0; //reset now
+        int bulletsToShoot = (int) (Mathf.Max(absorbedBullets, minBulletsToShoot) * suckedBulletMultiplier);
+        absorbedBullets = 0;//reset now
 
         for (int i = 0; i < bulletsToShoot; i++)
         {

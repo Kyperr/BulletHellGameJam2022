@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008651356, g: 0.018858032, b: 0.0044138255, a: 1}
+  m_IndirectSpecularColor: {r: 0.027729806, g: 0.06088269, b: 0.0140611455, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -565,8 +565,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1429186265}
-  spawnLogic: {fileID: 11400000, guid: 33816da4699223d439c7374b0d80ca29, type: 2}
+  spawnLogic: {fileID: 11400000, guid: 1941ac5a9ee158a479fc0bab5c880363, type: 2}
   musicObject: {fileID: 1655471934}
+  musicThreatVarName: Threat
 --- !u!4 &1575343441
 Transform:
   m_ObjectHideFlags: 0

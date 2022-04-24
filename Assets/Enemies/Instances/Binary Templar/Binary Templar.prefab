@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 5447525040476425626}
   - component: {fileID: -2681687871730172654}
   - component: {fileID: 8583245685414178794}
+  - component: {fileID: -2962400922903852421}
   m_Layer: 0
   m_Name: Binary Templar
   m_TagString: Untagged
@@ -352,6 +353,7 @@ MonoBehaviour:
   damageCooldown: 0
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
+  takeDamageSound: {fileID: -2962400922903852421}
 --- !u!114 &5447525040476425626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +397,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.83, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0.54}
+--- !u!114 &-2962400922903852421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179039431650410112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1883700392
+      Data2: 1306405429
+      Data3: 1228712101
+      Data4: 886087633
+    Path: event:/sfx/enemies/enemy_hit
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 50
+  OverrideMaxDistance: 750
 --- !u!1 &5983816486848598931
 GameObject:
   m_ObjectHideFlags: 0
