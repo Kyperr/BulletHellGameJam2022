@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c409e7e2c94955b499619274efbc7c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCost: 6
+  spawnCost: 10
 --- !u!114 &6012460371345358005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   takeDamage: 1
+  damageCooldown: 0
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
 --- !u!135 &7803723498562429338
