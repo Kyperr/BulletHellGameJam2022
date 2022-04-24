@@ -7,14 +7,14 @@ public class EnemySpawnLogic : ScriptableObject
 {
     [SerializeField]
     List<SpawnableEnemy> enemyList;
-    //[SerializeField]
-    //List<int> roundBudgets;
+    
     [SerializeField]
     int startBudget;
     [SerializeField]
     int increaseBudgetPerRound;
     [SerializeField]
     int maxBudget;
+
     [SerializeField]
     float enemyRadius = 2f;
 
@@ -57,7 +57,6 @@ public class EnemySpawnLogic : ScriptableObject
 
     public void generateEnemies(EnemySpawner es)
     {
-        float radius = es.ArenaRadius;
         var minimalBudget = calcualteMinBudget();
         float budget = startBudget + es.CurrentRound * increaseBudgetPerRound;
         budget = Mathf.Min(budget, maxBudget);
@@ -71,7 +70,7 @@ public class EnemySpawnLogic : ScriptableObject
             var enemy = enemyList[Random.Range(0, enemyList.Count)];
             if (budget - enemy.SpawnCost >= 0)
             {
-                var position = validGenerationPosition(avoidCollisionList, radius);
+                var position = validGenerationPosition(avoidCollisionList, enemyRadius);
                 if(position == Vector3.positiveInfinity)
                 {
                     Debug.LogError("can't find a good position for enemy");
@@ -83,6 +82,7 @@ public class EnemySpawnLogic : ScriptableObject
                     es.clearEnemies();
                 }
                 var go = Instantiate(enemy.gameObject, position, Quaternion.identity, es.transform);
+                go.transform.position = position;
                 es.addEnemy(go.GetComponent<SpawnableEnemy>());
                 avoidCollisionList.Add(position);
                 budget -= enemy.SpawnCost;

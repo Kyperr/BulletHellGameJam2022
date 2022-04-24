@@ -18,6 +18,9 @@ public class DestroysProjectileOnHit : MonoBehaviour
     [SerializeField]
     private Color onAnyTextColor = new Color(0, 222, 255);
 
+    [SerializeField]
+    private FMODUnity.StudioEventEmitter onAnySoundEffect;
+
     [Header("On Damage Taken")]
     [SerializeField]
     private bool onDamageTaken = false;
@@ -47,6 +50,11 @@ public class DestroysProjectileOnHit : MonoBehaviour
             Destroy(projectile.gameObject);
             DisplayOnAnyTextIfSet();
             OnProjectileDestroyed();
+            if (onAnySoundEffect != null)
+            {
+                Debug.Log("Sucking bullet.");
+                onAnySoundEffect.Play();
+            }
         }
     }
 

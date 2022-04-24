@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1985505bf5d8de74ba8c794defab87aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 65
   currentHP: 0
 --- !u!114 &3098417618935794166
 MonoBehaviour:
@@ -588,7 +588,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.08
+  m_Radius: 4.5
   m_Center: {x: 0, y: 0.5, z: -0.08}
 --- !u!114 &8174889377753204187
 MonoBehaviour:
@@ -618,6 +618,7 @@ MonoBehaviour:
   onAny: 0
   onAnyText: 
   onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
+  onAnySoundEffect: {fileID: 0}
   onDamageTaken: 1
 --- !u!54 &1564593582809714233
 Rigidbody:
@@ -647,11 +648,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7581c01efda968498230f27f2c56992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
+  moveSpeed: 115
   rangeOfAttackingDistances: {x: 150, y: 250}
   timeToSpendAttacking: {x: 6, y: 10}
   bulletShotRate: 8
-  blackHoleDeletionRate: 10
+  blackHoleDeletionRate: 15
   attackingBulletPattern: {fileID: 11400000, guid: b32d207c6f05e82439f9b8b9a0c1ebd6,
     type: 2}
   fleeTriggerDistance: 10

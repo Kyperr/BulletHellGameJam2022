@@ -57,7 +57,7 @@ MonoBehaviour:
   distanceToAttackFrom: 80
   attackPattern: {fileID: 11400000, guid: 0d1b89ee52406b44286e4aef05298ac3, type: 2}
   rateOfFire: 120
-  moveSpeed: 100
+  moveSpeed: 115
   distanceToAvoidOtherEnemies: 30
 --- !u!114 &1560578993568146715
 MonoBehaviour:
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1985505bf5d8de74ba8c794defab87aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 30
+  maxHP: 25
   currentHP: 0
 --- !u!114 &5342441417612172086
 MonoBehaviour:
@@ -127,7 +127,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.08
+  m_Radius: 1.6
   m_Center: {x: 0, y: 0.5, z: -0.08}
 --- !u!114 &1272525086346794779
 MonoBehaviour:
@@ -157,6 +157,7 @@ MonoBehaviour:
   onAny: 0
   onAnyText: 
   onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
+  onAnySoundEffect: {fileID: 0}
   onDamageTaken: 1
 --- !u!1 &3300309699520846067
 GameObject:

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ad026624-c3eb-43b7-ab6e-dd65f9430043}">
+		<property name="assetPath">
+			<value>music/Sub Bass.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>62.090906250000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6888575e-aaf8-4e4d-bc05-472f70f5cbe6}</destination>
+		</relationship>
+	</object>
+</objects>

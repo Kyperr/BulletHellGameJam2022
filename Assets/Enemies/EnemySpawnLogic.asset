@@ -21,4 +21,4 @@ MonoBehaviour:
   startBudget: 4
   increaseBudgetPerRound: 2
   maxBudget: 32
-  enemyRadius: 1000
+  enemyRadius: 1500

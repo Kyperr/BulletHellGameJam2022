@@ -147,7 +147,7 @@
 			<value>50</value>
 		</property>
 		<property name="maximumDistance">
-			<value>750</value>
+			<value>1400</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{3e11208f-917d-4176-8d6b-2cc729db3854}" />

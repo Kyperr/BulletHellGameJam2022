@@ -29,6 +29,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private FMODUnity.StudioEventEmitter musicObject;
 
+    [SerializeField]
+    private string musicThreatVarName = "Threat";
+
     int currentRound = 0;
     public int CurrentRound { get { return currentRound; } }
     private List<SpawnableEnemy> enemyList = new List<SpawnableEnemy>();
@@ -79,7 +82,7 @@ public class EnemySpawner : MonoBehaviour
         clearEnemies();
         spawnLogic.generateEnemies(this);
         currentRound++;
-        musicObject.SetParameter("Waves", currentRound);
+        musicObject.SetParameter(musicThreatVarName, currentRound);
     }
 
     public void addEnemy(SpawnableEnemy enemy)

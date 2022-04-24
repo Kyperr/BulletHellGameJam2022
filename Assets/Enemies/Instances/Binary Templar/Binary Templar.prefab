@@ -238,9 +238,9 @@ GameObject:
   - component: {fileID: -1613703322162973452}
   - component: {fileID: -6858415017508280049}
   - component: {fileID: 1159043389522854327}
-  - component: {fileID: 6243696178157988315}
   - component: {fileID: 5447525040476425626}
   - component: {fileID: -2681687871730172654}
+  - component: {fileID: 8583245685414178794}
   m_Layer: 0
   m_Name: Binary Templar
   m_TagString: Untagged
@@ -351,19 +351,6 @@ MonoBehaviour:
   takeDamage: 1
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
---- !u!135 &6243696178157988315
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5179039431650410112}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.08
-  m_Center: {x: 0, y: 0.5, z: -0.08}
 --- !u!114 &5447525040476425626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +379,21 @@ MonoBehaviour:
   onAny: 0
   onAnyText: 
   onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
+  onAnySoundEffect: {fileID: 0}
   onDamageTaken: 1
+--- !u!65 &8583245685414178794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179039431650410112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.75, y: 1, z: 2.15}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5983816486848598931
 GameObject:
   m_ObjectHideFlags: 0

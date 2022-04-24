@@ -25,6 +25,7 @@ public class RepellingShield : MonoBehaviour
         {
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
             rb.velocity = Vector3.Reflect(rb.velocity, (repelOrigin.position - other.transform.position).normalized);
+            PopupManager.Instance.createPopupText(transform.position, "Repelled", Color.yellow);
             rb.WakeUp();
         }
     }

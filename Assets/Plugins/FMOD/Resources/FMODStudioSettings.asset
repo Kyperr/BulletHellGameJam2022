@@ -486,11 +486,11 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     VirtualChannelCount:
-      Value: 0
-      HasValue: 0
+      Value: 2048
+      HasValue: 1
     RealChannelCount:
-      Value: 0
-      HasValue: 0
+      Value: 64
+      HasValue: 1
     DSPBufferLength:
       Value: 0
       HasValue: 0

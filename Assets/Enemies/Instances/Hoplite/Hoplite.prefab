@@ -9816,8 +9816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80b05304c6ac434eac246000d70e026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 150
-  rangeOfAttackingDistances: {x: 150, y: 200}
+  moveSpeed: 175
+  rangeOfAttackingDistances: {x: 150, y: 175}
   timeToSpendAttacking: {x: 12, y: 20}
   bulletShotRate: 10
   chargeUpAnimationTime: 3
@@ -9867,6 +9867,7 @@ MonoBehaviour:
   onAny: 0
   onAnyText: 
   onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
+  onAnySoundEffect: {fileID: 0}
   onDamageTaken: 1
 --- !u!1 &2706010429105667504
 GameObject:
@@ -10065,6 +10066,7 @@ MonoBehaviour:
   onAny: 1
   onAnyText: Blocked
   onAnyTextColor: {r: 0, g: 222, b: 255, a: 1}
+  onAnySoundEffect: {fileID: 0}
   onDamageTaken: 0
 --- !u!65 &4995313156240701809
 BoxCollider:

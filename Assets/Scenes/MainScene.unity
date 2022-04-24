@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.00013425642, g: 0.009189641, b: 0.022469481, a: 1}
+  m_IndirectSpecularColor: {r: 0.00009080261, g: 0.00676935, b: 0.01641417, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -257,6 +257,31 @@ PrefabInstance:
       propertyPath: TriggerOnce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
+        type: 3}
+      propertyPath: Params.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
+        type: 3}
+      propertyPath: Params.Array.data[0].Name
+      value: Threat
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
+        type: 3}
+      propertyPath: Params.Array.data[1].Name
+      value: Waves
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
+        type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
+        type: 3}
+      propertyPath: Params.Array.data[1].Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7186987395056069049, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
         type: 3}
       propertyPath: m_RootOrder
@@ -320,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 7186987395056069062, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
         type: 3}
       propertyPath: volume
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111, type: 3}
@@ -987,6 +1012,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898470440425072590, guid: dd216df18191a6240b3fb2abc6a5ae56,
+        type: 3}
+      propertyPath: altFireRate
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3898470440425072598, guid: dd216df18191a6240b3fb2abc6a5ae56,
         type: 3}
