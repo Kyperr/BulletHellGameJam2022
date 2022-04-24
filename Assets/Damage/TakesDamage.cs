@@ -23,6 +23,7 @@ public class TakesDamage : MonoBehaviour
 
     private HPObject hpObject;
 
+    [SerializeField]
     private float timeSinceLastDamage = float.MaxValue;
 
     void Start()
@@ -30,10 +31,14 @@ public class TakesDamage : MonoBehaviour
         hpObject = this.GetComponent<HPObject>();
     }
 
+    void Update()
+    {
+        timeSinceLastDamage += Time.deltaTime;
+    }
+
     // Returns true if killed
     public bool Damage(DoesDamage doesDamage)
     {
-        timeSinceLastDamage += Time.deltaTime;
         if (takeDamage && timeSinceLastDamage >= damageCooldown)
         {
             PopupManager.Instance.createPopupText(transform.position, doesDamage.DamageAmount.ToString(), Color.white);

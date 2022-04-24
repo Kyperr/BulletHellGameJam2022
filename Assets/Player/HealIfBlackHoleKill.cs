@@ -6,7 +6,7 @@ public class HealIfBlackHoleKill : MonoBehaviour
 {
 
     [SerializeField]
-    private int amountToHeal = 1;
+    private int baseRangeAmountToHeal;
 
     private HPObject playerHealth;
 
@@ -17,10 +17,16 @@ public class HealIfBlackHoleKill : MonoBehaviour
         DoesDamage doesDamage = GetComponent<DoesDamage>();
         if (doesDamage && playerHealth)
         {
-            doesDamage.OnDamageDone += (didKill) =>
+            doesDamage.OnDamageDone += (takesDamage, didKill) =>
             {
                 if (didKill)
                 {
+                    float amountToHeal = baseRangeAmountToHeal;
+                    AmountToHealFromBlackHole amount = takesDamage.GetComponent<AmountToHealFromBlackHole>();
+                    if (amount)
+                    {
+                        amountToHeal = amount.AmountToHeal;
+                    }
                     playerHealth.DoHealing(amountToHeal);
                     PopupManager.Instance.createPopupText(transform.position, "Heal +" + amountToHeal, Color.green);
                 }

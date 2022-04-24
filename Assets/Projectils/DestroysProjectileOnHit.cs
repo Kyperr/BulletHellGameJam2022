@@ -55,7 +55,6 @@ public class DestroysProjectileOnHit : MonoBehaviour
             OnProjectileDestroyed();
             if (onAnySoundEffect != null)
             {
-                Debug.Log("Sucking bullet.");
                 onAnySoundEffect.Play();
             }
         }

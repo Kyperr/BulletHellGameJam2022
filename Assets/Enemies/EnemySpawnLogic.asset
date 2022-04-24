@@ -19,6 +19,6 @@ MonoBehaviour:
   - {fileID: 587210458561225613, guid: e149de835cd49ab40a78bb340a8a9807, type: 3}
   - {fileID: 8463295123339458523, guid: 0335db4a1e3135b4c805674dcad68cf9, type: 3}
   startBudget: 4
-  increaseBudgetPerRound: 2
-  maxBudget: 32
+  increaseBudgetPerRound: 3
+  maxBudget: 50
   enemyRadius: 1500

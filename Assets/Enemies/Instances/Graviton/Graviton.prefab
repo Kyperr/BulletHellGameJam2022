@@ -19865,6 +19865,7 @@ GameObject:
   - component: {fileID: 78698452551719101}
   - component: {fileID: -4520702628555205451}
   - component: {fileID: 4245872324805337806}
+  - component: {fileID: -4752617860656212250}
   m_Layer: 0
   m_Name: Graviton
   m_TagString: Untagged
@@ -19951,8 +19952,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   takeDamage: 1
+  damageCooldown: 0
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
+  timeSinceLastDamage: 3.4028235e+38
 --- !u!114 &5769622212904668762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20048,6 +20051,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.5, y: 1, z: 4.46}
   m_Center: {x: 0, y: 0, z: 2.22}
+--- !u!114 &-4752617860656212250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653799139547364672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9b2931178c25c4498f965c46baf25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountToHeal: 20
 --- !u!1 &7814928599993860530
 GameObject:
   m_ObjectHideFlags: 0

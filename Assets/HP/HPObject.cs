@@ -9,9 +9,11 @@ public class HPObject : MonoBehaviour
 
     [SerializeField]
     float maxHP;
+    public float MaxHP => maxHP;
 
     [SerializeField]
     float currentHP;
+    public float CurrentHP => currentHP;
 
     bool isDead;
 

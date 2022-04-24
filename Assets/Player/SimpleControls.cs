@@ -63,4 +63,9 @@ public class SimpleControls : MonoBehaviour
             timeSinceLastAltFire = 0;
         }
     }
+
+    public float GetAltCooldown()
+    {
+        return Mathf.Clamp(timeSinceLastAltFire / (60f / altFireRate), 0f, 1f);
+    }
 }

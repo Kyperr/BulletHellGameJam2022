@@ -18,11 +18,13 @@ public class WardMissile : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 direction = (target.transform.position - transform.position).normalized;
+        if (target != null)
+        {
+            Vector3 direction = (target.transform.position - transform.position).normalized;
 
-        rb.AddForce(direction * speed);
+            rb.AddForce(direction * speed);
+        }
     }
 }

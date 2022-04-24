@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 6927326416567547219}
   - component: {fileID: 1564593582809714233}
   - component: {fileID: 464826217085347454}
+  - component: {fileID: -5873994852126217372}
   m_Layer: 0
   m_Name: Ward
   m_TagString: Untagged
@@ -575,8 +576,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   takeDamage: 1
+  damageCooldown: 0
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
+  timeSinceLastDamage: 3.4028235e+38
 --- !u!135 &7803723498562429338
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -658,6 +661,19 @@ MonoBehaviour:
   fleeTriggerDistance: 10
   blackholeDeletingAnimationTime: 0.25
   blackholeDeletingLineRenderer: {fileID: 4073051733118484372}
+--- !u!114 &-5873994852126217372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022347597968307905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9b2931178c25c4498f965c46baf25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountToHeal: 20
 --- !u!1001 &6661464128455624621
 PrefabInstance:
   m_ObjectHideFlags: 0

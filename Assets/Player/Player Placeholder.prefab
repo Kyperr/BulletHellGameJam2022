@@ -251,7 +251,7 @@ MonoBehaviour:
   primaryFireRate: 200
   primaryBulletPattern: {fileID: 11400000, guid: 5bd78484e3cc2924d8ab17a5c4e10b2c,
     type: 2}
-  altFireRate: 5
+  altFireRate: 10
   altBulletPattern: {fileID: 11400000, guid: 3adf34721031c044d8e031ef4e1eeb0e, type: 2}
 --- !u!114 &3898470440425072593
 MonoBehaviour:
@@ -296,9 +296,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   takeDamage: 1
+  damageCooldown: 0.25
   takesDamageFromClasses:
   - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
   - {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
+  timeSinceLastDamage: 3.4028235e+38
 --- !u!114 &8211866232850508814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1985505bf5d8de74ba8c794defab87aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1000
+  maxHP: 100
   currentHP: 0
 --- !u!114 &8962156727266891716
 MonoBehaviour:
@@ -515,6 +517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: hpBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5629938729085960640, guid: 9f6fa6f63fc8f004099a0860400bdb53,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5629938729085960651, guid: 9f6fa6f63fc8f004099a0860400bdb53,
         type: 3}

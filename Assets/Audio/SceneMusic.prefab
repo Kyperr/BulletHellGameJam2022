@@ -57,9 +57,11 @@ MonoBehaviour:
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
-  TriggerOnce: 0
+  TriggerOnce: 1
   Preload: 0
   Params:
+  - Name: Threat
+    Value: 1
   - Name: Waves
     Value: 0
   OverrideAttenuation: 0
@@ -77,4 +79,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b139b8d6516500848a0fe28da3db73a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 0
+  volume: 0.05

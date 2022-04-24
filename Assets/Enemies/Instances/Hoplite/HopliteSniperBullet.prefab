@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageClass: {fileID: 11400000, guid: ff744326dc0abea499d27fa8b77016f7, type: 2}
-  damageAmount: 15
+  damageAmount: 10
 --- !u!114 &8482881331459415429
 MonoBehaviour:
   m_ObjectHideFlags: 0
