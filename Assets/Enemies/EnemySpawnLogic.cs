@@ -18,6 +18,11 @@ public class EnemySpawnLogic : ScriptableObject
     [SerializeField]
     float enemyRadius = 2f;
 
+    public void sort()
+    {
+        enemyList.Sort((o1, o2) => o1.SpawnCost.CompareTo(o2.SpawnCost));
+    }
+
 
     float calcualteMinBudget()
     {
@@ -60,14 +65,23 @@ public class EnemySpawnLogic : ScriptableObject
         var minimalBudget = calcualteMinBudget();
         float budget = startBudget + es.CurrentRound * increaseBudgetPerRound;
         budget = Mathf.Min(budget, maxBudget);
-        //Debug.Log("current budge " + budget);
+        Debug.Log("current budge " + budget);
         int loopCount = 0;//in case for any reason we get into infinite loop
 
         List<Vector3> avoidCollisionList = new List<Vector3>() { es.PlayerPosition };
         List<GameObject> enemies = new List<GameObject>();
         while (loopCount < 100 && budget >= minimalBudget)
         {
+
+
             var enemy = enemyList[Random.Range(0, enemyList.Count)];
+            var nextUnlockedEnemy = EnemyManager.Instance.nextUnlockEnemy(enemyList);
+            if (nextUnlockedEnemy && nextUnlockedEnemy.SpawnCost <= budget)
+            {
+                enemy = nextUnlockedEnemy;
+                Debug.Log("force generate new enemy " + enemy);
+            }
+
             if (budget - enemy.SpawnCost >= 0)
             {
                 var position = validGenerationPosition(avoidCollisionList, enemyRadius);
