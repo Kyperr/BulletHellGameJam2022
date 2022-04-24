@@ -35,8 +35,11 @@ public class DestroysProjectileOnHit : MonoBehaviour
             {
                 takesDamage.OnDamageTaken += doesDamage =>
                 {
-                    Destroy(doesDamage.gameObject);
-                    OnProjectileDestroyed();
+                    if (doesDamage.GetComponent<Projectile>())
+                    {
+                        Destroy(doesDamage.gameObject);
+                        OnProjectileDestroyed();
+                    }
                 };
             }
         }

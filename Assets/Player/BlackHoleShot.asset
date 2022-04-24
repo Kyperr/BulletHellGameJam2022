@@ -17,5 +17,5 @@ MonoBehaviour:
     type: 3}
   projectile: {fileID: 672534189483499478, guid: 594f31d1e518ec9409cd7560fd069a53,
     type: 3}
-  projectileFireDistance: 3
-  initialProjectileVelocity: 100
+  projectileFireDistance: 25
+  initialProjectileVelocity: 750

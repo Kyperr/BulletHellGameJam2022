@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoesDamage : MonoBehaviour
 {
 
-    public delegate void OnDamageDoneDelegate();
+    public delegate void OnDamageDoneDelegate(bool didKill);
     public event OnDamageDoneDelegate OnDamageDone = delegate { };
 
     [SerializeField]
@@ -21,8 +21,7 @@ public class DoesDamage : MonoBehaviour
         TakesDamage takesDamage = other.gameObject.GetComponent<TakesDamage>();
         if (takesDamage && takesDamage.TakesDamageFromClasses.Contains(damageClass))
         {
-            takesDamage.Damage(this);
-            OnDamageDone();
+            OnDamageDone(takesDamage.Damage(this));
         }
     }
 }

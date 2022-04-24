@@ -9,31 +9,48 @@ public class HPObject : MonoBehaviour
 
     [SerializeField]
     float maxHP;
+
     [SerializeField]
     float currentHP;
+
     bool isDead;
+
     HPBar hpBar;
+
     EnemySpawner enemySpawner;
 
-    public void DoDamage(float d)
+    public bool DoDamage(float d)
     {
         if (isDead)
         {
-            return;
+            return false;
         }
         currentHP -= d;
         Mathf.Clamp(currentHP, 0, maxHP);
-        if (currentHP <= 0)
-        {
-            Die();
-        }
 
         if (hpBar)
         {
             //update HPBar
             hpBar.update(currentHP);
         }
+
+        if (currentHP <= 0)
+        {
+            Die();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
+
+    public void DoHealing(float d)
+    {
+        currentHP = Mathf.Min(maxHP, currentHP + d);
+    }
+
     void Die()
     {
         if (isDead)
@@ -55,7 +72,7 @@ public class HPObject : MonoBehaviour
             //if not player
             enemySpawner.destroy(GetComponentInParent<SpawnableEnemy>());
         }
-        
+
         // If its a player, oopsies.
         if (GetComponent<SimpleControls>())
         {

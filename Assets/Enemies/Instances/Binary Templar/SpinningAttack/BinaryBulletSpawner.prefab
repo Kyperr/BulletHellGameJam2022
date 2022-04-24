@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7112128935982780398}
   - component: {fileID: 1639197123664439818}
   - component: {fileID: 3294893522269549572}
+  - component: {fileID: 7112944344397966526}
+  - component: {fileID: 953672003445826931}
   m_Layer: 7
   m_Name: BinaryBulletSpawner
   m_TagString: Untagged
@@ -152,6 +154,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTimeInSeconds: 7
+--- !u!114 &7112944344397966526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851885698033747321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1985505bf5d8de74ba8c794defab87aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 10
+  currentHP: 0
+--- !u!114 &953672003445826931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851885698033747321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ac2423fc6db3f418676a063447e50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takeDamage: 1
+  takesDamageFromClasses:
+  - {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
 --- !u!1001 &2851885697272962480
 PrefabInstance:
   m_ObjectHideFlags: 0

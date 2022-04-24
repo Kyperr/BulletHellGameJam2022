@@ -225,6 +225,8 @@ GameObject:
   - component: {fileID: 8985040212574852176}
   - component: {fileID: 1632475578478567605}
   - component: {fileID: 198238377059262833}
+  - component: {fileID: -6700268271329746640}
+  - component: {fileID: -5650570414579007702}
   m_Layer: 0
   m_Name: BlackHole
   m_TagString: Untagged
@@ -287,7 +289,7 @@ Rigidbody:
   m_GameObject: {fileID: 672534189483499478}
   serializedVersion: 2
   m_Mass: 0.5
-  m_Drag: 1
+  m_Drag: 4
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -379,6 +381,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71686d2093d21ac4bb7bb964187f8469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6700268271329746640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672534189483499478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9911fd051247b9b4aafbb520c376c59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageClass: {fileID: 11400000, guid: 36658bdf347ed5148843770debc0645c, type: 2}
+  damageAmount: 20
+--- !u!114 &-5650570414579007702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672534189483499478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0ea372cb224e24c849b01f56d20dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountToHeal: 10
+  playerHealth: {fileID: 0}
 --- !u!1 &672534189888027923
 GameObject:
   m_ObjectHideFlags: 0

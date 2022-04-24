@@ -19984,11 +19984,12 @@ MonoBehaviour:
     type: 2}
   usualGravity: 0
   absorbingGravity: 100000
-  timeToSpendAbsorbing: {x: 5, y: 9}
+  timeToSpendAbsorbing: {x: 4, y: 8}
   suckingParticleSystem: {fileID: 4406685260080836815}
   absorbedVisualEffect: {fileID: 8561187700615848823}
   shootParticleSystem: {fileID: 8977139070112225309}
   minBulletsToShoot: 3
+  suckedBulletMultiplier: 2
   rangeOfTimesToWaitBetweenShots: {x: 0.025, y: 0.075}
 --- !u!114 &6131166496566979113
 MonoBehaviour:

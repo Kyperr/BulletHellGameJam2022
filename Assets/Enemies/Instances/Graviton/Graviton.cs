@@ -44,6 +44,9 @@ public class Graviton : BaseEnemyAI
     private int minBulletsToShoot = 3;
 
     [SerializeField]
+    private float suckedBulletMultiplier = 1.5f;
+
+    [SerializeField]
     private Vector2 rangeOfTimesToWaitBetweenShots = new Vector2(0.01f, 0.03f);
 
     private Vector3 desiredPosition;
@@ -117,8 +120,8 @@ public class Graviton : BaseEnemyAI
 
         absorbedVisualEffect.gameObject.SetActive(false);
 
-        int bulletsToShoot = Mathf.Max(absorbedBullets, minBulletsToShoot);
-        absorbedBullets = 0;//reset now
+        int bulletsToShoot = (int)(Mathf.Max(absorbedBullets, minBulletsToShoot) * suckedBulletMultiplier);
+        absorbedBullets = 0; //reset now
 
         for (int i = 0; i < bulletsToShoot; i++)
         {
