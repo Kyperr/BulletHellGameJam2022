@@ -19,6 +19,9 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    public delegate void OnWaveChangeDelegate(int wave);
+    public event OnWaveChangeDelegate OnWaveChange = delegate { };
+
     [SerializeField]
     private GameObject target;
     public GameObject Target => target;
@@ -47,6 +50,7 @@ public class EnemySpawner : MonoBehaviour
         player = GameObject.FindObjectOfType<SimpleControls>();
         spawnLogic.sort();
         generateNextRound();
+        OnWaveChange(currentRound);
     }
     public float ArenaRadius { get { return arena.ArenaRadius; } }
 
@@ -83,6 +87,7 @@ public class EnemySpawner : MonoBehaviour
         clearEnemies();
         spawnLogic.generateEnemies(this);
         currentRound++;
+        OnWaveChange(currentRound);
         musicObject.SetParameter(musicThreatVarName, currentRound);
     }
 

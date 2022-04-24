@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36357a7b45195b3489d14f3c1ac10988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseCursor: {fileID: 2800000, guid: d9d4e114494df0d458bf12ca700a147b, type: 3}
   moveSpeed: 250
   primaryFireRate: 200
   primaryBulletPattern: {fileID: 11400000, guid: 5bd78484e3cc2924d8ab17a5c4e10b2c,
