@@ -19909,7 +19909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c409e7e2c94955b499619274efbc7c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCost: 5
+  spawnCost: 7
 --- !u!114 &8219727501465614132
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,6 +45,7 @@ public class EnemySpawner : MonoBehaviour
     {
         arena = GameObject.FindObjectOfType<Arena>();
         player = GameObject.FindObjectOfType<SimpleControls>();
+        spawnLogic.sort();
         generateNextRound();
     }
     public float ArenaRadius { get { return arena.ArenaRadius; } }
