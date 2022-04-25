@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.00024482058, g: 0.020587776, b: 0.050136615, a: 1}
+  m_IndirectSpecularColor: {r: 0.0002153143, g: 0.016906872, b: 0.04122331, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -533,6 +533,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1626409672, guid: c39365b649a06464ea1eb1825a82f5d0, type: 3}
+      propertyPath: gameoverObject
+      value: 
+      objectReference: {fileID: 1920992494}
     - target: {fileID: 462300911665457622, guid: c39365b649a06464ea1eb1825a82f5d0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -753,6 +757,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3947535672211587809, guid: c39365b649a06464ea1eb1825a82f5d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5020455869232156033, guid: c39365b649a06464ea1eb1825a82f5d0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -800,6 +809,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c39365b649a06464ea1eb1825a82f5d0, type: 3}
+--- !u!1 &1920992494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4069192626567924806, guid: c39365b649a06464ea1eb1825a82f5d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1920992493}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2125158046 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7186987395056069048, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.00024798902, g: 0.020838557, b: 0.050764393, a: 1}
+  m_IndirectSpecularColor: {r: 0.0002153143, g: 0.016906872, b: 0.04122331, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1372,6 +1372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 7186987395056069062, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111,
+        type: 3}
+      propertyPath: volume
+      value: 0.025
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65bd1a59d09ee5e4c9c08ecc44a8b111, type: 3}
