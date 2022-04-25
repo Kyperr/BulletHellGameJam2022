@@ -33,12 +33,30 @@ public class Shadow : BaseEnemyAI
     private float distanceToAvoidOtherEnemies = 30f;
 
     [SerializeField]
-    private List<GameObject> shadowClones;
+    private GameObject shadowClone;
+
+    [SerializeField]
+    private int dashCount = 4;
+
+    [SerializeField]
+    private float dashPauseTime = .5f;
+
+    [SerializeField]
+    private float dashSpeed = 250f;
+
+    [SerializeField]
+    private float dashAngle = 80f;
+
+    [SerializeField]
+    private float dashDistance = 50f;
+
+    private Vector2 shadowStart;
 
     private Phase phase;
 
     private float timeSinceLastShot = 0;
     private bool distancing = false;
+    private bool dashing = false;
     private Vector3 desiredPosition;
 
     private float timeToSpendOnPhase = 0;
@@ -49,7 +67,7 @@ public class Shadow : BaseEnemyAI
     {
         target = EnemySpawner.Instance.Target;
         this.GetComponent<Target>().SetTarget(EnemySpawner.Instance.Target);
-        this.phase = Phase.CHASING;
+        this.phase = Phase.DISTANCING;
     }
 
     void Update()
@@ -57,8 +75,6 @@ public class Shadow : BaseEnemyAI
         if (target != null)
         {
             timeSinceLastShot += Time.deltaTime;
-
-            MoveShadowClones();
 
             if (phase == Phase.CHASING)
             {
@@ -77,20 +93,74 @@ public class Shadow : BaseEnemyAI
         }
     }
 
-    private void MoveShadowClones()
+    private void DashingLogic()
     {
-        foreach (GameObject shadow in shadowClones)
+        if (!dashing)
         {
-            float xPos = transform.position.x + Mathf.PingPong(Time.time, 5);
-            float zPos = transform.position.z + Mathf.PingPong(Time.time, 5);
-
-            shadow.transform.position = new Vector3(xPos, 0, zPos);
+            dashing = true;
+            StartCoroutine(Dash());
         }
     }
 
-    private void DashingLogic()
+    private IEnumerator Dash()
     {
-        SwapToPhase(Phase.CHASING);
+        Vector3 direction = (target.transform.position - this.transform.position).normalized;
+        Vector3[] dashPoints = new Vector3[dashCount];
+        float[] bulletDirections = new float[dashCount];
+        Debug.Log("dashPoints : " + dashPoints.Length);
+        Vector3 dashAngleVector; //= new Vector3(Mathf.Sin(Mathf.Deg2Rad * dashAngle), 0, Mathf.Cos(Mathf.Deg2Rad * dashAngle));
+
+        float sign = Mathf.Sign(Random.Range(-1f, 1f));
+        bulletDirections[0] = sign;
+        Vector3 lastPoint = transform.position;
+
+        for (int i = 0; i < dashCount; i++)
+        {
+            // dashAngleVector = new Vector3(Mathf.Sin(Mathf.Deg2Rad * dashAngle * sign), 0, Mathf.Cos(Mathf.Deg2Rad * dashAngle * sign)).normalized;
+            dashAngleVector = Quaternion.AngleAxis(dashAngle * sign, Vector3.up) * direction;
+            if (i == 0 || i == dashCount - 1)
+            {
+                // Half distance on the first and last to maintain center.
+                dashPoints[i] = lastPoint + (direction + dashAngleVector).normalized * (dashDistance / 2);
+            }
+            else
+            {
+                dashPoints[i] = lastPoint + (direction + dashAngleVector).normalized * dashDistance;
+            }
+
+            lastPoint = dashPoints[i];
+            bulletDirections[i] = sign;
+            sign *= -1;
+        }
+
+        for (int i = 0; i < dashPoints.Length; i++)
+        {
+            Vector3 point = dashPoints[i];
+            float bullletDirection = bulletDirections[i];
+
+            // Do the moving
+            while (!MoveToDesiredPosition(point, dashSpeed, false))
+            {
+                yield return 0;
+            }
+
+            // Send the bullets
+            if (bullletDirection == 1)
+            {
+                StartCoroutine(attackPattern.TriggerBulletPattern(this.gameObject, null, transform.right));
+            }
+
+            if (bullletDirection == -1)
+            {
+                StartCoroutine(attackPattern.TriggerBulletPattern(this.gameObject, null, transform.right * -1));
+            }
+
+            yield return new WaitForSeconds(dashPauseTime);
+        }
+
+        dashing = false;
+
+        SwapToPhase(Phase.DISTANCING);
     }
 
     private void DistancingLogic()
@@ -102,13 +172,33 @@ public class Shadow : BaseEnemyAI
             Vector3 directionalVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad * newAngle), 0, Mathf.Sin(Mathf.Deg2Rad * newAngle));
             desiredPosition = this.target.transform.position + (directionalVector.normalized * distance);
             distancing = true;
+            StartCoroutine(MoveToDistance());
         }
 
-        if (MoveToDesiredPosition(desiredPosition, moveSpeed))
+    }
+
+    private IEnumerator MoveToDistance()
+    {
+        while (!MoveToDesiredPosition(desiredPosition, moveSpeed))
         {
-            distancing = false;
-            SwapToPhase(Phase.DASHING);
+            yield return 0;
         }
+
+        float speed = 1;
+
+        float timeLerping = 0;
+
+        // Look at player;
+        Quaternion toRotation = Quaternion.LookRotation((target.transform.position - transform.position), transform.up);
+        while (timeLerping < speed)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, timeLerping / speed);
+            timeLerping += Time.deltaTime;
+            yield return 0;
+        }
+
+        distancing = false;
+        SwapToPhase(Phase.DASHING);
     }
 
     private void ChasingLogic()
