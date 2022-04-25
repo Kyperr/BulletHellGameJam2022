@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SimpleControls : MonoBehaviour
@@ -55,7 +56,7 @@ public class SimpleControls : MonoBehaviour
         //
         //transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
 
-        if (Input.GetButton("Fire1") && timeSinceLastPrimaryFire > (60f / (float)primaryFireRate) && primaryBulletPattern != null)
+        if (!EventSystem.current.IsPointerOverGameObject() && Input.GetButton("Fire1") && timeSinceLastPrimaryFire > (60f / (float)primaryFireRate) && primaryBulletPattern != null)
         {
             StartCoroutine(primaryBulletPattern.TriggerBulletPattern(this.gameObject));
             timeSinceLastPrimaryFire = 0;
