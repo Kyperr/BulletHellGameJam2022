@@ -16,7 +16,7 @@ public class ForwardShootingEnemyBulletPattern : EnemyBulletPattern
     [SerializeField]
     private float initialProjectileVelocity = 10f;
 
-    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null)
+    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null, Nullable<Vector3> directionOverride = null)
     {
         Vector3 baseDirection = new Vector3();
 

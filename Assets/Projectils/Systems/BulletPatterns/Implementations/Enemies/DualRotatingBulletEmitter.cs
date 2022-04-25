@@ -25,7 +25,7 @@ public class DualRotatingBulletEmitter : EnemyBulletPattern
     [SerializeField]
     private float angleDelta = 10f;
 
-    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone)
+    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone, Nullable<Vector3> directionOverride = null)
     {
         Vector3 baseDirection = new Vector3();
 

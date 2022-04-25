@@ -19,7 +19,7 @@ public class ForwardShootingDoubleEnemyBulletPattern : EnemyBulletPattern
     [SerializeField]
     private float shotAngle = 10f;
 
-    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null)
+    public override IEnumerator TriggerBulletPattern(GameObject source, Action whenDone = null, Nullable<Vector3> directionOverride = null)
     {
         Vector3 baseDirection = GetBaseDirection(source);
 
