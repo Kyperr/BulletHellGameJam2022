@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1272525086346794779}
   - component: {fileID: 70138865361446803}
   - component: {fileID: 7976813732790062302}
+  - component: {fileID: 960416545012948772}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -192,6 +193,19 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 50
   OverrideMaxDistance: 750
+--- !u!114 &960416545012948772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156715250515092481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0ea372cb224e24c849b01f56d20dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseRangeAmountToHeal: 8
 --- !u!1 &3300309699520846067
 GameObject:
   m_ObjectHideFlags: 0

@@ -79,7 +79,8 @@ public class HPObject : MonoBehaviour
         if (GetComponent<SimpleControls>())
         {
             //game over
-            GameObject.FindObjectOfType<GameOverView>(true).onGameOver();
+            GameOverView goView = GameObject.FindObjectOfType<GameOverView>(true);
+            goView.onGameOver();
         }
     }
 

@@ -566,7 +566,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -577,7 +577,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -621,7 +621,7 @@
 			<value>1.1000000238418579</value>
 		</property>
 		<property name="maximum">
-			<value>6</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -665,7 +665,7 @@
 			<value>2.0999999046325684</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -676,7 +676,7 @@
 			<value>3</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -701,7 +701,7 @@
 			<value>3.0999999046325684</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -712,7 +712,7 @@
 			<value>4</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -737,7 +737,7 @@
 			<value>4.0999999046325684</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -748,7 +748,7 @@
 			<value>5</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -773,7 +773,7 @@
 			<value>5.0999999046325684</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -784,7 +784,7 @@
 			<value>6</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>
@@ -801,7 +801,7 @@
 			<value>7</value>
 		</property>
 		<property name="maximum">
-			<value>10</value>
+			<value>999</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{b7c4ff02-535b-463b-9770-7c65e89b9814}</destination>

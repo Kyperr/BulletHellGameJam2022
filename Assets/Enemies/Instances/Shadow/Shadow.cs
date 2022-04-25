@@ -136,21 +136,21 @@ public class Shadow : BaseEnemyAI
         for (int i = 0; i < dashPoints.Length; i++)
         {
             Vector3 point = dashPoints[i];
-            float bullletDirection = bulletDirections[i];
+            float bulletDirection = bulletDirections[i];
 
             // Do the moving
-            while (!MoveToDesiredPosition(point, dashSpeed, false))
+            while (!MoveToDesiredPosition(point, dashSpeed))
             {
                 yield return 0;
             }
 
             // Send the bullets
-            if (bullletDirection == 1)
+            if (bulletDirection == 1)
             {
                 StartCoroutine(attackPattern.TriggerBulletPattern(this.gameObject, null, transform.right));
             }
 
-            if (bullletDirection == -1)
+            if (bulletDirection == -1)
             {
                 StartCoroutine(attackPattern.TriggerBulletPattern(this.gameObject, null, transform.right * -1));
             }

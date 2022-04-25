@@ -7,25 +7,19 @@ using UnityEngine.UI;
 public class HUDView : MonoBehaviour
 {
     [SerializeField]
-    Button pauseButton;
-    [SerializeField]
     GameObject pausePanel;
-    [SerializeField]
-    Button resumeButton;
-    [SerializeField]
-    Button mainButton;
-    [SerializeField]
-    Button restartButton;
+
+    private bool paused = false;
+
     public void pause()
     {
-        pauseButton.gameObject.SetActive(false);
+        paused = true;
         pausePanel.SetActive(true);
         Time.timeScale = 0;
     }
     public void resume()
     {
-
-        pauseButton.gameObject.SetActive(true);
+        paused = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1;
     }
@@ -45,17 +39,22 @@ public class HUDView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pauseButton.onClick.AddListener(pause);
-        resumeButton.onClick.AddListener(resume);
-        mainButton.onClick.AddListener(mainMenu);
-        restartButton.onClick.AddListener(restart);
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (paused)
+            {
+                resume();
+            }
+            else
+            {
+                pause();
+            }
+        }
     }
 }

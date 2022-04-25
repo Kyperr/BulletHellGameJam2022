@@ -102,10 +102,10 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    generateNextRound();
-        //}
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            generateNextRound();
+        }
 
         if (threat != currentRound)
         {

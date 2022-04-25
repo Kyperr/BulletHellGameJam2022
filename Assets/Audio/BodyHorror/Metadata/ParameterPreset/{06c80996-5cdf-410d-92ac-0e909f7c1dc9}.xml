@@ -16,13 +16,13 @@
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>11</value>
+			<value>999</value>
 		</property>
 		<property name="initialValue">
 			<value>1</value>
 		</property>
 		<property name="seekSpeedDescending">
-			<value>1.7000000476837158</value>
+			<value>169.66000475883482</value>
 		</property>
 	</object>
 </objects>

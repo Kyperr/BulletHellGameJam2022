@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameOverView : MonoBehaviour
 {
+    [SerializeField]
+    private FMODUnity.StudioEventEmitter gameOverMusicObject;
+
     public GameObject gameoverObject;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,7 @@ public class GameOverView : MonoBehaviour
 
     IEnumerator showGameover()
     {
+        gameOverMusicObject.Play();
         yield return new WaitForSecondsRealtime(1f);
         gameoverObject.SetActive(true);
 

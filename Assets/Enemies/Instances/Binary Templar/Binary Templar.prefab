@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: -2681687871730172654}
   - component: {fileID: 8583245685414178794}
   - component: {fileID: -2962400922903852421}
+  - component: {fileID: 3410110402475496469}
   m_Layer: 0
   m_Name: Binary Templar
   m_TagString: Untagged
@@ -427,6 +428,19 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 50
   OverrideMaxDistance: 750
+--- !u!114 &3410110402475496469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179039431650410112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0ea372cb224e24c849b01f56d20dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseRangeAmountToHeal: 7
 --- !u!1 &5983816486848598931
 GameObject:
   m_ObjectHideFlags: 0
