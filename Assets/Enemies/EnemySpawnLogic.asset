@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList:
   - {fileID: 1560578993568146715, guid: dcc6c0c03d1b8734eb75fb417ad79360, type: 3}
+  - {fileID: 587210458561225613, guid: e149de835cd49ab40a78bb340a8a9807, type: 3}
+  - {fileID: 113004882044241813, guid: 740d82aa8ca13684ea1418539d3312ab, type: 3}
   - {fileID: 5735861513588916122, guid: 294e273625d638a4db7f4fcfd9b83a3e, type: 3}
   - {fileID: 6057746480281386074, guid: 64ff682bc9c515e43885178a53b15811, type: 3}
-  - {fileID: 587210458561225613, guid: e149de835cd49ab40a78bb340a8a9807, type: 3}
   - {fileID: 8463295123339458523, guid: 0335db4a1e3135b4c805674dcad68cf9, type: 3}
-  - {fileID: 113004882044241813, guid: 740d82aa8ca13684ea1418539d3312ab, type: 3}
   startBudget: 4
   increaseBudgetPerRound: 3
-  maxBudget: 50
+  maxBudget: 90
   enemyRadius: 1500

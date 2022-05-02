@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.00022899105, g: 0.018311676, b: 0.044623904, a: 1}
+  m_IndirectSpecularColor: {r: 0.0038229977, g: 0.16659689, b: 0.26627687, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -470,6 +470,12 @@ PrefabInstance:
       objectReference: {fileID: 1558578699}
     - target: {fileID: 1866087784612422884, guid: a54c14db816fac849b208cbc026965bc,
         type: 3}
+      propertyPath: spawnLogic
+      value: 
+      objectReference: {fileID: 11400000, guid: 1941ac5a9ee158a479fc0bab5c880363,
+        type: 2}
+    - target: {fileID: 1866087784612422884, guid: a54c14db816fac849b208cbc026965bc,
+        type: 3}
       propertyPath: musicObject
       value: 
       objectReference: {fileID: 2125158046}
@@ -505,6 +511,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 406872763, guid: c39365b649a06464ea1eb1825a82f5d0, type: 3}
+      propertyPath: waveFrameSets.Array.data[3].wave
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 406872763, guid: c39365b649a06464ea1eb1825a82f5d0, type: 3}
+      propertyPath: waveFrameSets.Array.data[4].wave
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 406872763, guid: c39365b649a06464ea1eb1825a82f5d0, type: 3}
+      propertyPath: waveFrameSets.Array.data[5].wave
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1626409672, guid: c39365b649a06464ea1eb1825a82f5d0, type: 3}
       propertyPath: gameOverMusicObject
       value: 

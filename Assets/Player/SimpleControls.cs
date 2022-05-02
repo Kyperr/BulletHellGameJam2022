@@ -7,9 +7,6 @@ using UnityEngine.EventSystems;
 public class SimpleControls : MonoBehaviour
 {
     [SerializeField]
-    public Texture2D mouseCursor;
-
-    [SerializeField]
     private float moveSpeed = 10f;
 
     [SerializeField]
@@ -33,7 +30,6 @@ public class SimpleControls : MonoBehaviour
     private float verticalInput;
     private void Awake()
     {
-        Cursor.SetCursor(mouseCursor, new Vector2(0,0), CursorMode.Auto);
         rb = GetComponent<Rigidbody>();
     }
 

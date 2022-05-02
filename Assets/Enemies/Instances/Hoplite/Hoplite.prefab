@@ -9822,7 +9822,7 @@ MonoBehaviour:
   moveSpeed: 175
   rangeOfAttackingDistances: {x: 150, y: 175}
   timeToSpendAttacking: {x: 12, y: 20}
-  bulletShotRate: 10
+  bulletShotRate: 8.5
   chargeUpAnimationTime: 3
   chargeUpProjectiles: {fileID: 667003381}
   attackingBulletPattern: {fileID: 11400000, guid: 64a1bc374dc792149a27cd6dafc21a98,
